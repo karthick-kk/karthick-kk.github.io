@@ -6,8 +6,34 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Wed, 28 Oct 2020 14:34:08 +0530</lastBuildDate>
+        <lastBuildDate>Fri, 30 Oct 2020 00:00:09 +0530</lastBuildDate>
         <atom:link href="https://karthick-kk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Encrypt Decrypt With Gpg</title>
+            <link>https://karthick-kk.github.io/posts/2020/10/encrypt-decrypt-with-gpg/</link>
+            <pubDate>Fri, 30 Oct 2020 00:00:09 +0530</pubDate>
+            
+            <guid>https://karthick-kk.github.io/posts/2020/10/encrypt-decrypt-with-gpg/</guid>
+            <description> This article explains encryption and decryption of files using GNU gpg Setup GNU gpg Generate Keys gpg --full-generate-key  passphrase is optional  Encrypting a file gpg -e -r &amp;#34;karthickk&amp;#34; .wekan.json  This creates a file with an extension .gpg
+ Decrypting a file gpg -o .wekan.json -d .wekan.json.gpg </description>
+            <content type="html"><![CDATA[<hr>
+<h2 id="this-article-explains-encryption-and-decryption-of-files-using-gnu-gpg">This article explains encryption and decryption of files using GNU gpg</h2>
+<h2 id="setup-gnu-gpg">Setup GNU gpg</h2>
+<h3 id="generate-keys">Generate Keys</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gpg --full-generate-key
+</code></pre></div><ul>
+<li>passphrase is optional</li>
+</ul>
+<h3 id="encrypting-a-file">Encrypting a file</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gpg -e -r <span style="color:#e6db74">&#34;karthickk&#34;</span> .wekan.json
+</code></pre></div><blockquote>
+<p>This creates a file with an extension .gpg</p>
+</blockquote>
+<h3 id="decrypting-a-file">Decrypting a file</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gpg -o .wekan.json -d .wekan.json.gpg
+</code></pre></div>]]></content>
+        </item>
         
         <item>
             <title>Hashicorp Boundary Setup and Demo</title>
