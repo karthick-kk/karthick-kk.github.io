@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 28 Oct 2020 14:34:08 +0530</lastBuildDate><atom:link href="https://karthick-kk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Oct 2020 23:21:06 +0530</lastBuildDate><atom:link href="https://karthick-kk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Encrypt Decrypt With Gpg</title>
+      <link>https://karthick-kk.github.io/posts/2020/10/encrypt-decrypt-with-gpg/</link>
+      <pubDate>Thu, 29 Oct 2020 23:21:06 +0530</pubDate>
+      
+      <guid>https://karthick-kk.github.io/posts/2020/10/encrypt-decrypt-with-gpg/</guid>
+      <description> This article explains how to encrypt and decrypt files on unix with GNU Gpg Setup GNU gpg Generate Keys gpg --full-generate-key  no passphrase  Encrypting a file gpg -e -r &amp;#34;karthick&amp;#34; .wekan.json Decrypting the file gpg -o /var/tmp/.wekan.json -d .wekan.json.gpg </description>
+    </item>
+    
     <item>
       <title>Hashicorp Boundary Setup and Demo</title>
       <link>https://karthick-kk.github.io/posts/2020/10/hashicorp-boundary-setup-and-demo/</link>

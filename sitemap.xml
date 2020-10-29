@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://karthick-kk.github.io/posts/2020/10/encrypt-decrypt-with-gpg/</loc>
+    <lastmod>2020-10-29T23:21:06+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karthick-kk.github.io/</loc>
+    <lastmod>2020-10-29T23:21:06+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karthick-kk.github.io/posts/</loc>
+    <lastmod>2020-10-29T23:21:06+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karthick-kk.github.io/tags/</loc>
+    <lastmod>2020-10-29T23:21:06+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karthick-kk.github.io/tags/untagged/</loc>
+    <lastmod>2020-10-29T23:21:06+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://karthick-kk.github.io/tags/boundary/</loc>
     <lastmod>2020-10-28T14:34:08+05:30</lastmod>
   </url>
@@ -14,21 +39,6 @@
   
   <url>
     <loc>https://karthick-kk.github.io/posts/2020/10/hashicorp-boundary-setup-and-demo/</loc>
-    <lastmod>2020-10-28T14:34:08+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://karthick-kk.github.io/</loc>
-    <lastmod>2020-10-28T14:34:08+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://karthick-kk.github.io/posts/</loc>
-    <lastmod>2020-10-28T14:34:08+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://karthick-kk.github.io/tags/</loc>
     <lastmod>2020-10-28T14:34:08+05:30</lastmod>
   </url>
   
