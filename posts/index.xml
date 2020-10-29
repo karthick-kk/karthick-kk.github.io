@@ -6,30 +6,8 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Thu, 29 Oct 2020 23:21:06 +0530</lastBuildDate>
+        <lastBuildDate>Wed, 28 Oct 2020 14:34:08 +0530</lastBuildDate>
         <atom:link href="https://karthick-kk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-        
-        <item>
-            <title>Encrypt Decrypt With Gpg</title>
-            <link>https://karthick-kk.github.io/posts/2020/10/encrypt-decrypt-with-gpg/</link>
-            <pubDate>Thu, 29 Oct 2020 23:21:06 +0530</pubDate>
-            
-            <guid>https://karthick-kk.github.io/posts/2020/10/encrypt-decrypt-with-gpg/</guid>
-            <description> This article explains how to encrypt and decrypt files on unix with GNU Gpg Setup GNU gpg Generate Keys gpg --full-generate-key  no passphrase  Encrypting a file gpg -e -r &amp;#34;karthick&amp;#34; .wekan.json Decrypting the file gpg -o /var/tmp/.wekan.json -d .wekan.json.gpg </description>
-            <content type="html"><![CDATA[<hr>
-<h2 id="this-article-explains-how-to-encrypt-and-decrypt-files-on-unix-with-gnu-gpg">This article explains how to encrypt and decrypt files on unix with GNU Gpg</h2>
-<h2 id="setup-gnu-gpg">Setup GNU gpg</h2>
-<h3 id="generate-keys">Generate Keys</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gpg --full-generate-key
-</code></pre></div><ul>
-<li>no passphrase</li>
-</ul>
-<h3 id="encrypting-a-file">Encrypting a file</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gpg -e -r <span style="color:#e6db74">&#34;karthick&#34;</span> .wekan.json
-</code></pre></div><h3 id="decrypting-the-file">Decrypting the file</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gpg -o /var/tmp/.wekan.json -d .wekan.json.gpg
-</code></pre></div>]]></content>
-        </item>
         
         <item>
             <title>Hashicorp Boundary Setup and Demo</title>
