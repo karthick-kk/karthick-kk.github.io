@@ -15,11 +15,12 @@
             <pubDate>Thu, 05 Nov 2020 18:32:55 +0530</pubDate>
             
             <guid>https://karthick.it/posts/2020/11/zsh-setup/</guid>
-            <description>This guide is to provide some quick steps to setup zsh,oh-my-zsh framework with essential plugins and powerline10k theme Zsh Setup Change default shell to zsh sudo usermod -s /usr/bin/zsh $USER Setup oh-my-zsh framework An excellent framework with extensible plugins and themes to manage zsh configurations.
+            <description>This guide is to provide some quick steps to setup zsh,oh-my-zsh framework with essential plugins and powerline10k theme
+ Change default shell to zsh sudo usermod -s /usr/bin/zsh $USER Setup oh-my-zsh framework An excellent framework with extensible plugins and themes to manage zsh configurations.
 sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;#34; Install essential plugins git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions Enable installed plugins Update ~/.zshrc file to enable the installed plugins</description>
             <content type="html"><![CDATA[<hr>
-<h2 id="this-guide-is-to-provide-some-quick-steps-to-setup-zshoh-my-zsh-framework-with-essential-plugins-and-powerline10k-theme">This guide is to provide some quick steps to setup zsh,oh-my-zsh framework with essential plugins and powerline10k theme</h2>
-<h1 id="zsh-setup">Zsh Setup</h1>
+<p>This guide is to provide some quick steps to setup zsh,oh-my-zsh framework with essential plugins and powerline10k theme</p>
+<hr>
 <h2 id="change-default-shell-to-zsh">Change default shell to zsh</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo usermod -s /usr/bin/zsh $USER
 </code></pre></div><h2 id="setup-oh-my-zsh-framework">Setup oh-my-zsh framework</h2>
@@ -39,9 +40,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git <span style="colo
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> https://github.com/romkatv/powerlevel10k.git <span style="color:#e6db74">${</span>ZSH_CUSTOM<span style="color:#66d9ef">:-</span>$HOME/.oh-my-zsh/custom<span style="color:#e6db74">}</span>/themes/powerlevel10k
 </code></pre></div><p>When the installation is complete, a wizard will guide us through the rest of configuration and tweaks for a powerup shell</p>
 <p>The wizard can anytime be re-run with <code>p10k configure</code> command</p>
-<h3 id="reference-youtube-videos">Reference youtube videos</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
 ]]></content>
         </item>
         
@@ -51,15 +49,17 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git <span style="colo
             <pubDate>Thu, 05 Nov 2020 14:17:26 +0530</pubDate>
             
             <guid>https://karthick.it/posts/2020/11/opengl-compositor-crash-fix-restart/</guid>
-            <description>A workaround to get rid of x11/compositor crash in KDE 5.x for Intel HD GPUs OpenGL-Compositor crash fix on wakeup/unlock event This is a simple workaround to recover from the kde compositor crashes that renders the screen with black artifacts with non-responding UI.
+            <description>A workaround to get rid of x11/compositor crash in KDE 5.x for Intel HD GPUs
+ OpenGL-Compositor crash fix on wakeup/unlock event This is a simple workaround to recover from the kde compositor crashes that renders the screen with black artifacts with non-responding UI.
 The idea is to keep a script running in the background which capture the dbus event of lock/unlock screen to restart kwin window manager.
 Restart script  restart_kwin.</description>
             <content type="html"><![CDATA[<hr>
-<h2 id="a-workaround-to-get-rid-of-x11compositor-crash-in-kde-5x-for-intel-hd-gpus">A workaround to get rid of x11/compositor crash in KDE 5.x for Intel HD GPUs</h2>
-<h1 id="opengl-compositor-crash-fix-on-wakeupunlock-event">OpenGL-Compositor crash fix on wakeup/unlock event</h1>
+<p>A workaround to get rid of x11/compositor crash in KDE 5.x for Intel HD GPUs</p>
+<hr>
+<h2 id="opengl-compositor-crash-fix-on-wakeupunlock-event">OpenGL-Compositor crash fix on wakeup/unlock event</h2>
 <p>This is a simple workaround to recover from the kde compositor crashes that renders the screen with black artifacts with non-responding UI.</p>
 <p>The idea is to keep a script running in the background which capture the dbus event of lock/unlock screen to restart kwin window manager.</p>
-<h2 id="restart-script">Restart script</h2>
+<h3 id="restart-script">Restart script</h3>
 <blockquote>
 <p>restart_kwin.sh</p>
 </blockquote>
@@ -70,7 +70,7 @@ Restart script  restart_kwin.</description>
       *<span style="color:#e6db74">&#34;boolean false&#34;</span>*<span style="color:#f92672">)</span> kwin_x11 --replace;;  
     <span style="color:#66d9ef">esac</span>
   <span style="color:#66d9ef">done</span>
-</code></pre></div><h2 id="autostart-task">Autostart task</h2>
+</code></pre></div><h3 id="autostart-task">Autostart task</h3>
 <p><img src="https://raw.githubusercontent.com/corestackdev/images/main/image-20201105095954085.png" alt="image-20201105095954085"></p>
 <h2 id="how-it-works">How it works</h2>
 <p>The autostart script monitors for lock/unlock event continuously in the background. On every unlock event, it triggers a kwin window manager restart using the command <code>kwin_x11 --replace</code></p>
@@ -83,10 +83,12 @@ Restart script  restart_kwin.</description>
             <pubDate>Fri, 30 Oct 2020 00:00:09 +0530</pubDate>
             
             <guid>https://karthick.it/posts/2020/10/encrypt-decrypt-with-gpg/</guid>
-            <description> This article explains encryption and decryption of files using GNU gpg Setup GNU gpg Generate Keys gpg --full-generate-key  passphrase is optional  Encrypting a file gpg -e -r &amp;#34;karthickk&amp;#34; .wekan.json  This creates a file with an extension .gpg
+            <description> This article explains encryption and decryption of files using GNU gpg
+ Setup GNU gpg Generate Keys gpg --full-generate-key  passphrase is optional  Encrypting a file gpg -e -r &amp;#34;karthickk&amp;#34; .wekan.json  This creates a file with an extension .gpg
  Decrypting a file gpg -o .wekan.json -d .wekan.json.gpg </description>
             <content type="html"><![CDATA[<hr>
-<h2 id="this-article-explains-encryption-and-decryption-of-files-using-gnu-gpg">This article explains encryption and decryption of files using GNU gpg</h2>
+<p>This article explains encryption and decryption of files using GNU gpg</p>
+<hr>
 <h2 id="setup-gnu-gpg">Setup GNU gpg</h2>
 <h3 id="generate-keys">Generate Keys</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gpg --full-generate-key

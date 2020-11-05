@@ -14,7 +14,8 @@
       <pubDate>Thu, 05 Nov 2020 14:17:26 +0530</pubDate>
       
       <guid>https://karthick.it/posts/2020/11/opengl-compositor-crash-fix-restart/</guid>
-      <description>A workaround to get rid of x11/compositor crash in KDE 5.x for Intel HD GPUs OpenGL-Compositor crash fix on wakeup/unlock event This is a simple workaround to recover from the kde compositor crashes that renders the screen with black artifacts with non-responding UI.
+      <description>A workaround to get rid of x11/compositor crash in KDE 5.x for Intel HD GPUs
+ OpenGL-Compositor crash fix on wakeup/unlock event This is a simple workaround to recover from the kde compositor crashes that renders the screen with black artifacts with non-responding UI.
 The idea is to keep a script running in the background which capture the dbus event of lock/unlock screen to restart kwin window manager.
 Restart script  restart_kwin.</description>
     </item>

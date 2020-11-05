@@ -14,7 +14,8 @@
       <pubDate>Thu, 05 Nov 2020 18:32:55 +0530</pubDate>
       
       <guid>https://karthick.it/posts/2020/11/zsh-setup/</guid>
-      <description>This guide is to provide some quick steps to setup zsh,oh-my-zsh framework with essential plugins and powerline10k theme Zsh Setup Change default shell to zsh sudo usermod -s /usr/bin/zsh $USER Setup oh-my-zsh framework An excellent framework with extensible plugins and themes to manage zsh configurations.
+      <description>This guide is to provide some quick steps to setup zsh,oh-my-zsh framework with essential plugins and powerline10k theme
+ Change default shell to zsh sudo usermod -s /usr/bin/zsh $USER Setup oh-my-zsh framework An excellent framework with extensible plugins and themes to manage zsh configurations.
 sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;#34; Install essential plugins git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions Enable installed plugins Update ~/.zshrc file to enable the installed plugins</description>
     </item>
     
@@ -24,7 +25,8 @@ sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/ma
       <pubDate>Thu, 05 Nov 2020 14:17:26 +0530</pubDate>
       
       <guid>https://karthick.it/posts/2020/11/opengl-compositor-crash-fix-restart/</guid>
-      <description>A workaround to get rid of x11/compositor crash in KDE 5.x for Intel HD GPUs OpenGL-Compositor crash fix on wakeup/unlock event This is a simple workaround to recover from the kde compositor crashes that renders the screen with black artifacts with non-responding UI.
+      <description>A workaround to get rid of x11/compositor crash in KDE 5.x for Intel HD GPUs
+ OpenGL-Compositor crash fix on wakeup/unlock event This is a simple workaround to recover from the kde compositor crashes that renders the screen with black artifacts with non-responding UI.
 The idea is to keep a script running in the background which capture the dbus event of lock/unlock screen to restart kwin window manager.
 Restart script  restart_kwin.</description>
     </item>
@@ -35,7 +37,8 @@ Restart script  restart_kwin.</description>
       <pubDate>Fri, 30 Oct 2020 00:00:09 +0530</pubDate>
       
       <guid>https://karthick.it/posts/2020/10/encrypt-decrypt-with-gpg/</guid>
-      <description> This article explains encryption and decryption of files using GNU gpg Setup GNU gpg Generate Keys gpg --full-generate-key  passphrase is optional  Encrypting a file gpg -e -r &amp;#34;karthickk&amp;#34; .wekan.json  This creates a file with an extension .gpg
+      <description> This article explains encryption and decryption of files using GNU gpg
+ Setup GNU gpg Generate Keys gpg --full-generate-key  passphrase is optional  Encrypting a file gpg -e -r &amp;#34;karthickk&amp;#34; .wekan.json  This creates a file with an extension .gpg
  Decrypting a file gpg -o .wekan.json -d .wekan.json.gpg </description>
     </item>
     
