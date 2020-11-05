@@ -6,8 +6,44 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Thu, 05 Nov 2020 14:17:26 +0530</lastBuildDate>
+        <lastBuildDate>Thu, 05 Nov 2020 18:32:55 +0530</lastBuildDate>
         <atom:link href="https://karthick.it/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Zsh Setup</title>
+            <link>https://karthick.it/posts/2020/11/zsh-setup/</link>
+            <pubDate>Thu, 05 Nov 2020 18:32:55 +0530</pubDate>
+            
+            <guid>https://karthick.it/posts/2020/11/zsh-setup/</guid>
+            <description>This guide is to provide some quick steps to setup zsh,oh-my-zsh framework with essential plugins and powerline10k theme Zsh Setup Change default shell to zsh sudo usermod -s /usr/bin/zsh $USER Setup oh-my-zsh framework An excellent framework with extensible plugins and themes to manage zsh configurations.
+sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;#34; Install essential plugins git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions Enable installed plugins Update ~/.zshrc file to enable the installed plugins</description>
+            <content type="html"><![CDATA[<hr>
+<h2 id="this-guide-is-to-provide-some-quick-steps-to-setup-zshoh-my-zsh-framework-with-essential-plugins-and-powerline10k-theme">This guide is to provide some quick steps to setup zsh,oh-my-zsh framework with essential plugins and powerline10k theme</h2>
+<h1 id="zsh-setup">Zsh Setup</h1>
+<h2 id="change-default-shell-to-zsh">Change default shell to zsh</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo usermod -s /usr/bin/zsh $USER
+</code></pre></div><h2 id="setup-oh-my-zsh-framework">Setup oh-my-zsh framework</h2>
+<p>An excellent framework with extensible plugins and themes to manage zsh configurations.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sh -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><h3 id="install-essential-plugins">Install essential plugins</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span style="color:#e6db74">${</span>ZSH_CUSTOM<span style="color:#66d9ef">:-</span>~/.oh-my-zsh/custom<span style="color:#e6db74">}</span>/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions.git <span style="color:#e6db74">${</span>ZSH_CUSTOM<span style="color:#66d9ef">:-</span>~/.oh-my-zsh/custom<span style="color:#e6db74">}</span>/plugins/zsh-autosuggestions
+</code></pre></div><h3 id="enable-installed-plugins">Enable installed plugins</h3>
+<p>Update <code>~/.zshrc</code> file to enable the installed <strong>plugins</strong></p>
+<pre><code class="language-i\" data-lang="i\">plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+</code></pre><h2 id="installing-powerlevel10k-theme">Installing Powerlevel10K Theme</h2>
+<p>Although zsh comes with many pre-installed themes, this external community supported theme standsout.</p>
+<h3 id="install-required-fonts">Install required fonts</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yain ttf-dejavu ttf-meslo-nerd-font-powerlevel10k
+</code></pre></div><h3 id="install-the-theme">Install the theme</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> https://github.com/romkatv/powerlevel10k.git <span style="color:#e6db74">${</span>ZSH_CUSTOM<span style="color:#66d9ef">:-</span>$HOME/.oh-my-zsh/custom<span style="color:#e6db74">}</span>/themes/powerlevel10k
+</code></pre></div><p>When the installation is complete, a wizard will guide us through the rest of configuration and tweaks for a powerup shell</p>
+<p>The wizard can anytime be re-run with <code>p10k configure</code> command</p>
+<h3 id="reference-youtube-videos">Reference youtube videos</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+]]></content>
+        </item>
         
         <item>
             <title>Opengl Compositor Crash Fix Restart</title>
