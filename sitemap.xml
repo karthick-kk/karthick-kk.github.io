@@ -3,18 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://karthick.it/posts/2020/11/clean-chroot-builds-on-arch-linux/</loc>
+    <lastmod>2020-11-10T16:23:49+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karthick.it/tags/install/</loc>
+    <lastmod>2020-11-10T16:23:49+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://karthick.it/</loc>
-    <lastmod>2020-11-05T18:32:55+05:30</lastmod>
+    <lastmod>2020-11-10T16:23:49+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://karthick.it/posts/</loc>
-    <lastmod>2020-11-05T18:32:55+05:30</lastmod>
+    <lastmod>2020-11-10T16:23:49+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://karthick.it/tags/</loc>
-    <lastmod>2020-11-05T18:32:55+05:30</lastmod>
+    <lastmod>2020-11-10T16:23:49+05:30</lastmod>
   </url>
   
   <url>

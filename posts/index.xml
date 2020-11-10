@@ -6,8 +6,65 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Thu, 05 Nov 2020 18:32:55 +0530</lastBuildDate>
+        <lastBuildDate>Tue, 10 Nov 2020 16:23:49 +0530</lastBuildDate>
         <atom:link href="https://karthick.it/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Clean Chroot Builds on Arch Linux</title>
+            <link>https://karthick.it/posts/2020/11/clean-chroot-builds-on-arch-linux/</link>
+            <pubDate>Tue, 10 Nov 2020 16:23:49 +0530</pubDate>
+            
+            <guid>https://karthick.it/posts/2020/11/clean-chroot-builds-on-arch-linux/</guid>
+            <description>A clean chroot build is preferred when there are package dependencies during aur package installation. This article should allow us to perform one such clean chroot build using the guided aur package called clean chroot manager(ccm).
+ Install CCM yay -S clean-chroot-manager Setup base config for chroot   Run the sudo ccm64 c command to generate a default clean-chroot-manager.conf
+  Create a chroot path running mkdir ~/chroot</description>
+            <content type="html"><![CDATA[<hr>
+<p>A clean chroot build is preferred when there are package dependencies during aur package installation.
+This article should allow us to perform one such clean chroot build using the guided aur package called <a href="https://github.com/graysky2/clean-chroot-manager">clean chroot manager(ccm)</a>.</p>
+<hr>
+<h3 id="install-ccm">Install CCM</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yay -S clean-chroot-manager
+</code></pre></div><h3 id="setup-base-config-for-chroot">Setup base config for chroot</h3>
+<ul>
+<li>
+<p>Run the <code>sudo ccm64 c</code> command to generate a default <strong>clean-chroot-manager.conf</strong></p>
+</li>
+<li>
+<p>Create a chroot path running <code>mkdir ~/chroot</code></p>
+</li>
+<li>
+<p>Edit this file and update the <code>CHROOTPATH64=&quot;/home/karthick-k/chroot&quot;</code> to a valid path</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">nano ~/.config/clean-chroot-manager.conf
+</code></pre></div><h3 id="build-a-new-aur-package-from-chroot">Build a new aur package from chroot</h3>
+<ul>
+<li>We could use any package source from aur. I&rsquo;m using <a href="https://aur.archlinux.org/packages/teams-for-linux/">teams for linux</a> in this case</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://aur.archlinux.org/teams-for-linux.git
+</code></pre></div><ul>
+<li>Change directory to <strong>PKGBUILD</strong> folder of the aur package</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd teams-for-linux; ls -l                       
+total <span style="color:#ae81ff">164</span>
+-rw-r--r-- <span style="color:#ae81ff">1</span> karthick-k karthick-k    <span style="color:#ae81ff">459</span> Nov <span style="color:#ae81ff">10</span> 14:01 index.patch
+-rw-r--r-- <span style="color:#ae81ff">1</span> karthick-k karthick-k   <span style="color:#ae81ff">1833</span> Nov <span style="color:#ae81ff">10</span> 14:01 PKGBUILD
+-rw-r--r-- <span style="color:#ae81ff">1</span> karthick-k karthick-k    <span style="color:#ae81ff">279</span> Nov <span style="color:#ae81ff">10</span> 14:01 teams-for-linux.desktop
+</code></pre></div><ul>
+<li>Build the package</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo ccm64 s
+</code></pre></div><ul>
+<li>List the package that are built</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo ccm64 l
+<span style="color:#f92672">==</span>&gt; Listing out packages in buildroot repo...
+total 63M
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root 63M Nov <span style="color:#ae81ff">10</span> 14:34 teams-for-linux-1.0.5-1-x86_64.pkg.tar.zst
+</code></pre></div><h3 id="install-the-package">Install the package</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo pacman -U teams-for-linux-1.0.5-1-x86_64.pkg.tar.zst
+</code></pre></div>]]></content>
+        </item>
         
         <item>
             <title>Zsh Setup</title>
