@@ -97,7 +97,8 @@ I’m currently working with CoreStack, as a Technical Lead - DevOps Automation 
       <guid>https://karthick.it/work/</guid>
       <description>Current/Recent Works GoVuln Scanner [WIP] Lang: GO
 Started as a small hobby project to mimic CIS audit tool(commercial vulnerability scanner) is completely being built from the ground up using golang and bootstrap.
-Route53 Updater for RDS Instance Lang: Python
+Features:
+ GUI Scanner with Remote Exec enabled Conformance with Latest CIS benchmark standards(v2) Batch Operation (TODO) Remote Scanning with SSH Password(Supported)/Key(TODO) Remediation of discovered vulnerabilities (TODO)  Route53 Updater for RDS Lang: Python
 Quick task to create/update CNAME entries of a hosted zone with RDS cluster endpoint.</description>
     </item>
     
