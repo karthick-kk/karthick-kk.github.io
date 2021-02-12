@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 10 Nov 2020 16:23:49 +0530</lastBuildDate><atom:link href="https://karthick.it/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Feb 2021 10:15:03 +0530</lastBuildDate><atom:link href="https://karthick.it/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Awx Upgrade Docker</title>
+      <link>https://karthick.it/posts/2021/02/awx-upgrade-docker/</link>
+      <pubDate>Fri, 12 Feb 2021 10:15:03 +0530</pubDate>
+      
+      <guid>https://karthick.it/posts/2021/02/awx-upgrade-docker/</guid>
+      <description>This article explains upgrade of awx services running on docker.
+ Stop AWX Services In some case, tag latest needs to be replaced with current version running on the system.
+docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest docker stop awx_web docker rm awx_web docker rmi ansible/awx_web:latest Backup Inventory File cp ~/awx/installer/inventory ~/inventory Refresh AWX Code cd ~/awx/installer git stash git pull cd installer Run Upgrade export GPG_TTY=$(tty) cd installer # Review inventory (Update passwords and vars from backed up inventory file) ansible-playbook -i inventory install.</description>
+    </item>
+    
     <item>
       <title>Clean Chroot Builds on Arch Linux</title>
       <link>https://karthick.it/posts/2020/11/clean-chroot-builds-on-arch-linux/</link>
