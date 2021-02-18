@@ -14,8 +14,7 @@
       <pubDate>Thu, 18 Feb 2021 15:19:18 +0530</pubDate>
       
       <guid>https://karthick.it/posts/2021/02/tcp-port-forwarding-with-nginx-ingress-on-a-bare-metal-kubernetes-cluster/</guid>
-      <description>Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing.
-If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap.</description>
+      <description>Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing. If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap.</description>
     </item>
     
     <item>

@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Karthick K ">
-<meta name="description" content="Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing.
-If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap." />
+<meta name="description" content="Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing. If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap." />
 <meta name="keywords" content=", Configuration" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
@@ -43,8 +42,7 @@ If we need to get our services running on specific port number for external acce
 
 
 <meta itemprop="name" content="TCP Port Forwarding with Nginx Ingress on a Bare Metal Kubernetes Cluster">
-<meta itemprop="description" content="Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing.
-If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap.">
+<meta itemprop="description" content="Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing. If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap.">
 <meta itemprop="datePublished" content="2021-02-18T15:19:18+05:30" />
 <meta itemprop="dateModified" content="2021-02-18T15:19:18+05:30" />
 <meta itemprop="wordCount" content="434">
@@ -58,14 +56,12 @@ If we need to get our services running on specific port number for external acce
 <meta name="twitter:image" content="https://karthick.it"/>
 
 <meta name="twitter:title" content="TCP Port Forwarding with Nginx Ingress on a Bare Metal Kubernetes Cluster"/>
-<meta name="twitter:description" content="Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing.
-If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap."/>
+<meta name="twitter:description" content="Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing. If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap."/>
 
 
 
     <meta property="og:title" content="TCP Port Forwarding with Nginx Ingress on a Bare Metal Kubernetes Cluster" />
-<meta property="og:description" content="Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing.
-If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap." />
+<meta property="og:description" content="Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing. If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://karthick.it/posts/2021/02/tcp-port-forwarding-with-nginx-ingress-on-a-bare-metal-kubernetes-cluster/" />
 <meta property="og:image" content="https://karthick.it"/>
@@ -158,7 +154,6 @@ If we need to get our services running on specific port number for external acce
           <div class="toc-title">Table of Contents</div>
           <nav id="TableOfContents">
   <ul>
-    <li><a href="#if-we-need-to-get-our-services-running-on-specific-port-number-for-external-access-then-additional-configurations-are-required-on-the-ingress-deploymentservice-and-configmap-this-article-covers-them-each-and-is-applicable-for-k8s-cluster-running-on-cloudon-premise">If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap. This article covers them each and is applicable for k8s cluster running on cloud/on-premise.</a></li>
     <li><a href="#install-nginx-ingress-controller">Install Nginx Ingress Controller</a>
       <ul>
         <li><a href="#install-nginx-ingress">Install nginx ingress</a></li>
@@ -181,8 +176,9 @@ If we need to get our services running on specific port number for external acce
 
       <div class="post-content">
         <hr>
-<p>Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or <code>kubectl port-forward</code> procedure. The former runs on port numbers above 30000 and the later is commonly used for testing.</p>
-<h2 id="if-we-need-to-get-our-services-running-on-specific-port-number-for-external-access-then-additional-configurations-are-required-on-the-ingress-deploymentservice-and-configmap-this-article-covers-them-each-and-is-applicable-for-k8s-cluster-running-on-cloudon-premise">If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap. This article covers them each and is applicable for k8s cluster running on cloud/on-premise.</h2>
+<p>Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or <code>kubectl port-forward</code> procedure. The former runs on port numbers above 30000 and the later is commonly used for testing.
+If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap. This article covers them each and is applicable for k8s cluster running on cloud/on-premise.</p>
+<hr>
 <h2 id="install-nginx-ingress-controller">Install Nginx Ingress Controller</h2>
 <p>Remove existing nginx controller configuration through helm or <code>kubectl delete ns ingress-nginx</code></p>
 <h3 id="install-nginx-ingress">Install nginx ingress</h3>
