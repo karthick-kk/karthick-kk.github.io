@@ -3,22 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://karthick.it/posts/2021/02/awx-upgrade-docker/</loc>
-    <lastmod>2021-02-12T10:15:03+05:30</lastmod>
+    <loc>https://karthick.it/tags/configuration/</loc>
+    <lastmod>2021-02-18T15:19:18+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://karthick.it/</loc>
-    <lastmod>2021-02-12T10:15:03+05:30</lastmod>
+    <lastmod>2021-02-18T15:19:18+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://karthick.it/posts/</loc>
-    <lastmod>2021-02-12T10:15:03+05:30</lastmod>
+    <lastmod>2021-02-18T15:19:18+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://karthick.it/tags/</loc>
+    <lastmod>2021-02-18T15:19:18+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karthick.it/posts/2021/02/tcp-port-forwarding-with-nginx-ingress-on-a-bare-metal-kubernetes-cluster/</loc>
+    <lastmod>2021-02-18T15:19:18+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karthick.it/posts/2021/02/awx-upgrade-docker/</loc>
     <lastmod>2021-02-12T10:15:03+05:30</lastmod>
   </url>
   

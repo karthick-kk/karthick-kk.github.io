@@ -6,8 +6,134 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Fri, 12 Feb 2021 10:15:03 +0530</lastBuildDate>
+        <lastBuildDate>Thu, 18 Feb 2021 15:19:18 +0530</lastBuildDate>
         <atom:link href="https://karthick.it/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>TCP Port Forwarding with Nginx Ingress on a Bare Metal Kubernetes Cluster</title>
+            <link>https://karthick.it/posts/2021/02/tcp-port-forwarding-with-nginx-ingress-on-a-bare-metal-kubernetes-cluster/</link>
+            <pubDate>Thu, 18 Feb 2021 15:19:18 +0530</pubDate>
+            
+            <guid>https://karthick.it/posts/2021/02/tcp-port-forwarding-with-nginx-ingress-on-a-bare-metal-kubernetes-cluster/</guid>
+            <description>Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing.
+If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap.</description>
+            <content type="html"><![CDATA[<hr>
+<p>Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or <code>kubectl port-forward</code> procedure. The former runs on port numbers above 30000 and the later is commonly used for testing.</p>
+<h2 id="if-we-need-to-get-our-services-running-on-specific-port-number-for-external-access-then-additional-configurations-are-required-on-the-ingress-deploymentservice-and-configmap-this-article-covers-them-each-and-is-applicable-for-k8s-cluster-running-on-cloudon-premise">If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap. This article covers them each and is applicable for k8s cluster running on cloud/on-premise.</h2>
+<h2 id="install-nginx-ingress-controller">Install Nginx Ingress Controller</h2>
+<p>Remove existing nginx controller configuration through helm or <code>kubectl delete ns ingress-nginx</code></p>
+<h3 id="install-nginx-ingress">Install nginx ingress</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.44.0/deploy/static/provider/baremetal/deploy.yaml
+</code></pre></div><h2 id="configuration-updates">Configuration Updates</h2>
+<h3 id="update-nginx-service-configuration">Update nginx service configuration</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl edit service/ingress-nginx-controller -n ingress-nginx
+</code></pre></div><ul>
+<li>
+<p>The Ingress service type is set to NodePort. This has to be modified and set to LoadBalancer type <code>type: LoadBalancer</code></p>
+</li>
+<li>
+<p>For bare metal clusters, add the attribute  <code>externalIPs:</code> and add either an externally configured load balancer IP or a local network interface IP (typically eth0)</p>
+</li>
+<li>
+<p>Add the required custom TCP ports which are to be opened up through ingress</p>
+</li>
+</ul>
+<p>To expose rabbitmq application ports, these are the typical changes</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">spec</span>:
+  <span style="color:#f92672">clusterIP</span>: <span style="color:#ae81ff">10.43.198.64</span>
+  <span style="color:#f92672">externalIPs</span>:
+  - <span style="color:#ae81ff">10.128.0.13</span>
+  <span style="color:#f92672">externalTrafficPolicy</span>: <span style="color:#ae81ff">Cluster</span>
+  <span style="color:#f92672">ports</span>:
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">http</span>
+    <span style="color:#f92672">nodePort</span>: <span style="color:#ae81ff">31954</span>
+    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">80</span>
+    <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+    <span style="color:#f92672">targetPort</span>: <span style="color:#ae81ff">http</span>
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">https</span>
+    <span style="color:#f92672">nodePort</span>: <span style="color:#ae81ff">31997</span>
+    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">443</span>
+    <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+    <span style="color:#f92672">targetPort</span>: <span style="color:#ae81ff">https</span>
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">rabbitmq-tcp-15672</span>
+    <span style="color:#f92672">nodePort</span>: <span style="color:#ae81ff">31555</span>
+    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">15672</span>
+    <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+    <span style="color:#f92672">targetPort</span>: <span style="color:#ae81ff">15672</span>
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">rabbitmq-tcp-5672</span>
+    <span style="color:#f92672">nodePort</span>: <span style="color:#ae81ff">31556</span>
+    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">5672</span>
+    <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+    <span style="color:#f92672">targetPort</span>: <span style="color:#ae81ff">5672</span>
+  <span style="color:#f92672">selector</span>:
+    <span style="color:#f92672">app.kubernetes.io/component</span>: <span style="color:#ae81ff">controller</span>
+    <span style="color:#f92672">app.kubernetes.io/instance</span>: <span style="color:#ae81ff">ingress-nginx</span>
+    <span style="color:#f92672">app.kubernetes.io/name</span>: <span style="color:#ae81ff">ingress-nginx</span>
+  <span style="color:#f92672">sessionAffinity</span>: <span style="color:#ae81ff">None</span>
+  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">LoadBalancer</span>
+</code></pre></div><h3 id="update-nginx-deployment-configuration">Update nginx Deployment configuration</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl edit deployment.apps/ingress-nginx-controller -n ingress-nginx
+</code></pre></div><ul>
+<li>
+<p>Update the controller args to support tcp and udp services.</p>
+<p>The 2 arguments must be added to the controller</p>
+<p><strong>&ndash;tcp-services-configmap=$(POD_NAMESPACE)/tcp-services</strong></p>
+<p><strong>&ndash;udp-services-configmap=$(POD_NAMESPACE)/udp-services</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">spec</span>:
+      <span style="color:#f92672">containers</span>:
+      - <span style="color:#f92672">args</span>:
+        - <span style="color:#ae81ff">/nginx-ingress-controller</span>
+        - --<span style="color:#ae81ff">election-id=ingress-controller-leader</span>
+        - --<span style="color:#ae81ff">ingress-class=nginx</span>
+        - --<span style="color:#ae81ff">configmap=$(POD_NAMESPACE)/ingress-nginx-controller</span>
+        - --<span style="color:#ae81ff">tcp-services-configmap=$(POD_NAMESPACE)/tcp-services</span>
+        - --<span style="color:#ae81ff">udp-services-configmap=$(POD_NAMESPACE)/udp-services</span>
+        - --<span style="color:#ae81ff">validating-webhook=:8443</span>
+        - --<span style="color:#ae81ff">validating-webhook-certificate=/usr/local/certificates/cert</span>
+        - --<span style="color:#ae81ff">validating-webhook-key=/usr/local/certificates/key</span>
+</code></pre></div><ul>
+<li>Add the ports to open up on controller pod(s)</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">        <span style="color:#f92672">ports</span>:
+        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">80</span>
+          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">http</span>
+          <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">443</span>
+          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">https</span>
+          <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">8443</span>
+          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">webhook</span>
+          <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">15672</span>
+          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">rabbitmqadm</span>
+          <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">5672</span>
+          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">rabbitmqamqp</span>
+          <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+</code></pre></div><h3 id="configmap-changes">ConfigMap Changes</h3>
+<p>Create a configmap data for the custom ports - configmap-port-expose.yaml</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">tcp-services</span>
+  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">ingress-nginx</span>
+<span style="color:#f92672">data</span>:
+  <span style="color:#f92672">15672</span>: <span style="color:#e6db74">&#34;rabbitmq/rabbittestha-rabbitmq:15672&#34;</span>
+  <span style="color:#f92672">5672</span>: <span style="color:#e6db74">&#34;rabbitmq/rabbittestha-rabbitmq:5672&#34;</span>
+</code></pre></div><p>Refers - <code>rabbitmq</code> namespace and <code>rabbittestha-rabbitmq</code> service within that namespace</p>
+<h2 id="testing">Testing</h2>
+<p>Connect to the TCP port using telnet and node IP</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ telnet 10.128.0.13 <span style="color:#ae81ff">15672</span>
+Trying 10.128.0.13...
+Connected to 10.128.0.13.
+Escape character is <span style="color:#e6db74">&#39;^]&#39;</span>.
+^<span style="color:#f92672">]</span>
+telnet&gt;
+</code></pre></div><p>With an external/Floating/LoadBalancer IP attached to this server, the service will be accessible from outside world</p>
+]]></content>
+        </item>
         
         <item>
             <title>Awx Upgrade Docker</title>

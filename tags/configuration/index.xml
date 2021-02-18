@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configuration on Karthick-K</title>
+    <link>https://karthick.it/tags/configuration/</link>
+    <description>Recent content in Configuration on Karthick-K</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 18 Feb 2021 15:19:18 +0530</lastBuildDate><atom:link href="https://karthick.it/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TCP Port Forwarding with Nginx Ingress on a Bare Metal Kubernetes Cluster</title>
+      <link>https://karthick.it/posts/2021/02/tcp-port-forwarding-with-nginx-ingress-on-a-bare-metal-kubernetes-cluster/</link>
+      <pubDate>Thu, 18 Feb 2021 15:19:18 +0530</pubDate>
+      
+      <guid>https://karthick.it/posts/2021/02/tcp-port-forwarding-with-nginx-ingress-on-a-bare-metal-kubernetes-cluster/</guid>
+      <description>Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing.
+If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap.</description>
+    </item>
+    
+  </channel>
+</rss>
