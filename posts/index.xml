@@ -10,13 +10,63 @@
         <atom:link href="https://karthick.it/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>Ova to Ovf</title>
-            <link>https://karthick.it/posts/2021/02/ova-to-ovf/</link>
+            <title>Converting VirtualBox OVA to VMware Compatible OVF</title>
+            <link>https://karthick.it/posts/2021/02/converting-virtualbox-ova-to-vmware-compatible-ovf/</link>
             <pubDate>Tue, 23 Feb 2021 14:29:17 +0530</pubDate>
             
-            <guid>https://karthick.it/posts/2021/02/ova-to-ovf/</guid>
-            <description></description>
-            <content type="html"><![CDATA[]]></content>
+            <guid>https://karthick.it/posts/2021/02/converting-virtualbox-ova-to-vmware-compatible-ovf/</guid>
+            <description>This guide use the possible freeware tools to perform the conversion.
+ Conversion Need? Virtualbox does not generate Vmware Cloud/Vmware ESXi compatible OVA/OVF files
+Tools Required   Vmware Player
+  ovftool
+ VMware account needed to download (free to signup)
+   Conversion Process Step 1:
+Export the VM as OVA from virtualbox
+Step 2:
+Import the OVA on to installed VMware player. When prompted to retry/cancel, proceed with retry importing, ignoring the warning messages any.</description>
+            <content type="html"><![CDATA[<hr>
+<p>This guide use the possible freeware tools to perform the conversion.</p>
+<hr>
+<h2 id="conversion-need">Conversion Need?</h2>
+<p>Virtualbox does not generate Vmware Cloud/Vmware ESXi compatible OVA/OVF files</p>
+<h2 id="tools-required">Tools Required</h2>
+<ul>
+<li>
+<p>Vmware Player</p>
+</li>
+<li>
+<p>ovftool</p>
+<blockquote>
+<p>VMware account needed to download (free to signup)</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="conversion-process">Conversion Process</h2>
+<p>Step 1:</p>
+<p>Export the VM as OVA from virtualbox</p>
+<p>Step 2:</p>
+<p>Import the OVA on to installed VMware player. When prompted to retry/cancel, proceed with retry importing, ignoring the warning messages any.</p>
+<p>Step 3:</p>
+<p>Run the ovftool to generate the .ovf,.mf and .vmdk files of the imported VM</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ ovftool ~/vmware/OL8/OL8.vmx ~/ol8-vmware-exported.ovf                           
+Opening VMX source: /home/karthick-k/vmware/OL8/OL8.vmx
+Opening OVF target: /home/karthick-k/ol8-vmware-exported.ovf
+Writing OVF package: /home/karthick-k/ol8-vmware-exported.ovf
+Transfer Completed
+Completed successfully
+</code></pre></div><p>Step 4:</p>
+<ul>
+<li>
+<p>Edit .mf file and remove SHA256 value of .ovf file in first line.</p>
+</li>
+<li>
+<p>Edit .ovf file and change line with string <code>VirtualSystemType</code> with updated vmx-xx version</p>
+<p><code>&lt;vssd:VirtualSystemType&gt;vmx-14&lt;/vssd:VirtualSystemType&gt;</code></p>
+</li>
+</ul>
+<p>The files are ready to be imported with Vmware Cloud or ESXi cluster.</p>
+<p>Reference: <a href="https://zhengwu.org/convert-virtual-machine-of-virtualbox-to-esxi/">https://zhengwu.org/convert-virtual-machine-of-virtualbox-to-esxi/</a></p>
+]]></content>
         </item>
         
         <item>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Migration on Karthick-K</title>
+    <link>https://karthick.it/tags/migration/</link>
+    <description>Recent content in Migration on Karthick-K</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Tue, 23 Feb 2021 14:29:17 +0530</lastBuildDate><atom:link href="https://karthick.it/tags/migration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Converting VirtualBox OVA to VMware Compatible OVF</title>
+      <link>https://karthick.it/posts/2021/02/converting-virtualbox-ova-to-vmware-compatible-ovf/</link>
+      <pubDate>Tue, 23 Feb 2021 14:29:17 +0530</pubDate>
+      
+      <guid>https://karthick.it/posts/2021/02/converting-virtualbox-ova-to-vmware-compatible-ovf/</guid>
+      <description>This guide use the possible freeware tools to perform the conversion.
+ Conversion Need? Virtualbox does not generate Vmware Cloud/Vmware ESXi compatible OVA/OVF files
+Tools Required   Vmware Player
+  ovftool
+ VMware account needed to download (free to signup)
+   Conversion Process Step 1:
+Export the VM as OVA from virtualbox
+Step 2:
+Import the OVA on to installed VMware player. When prompted to retry/cancel, proceed with retry importing, ignoring the warning messages any.</description>
+    </item>
+    
+  </channel>
+</rss>
