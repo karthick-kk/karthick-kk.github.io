@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>untagged on Karthick-K</title>
-    <link>https://karthick-kk.github.io/tags/untagged/</link>
+    <link>https://karthick.it/tags/untagged/</link>
     <description>Recent content in untagged on Karthick-K</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 29 Oct 2020 23:21:06 +0530</lastBuildDate><atom:link href="https://karthick-kk.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Feb 2021 14:29:17 +0530</lastBuildDate><atom:link href="https://karthick.it/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Encrypt Decrypt With Gpg</title>
-      <link>https://karthick-kk.github.io/posts/2020/10/encrypt-decrypt-with-gpg/</link>
-      <pubDate>Thu, 29 Oct 2020 23:21:06 +0530</pubDate>
+      <title>Ova to Ovf</title>
+      <link>https://karthick.it/posts/2021/02/ova-to-ovf/</link>
+      <pubDate>Tue, 23 Feb 2021 14:29:17 +0530</pubDate>
       
-      <guid>https://karthick-kk.github.io/posts/2020/10/encrypt-decrypt-with-gpg/</guid>
-      <description> This article explains how to encrypt and decrypt files on unix with GNU Gpg Setup GNU gpg Generate Keys gpg --full-generate-key  no passphrase  Encrypting a file gpg -e -r &amp;#34;karthick&amp;#34; .wekan.json Decrypting the file gpg -o /var/tmp/.wekan.json -d .wekan.json.gpg </description>
+      <guid>https://karthick.it/posts/2021/02/ova-to-ovf/</guid>
+      <description></description>
     </item>
     
   </channel>

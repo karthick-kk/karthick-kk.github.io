@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 18 Feb 2021 15:19:18 +0530</lastBuildDate><atom:link href="https://karthick.it/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Feb 2021 14:29:17 +0530</lastBuildDate><atom:link href="https://karthick.it/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>untagged</title>
+      <link>https://karthick.it/tags/untagged/</link>
+      <pubDate>Tue, 23 Feb 2021 14:29:17 +0530</pubDate>
+      
+      <guid>https://karthick.it/tags/untagged/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Configuration</title>
       <link>https://karthick.it/tags/configuration/</link>
@@ -86,15 +95,6 @@
       <pubDate>Wed, 28 Oct 2020 14:34:08 +0530</pubDate>
       
       <guid>https://karthick.it/tags/boundary/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hashicorp</title>
-      <link>https://karthick.it/tags/hashicorp/</link>
-      <pubDate>Wed, 28 Oct 2020 14:34:08 +0530</pubDate>
-      
-      <guid>https://karthick.it/tags/hashicorp/</guid>
       <description></description>
     </item>
     

@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 18 Feb 2021 15:19:18 +0530</lastBuildDate><atom:link href="https://karthick.it/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Feb 2021 14:29:17 +0530</lastBuildDate><atom:link href="https://karthick.it/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ova to Ovf</title>
+      <link>https://karthick.it/posts/2021/02/ova-to-ovf/</link>
+      <pubDate>Tue, 23 Feb 2021 14:29:17 +0530</pubDate>
+      
+      <guid>https://karthick.it/posts/2021/02/ova-to-ovf/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>TCP Port Forwarding with Nginx Ingress on a Bare Metal Kubernetes Cluster</title>
       <link>https://karthick.it/posts/2021/02/tcp-port-forwarding-with-nginx-ingress-on-a-bare-metal-kubernetes-cluster/</link>
@@ -107,19 +116,6 @@ Before CoreStack, I was a Cloud &amp;amp; Linux administrator at Excelencia Cons
       <guid>https://karthick.it/resume/</guid>
       <description>Karthick K DevOps Platform Automation Engineer     +91 9840585161  karthick.kk@hotmail.com     https://github.com/karthick-kk  Chennai     TL;DR - DevOps and Cloud Automation Engineer
 I’m currently working with CoreStack, as a Technical Lead - DevOps Automation Engineer, where I help developers streamline their workflows &amp;amp; build more awesome and effortless releases. I have a passion towards automating complex tasks using custom tooling and CI/CD pipelines.</description>
-    </item>
-    
-    <item>
-      <title>Work</title>
-      <link>https://karthick.it/work/</link>
-      <pubDate>Wed, 28 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://karthick.it/work/</guid>
-      <description>Current/Recent Works GoVuln Scanner [WIP] Lang: GO
-Started as a small hobby project to mimic CIS audit tool(commercial vulnerability scanner) is completely being built from the ground up using golang and bootstrap.
-Features:
- GUI Scanner with Remote Exec enabled Conformance with Latest CIS benchmark standards(v2) Batch Operation (TODO) Remote Scanning with SSH Password(Supported)/Key(TODO) Remediation of discovered vulnerabilities (TODO)  Route53 Updater for RDS Lang: Python
-Quick task to create/update CNAME entries of a hosted zone with RDS cluster endpoint.</description>
     </item>
     
   </channel>

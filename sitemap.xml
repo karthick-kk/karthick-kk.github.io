@@ -3,22 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://karthick.it/tags/configuration/</loc>
-    <lastmod>2021-02-18T15:19:18+05:30</lastmod>
+    <loc>https://karthick.it/</loc>
+    <lastmod>2021-02-23T14:29:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://karthick.it/</loc>
-    <lastmod>2021-02-18T15:19:18+05:30</lastmod>
+    <loc>https://karthick.it/posts/2021/02/ova-to-ovf/</loc>
+    <lastmod>2021-02-23T14:29:17+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://karthick.it/posts/</loc>
-    <lastmod>2021-02-18T15:19:18+05:30</lastmod>
+    <lastmod>2021-02-23T14:29:17+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://karthick.it/tags/</loc>
+    <lastmod>2021-02-23T14:29:17+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karthick.it/tags/untagged/</loc>
+    <lastmod>2021-02-23T14:29:17+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karthick.it/tags/configuration/</loc>
     <lastmod>2021-02-18T15:19:18+05:30</lastmod>
   </url>
   
