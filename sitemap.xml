@@ -1,148 +1,90 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://karthick.it/posts/2021/02/converting-virtualbox-ova-to-vmware-compatible-ovf/</loc>
     <lastmod>2021-02-23T14:29:17+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/</loc>
     <lastmod>2021-02-23T14:29:17+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/tags/migration/</loc>
     <lastmod>2021-02-23T14:29:17+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/posts/</loc>
     <lastmod>2021-02-23T14:29:17+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/tags/</loc>
     <lastmod>2021-02-23T14:29:17+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/tags/virtualization/</loc>
     <lastmod>2021-02-23T14:29:17+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/tags/vmware/</loc>
     <lastmod>2021-02-23T14:29:17+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/tags/configuration/</loc>
     <lastmod>2021-02-18T15:19:18+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/posts/2021/02/tcp-port-forwarding-with-nginx-ingress-on-a-bare-metal-kubernetes-cluster/</loc>
     <lastmod>2021-02-18T15:19:18+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/posts/2021/02/awx-upgrade-docker/</loc>
     <lastmod>2021-02-12T10:15:03+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/tags/upgrade/</loc>
     <lastmod>2021-02-12T10:15:03+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/posts/2020/11/clean-chroot-builds-on-arch-linux/</loc>
     <lastmod>2020-11-10T16:23:49+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/tags/install/</loc>
     <lastmod>2020-11-10T16:23:49+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/tags/zsh/</loc>
     <lastmod>2020-11-05T18:32:55+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/posts/2020/11/zsh-setup/</loc>
     <lastmod>2020-11-05T18:32:55+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/tags/fix/</loc>
     <lastmod>2020-11-05T14:17:26+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/tags/kde/</loc>
     <lastmod>2020-11-05T14:17:26+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/posts/2020/11/opengl-compositor-crash-fix-restart/</loc>
     <lastmod>2020-11-05T14:17:26+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/tags/workaround/</loc>
     <lastmod>2020-11-05T14:17:26+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/posts/2020/10/encrypt-decrypt-with-gpg/</loc>
     <lastmod>2020-10-30T00:00:09+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/tags/security/</loc>
     <lastmod>2020-10-30T00:00:09+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/tags/boundary/</loc>
     <lastmod>2020-10-28T14:34:08+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/tags/hashicorp/</loc>
     <lastmod>2020-10-28T14:34:08+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/posts/2020/10/hashicorp-boundary-setup-and-demo/</loc>
     <lastmod>2020-10-28T14:34:08+05:30</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/about/</loc>
     <lastmod>2020-10-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/resume/</loc>
     <lastmod>2020-10-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/work/</loc>
     <lastmod>2020-10-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://karthick.it/series/</loc>
   </url>
-  
 </urlset>
