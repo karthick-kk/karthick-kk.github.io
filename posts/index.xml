@@ -6,8 +6,24 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Tue, 23 Feb 2021 14:29:17 +0530</lastBuildDate>
+        <lastBuildDate>Fri, 09 Apr 2021 09:19:16 +0530</lastBuildDate>
         <atom:link href="https://karthick.it/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Wireless LAN CLI Configuration under Arch Linux</title>
+            <link>https://karthick.it/posts/2021/04/wireless-lan-cli-configuration-under-arch-linux/</link>
+            <pubDate>Fri, 09 Apr 2021 09:19:16 +0530</pubDate>
+            
+            <guid>https://karthick.it/posts/2021/04/wireless-lan-cli-configuration-under-arch-linux/</guid>
+            <description> Steps to configure a wireless adapter to connect to nearby access point by shell commands Runbook $ sudo systemctl start iwd $ sudo iwctl --passphrase &amp;lt;secret&amp;gt; station wlan0 connect &amp;lt;accesspoint&amp;gt; $ sudo systemctl start dhcpcd@wlan0 </description>
+            <content type="html"><![CDATA[<hr>
+<h2 id="steps-to-configure-a-wireless-adapter-to-connect-to-nearby-access-point-by-shell-commands">Steps to configure a wireless adapter to connect to nearby access point by shell commands</h2>
+<h2 id="runbook">Runbook</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ sudo systemctl start iwd
+$ sudo iwctl --passphrase &lt;secret&gt; station wlan0 connect &lt;accesspoint&gt;
+$ sudo systemctl start dhcpcd@wlan0
+</code></pre></div>]]></content>
+        </item>
         
         <item>
             <title>Converting VirtualBox OVA to VMware Compatible OVF</title>

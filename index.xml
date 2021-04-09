@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 23 Feb 2021 14:29:17 +0530</lastBuildDate><atom:link href="https://karthick.it/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Apr 2021 09:19:16 +0530</lastBuildDate><atom:link href="https://karthick.it/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wireless LAN CLI Configuration under Arch Linux</title>
+      <link>https://karthick.it/posts/2021/04/wireless-lan-cli-configuration-under-arch-linux/</link>
+      <pubDate>Fri, 09 Apr 2021 09:19:16 +0530</pubDate>
+      
+      <guid>https://karthick.it/posts/2021/04/wireless-lan-cli-configuration-under-arch-linux/</guid>
+      <description> Steps to configure a wireless adapter to connect to nearby access point by shell commands Runbook $ sudo systemctl start iwd $ sudo iwctl --passphrase &amp;lt;secret&amp;gt; station wlan0 connect &amp;lt;accesspoint&amp;gt; $ sudo systemctl start dhcpcd@wlan0 </description>
+    </item>
+    
     <item>
       <title>Converting VirtualBox OVA to VMware Compatible OVF</title>
       <link>https://karthick.it/posts/2021/02/converting-virtualbox-ova-to-vmware-compatible-ovf/</link>
@@ -114,16 +123,6 @@ I like building new stuffs with scripts and different devops tools.
 Most of my time is spent on automating complex tasks with CI/CD pipelines, custom tooling and containerization of applications.
 I’m currently working with CoreStack, as a Technical lead - devops automation, where I help developers streamline their workflows &amp;amp; build more awesome and effortless releases.
 Before CoreStack, I was a Cloud &amp;amp; Linux administrator at Excelencia Consulting Pvt.</description>
-    </item>
-    
-    <item>
-      <title>CV</title>
-      <link>https://karthick.it/resume/</link>
-      <pubDate>Wed, 28 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://karthick.it/resume/</guid>
-      <description>Karthick K DevOps Platform Automation Engineer     +91 9840585161  karthick.kk@hotmail.com     https://github.com/karthick-kk  Chennai     TL;DR - DevOps and Cloud Automation Engineer
-I’m currently working with CoreStack, as a Technical Lead - DevOps Automation Engineer, where I help developers streamline their workflows &amp;amp; build more awesome and effortless releases. I have a passion towards automating complex tasks using custom tooling and CI/CD pipelines.</description>
     </item>
     
   </channel>

@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 23 Feb 2021 14:29:17 +0530</lastBuildDate><atom:link href="https://karthick.it/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Apr 2021 09:19:16 +0530</lastBuildDate><atom:link href="https://karthick.it/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arch</title>
+      <link>https://karthick.it/tags/arch/</link>
+      <pubDate>Fri, 09 Apr 2021 09:19:16 +0530</pubDate>
+      
+      <guid>https://karthick.it/tags/arch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cli</title>
+      <link>https://karthick.it/tags/cli/</link>
+      <pubDate>Fri, 09 Apr 2021 09:19:16 +0530</pubDate>
+      
+      <guid>https://karthick.it/tags/cli/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Migration</title>
       <link>https://karthick.it/tags/migration/</link>
@@ -77,24 +95,6 @@
       <pubDate>Thu, 05 Nov 2020 14:17:26 +0530</pubDate>
       
       <guid>https://karthick.it/tags/fix/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kde</title>
-      <link>https://karthick.it/tags/kde/</link>
-      <pubDate>Thu, 05 Nov 2020 14:17:26 +0530</pubDate>
-      
-      <guid>https://karthick.it/tags/kde/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>workaround</title>
-      <link>https://karthick.it/tags/workaround/</link>
-      <pubDate>Thu, 05 Nov 2020 14:17:26 +0530</pubDate>
-      
-      <guid>https://karthick.it/tags/workaround/</guid>
       <description></description>
     </item>
     
