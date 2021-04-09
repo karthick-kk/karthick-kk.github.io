@@ -15,10 +15,10 @@
             <pubDate>Fri, 09 Apr 2021 09:19:16 +0530</pubDate>
             
             <guid>https://karthick.it/posts/2021/04/wireless-lan-cli-configuration-under-arch-linux/</guid>
-            <description> Steps to configure a wireless adapter to connect to nearby access point by shell commands Runbook $ sudo systemctl start iwd $ sudo iwctl --passphrase &amp;lt;secret&amp;gt; station wlan0 connect &amp;lt;accesspoint&amp;gt; $ sudo systemctl start dhcpcd@wlan0 </description>
-            <content type="html"><![CDATA[<hr>
-<h2 id="steps-to-configure-a-wireless-adapter-to-connect-to-nearby-access-point-by-shell-commands">Steps to configure a wireless adapter to connect to nearby access point by shell commands</h2>
-<h2 id="runbook">Runbook</h2>
+            <description>Steps to configure a wireless adapter to connect to nearby access point by shell commands
+Runbook $ sudo systemctl start iwd $ sudo iwctl --passphrase &amp;lt;secret&amp;gt; station wlan0 connect &amp;lt;accesspoint&amp;gt; $ sudo systemctl start dhcpcd@wlan0 </description>
+            <content type="html"><![CDATA[<p>Steps to configure a wireless adapter to connect to nearby access point by shell commands</p>
+<h4 id="runbook">Runbook</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ sudo systemctl start iwd
 $ sudo iwctl --passphrase &lt;secret&gt; station wlan0 connect &lt;accesspoint&gt;
 $ sudo systemctl start dhcpcd@wlan0
