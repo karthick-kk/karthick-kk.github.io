@@ -6,8 +6,18 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Fri, 09 Apr 2021 09:19:16 +0530</lastBuildDate>
+        <lastBuildDate>Thu, 29 Apr 2021 17:58:48 +0530</lastBuildDate>
         <atom:link href="https://karthick.it/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Running Github Actions Locally</title>
+            <link>https://karthick.it/posts/2021/04/running-github-actions-locally/</link>
+            <pubDate>Thu, 29 Apr 2021 17:58:48 +0530</pubDate>
+            
+            <guid>https://karthick.it/posts/2021/04/running-github-actions-locally/</guid>
+            <description></description>
+            <content type="html"><![CDATA[]]></content>
+        </item>
         
         <item>
             <title>Wireless LAN CLI Configuration under Arch Linux</title>
