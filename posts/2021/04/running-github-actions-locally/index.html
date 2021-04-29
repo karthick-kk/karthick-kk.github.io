@@ -48,7 +48,7 @@ Refer README for the installation of act." />
  ACT ACT is an opensource project that allows us to test these github workflows locally rather than updating the workflow file directly on the github repository.
 Refer README for the installation of act."><meta itemprop="datePublished" content="2021-04-29T17:58:48&#43;05:30" />
 <meta itemprop="dateModified" content="2021-04-29T17:58:48&#43;05:30" />
-<meta itemprop="wordCount" content="269"><meta itemprop="image" content="https://karthick.it"/>
+<meta itemprop="wordCount" content="262"><meta itemprop="image" content="https://karthick.it"/>
 <meta itemprop="keywords" content="devops,github," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://karthick.it"/>
@@ -192,7 +192,7 @@ Refer README for the installation of act." />
 <li>self-hosted - is the referenced runner in my workflow file which is overriden by a docker hub image (karthickk/github-runner:latest)</li>
 </ul>
 <h2 id="limitations">Limitations</h2>
-<p>The workflows runs on the latest commit code. GitHub actions does not allow us to specify a commit code based trigger in the workflow file. However, below is a workaround to run the workflow/action against a  specific commit.</p>
+<p>The workflows runs against the latest commit code. GitHub actions cannot be triggered based on a commit ID. However, below is a workaround to run the workflow/action against a  specific commit.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cd &lt;git cloned path&gt;
 $ git reset –hard &lt;commit-hash&gt;
 $ act -r --secret-file ~/dev/act/secrets -P self-hosted<span style="color:#f92672">=</span>karthickk/github-runner:latest
@@ -222,7 +222,7 @@ $ act -r --secret-file ~/dev/act/secrets -P self-hosted<span style="color:#f9267
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        269 Words
+        262 Words
       </p>
 
       <p>
