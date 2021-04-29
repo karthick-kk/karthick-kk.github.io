@@ -15,8 +15,37 @@
             <pubDate>Thu, 29 Apr 2021 17:58:48 +0530</pubDate>
             
             <guid>https://karthick.it/posts/2021/04/running-github-actions-locally/</guid>
-            <description></description>
-            <content type="html"><![CDATA[]]></content>
+            <description>Actions are usually developed in the GitHub repository where the project itself is hosted. It is often required to modify these workflows multiple times during its development. This requires a commit to the repo everytime to execute/trigger these workflows.
+ ACT ACT is an opensource project that allows us to test these github workflows locally rather than updating the workflow file directly on the github repository.
+Refer README for the installation of act.</description>
+            <content type="html"><![CDATA[<hr>
+<p>Actions are usually developed in the GitHub repository where the project itself is hosted. It is often required to modify these workflows multiple times during its development. This requires a commit to the repo everytime to execute/trigger these workflows.</p>
+<hr>
+<h2 id="act">ACT</h2>
+<p>ACT is an opensource project that allows us to test these github workflows locally rather than updating the workflow file directly on the github repository.</p>
+<p>Refer README for the installation of act.</p>
+<p><a href="https://github.com/nektos/act">https://github.com/nektos/act</a></p>
+<h2 id="handling-secrets">Handling Secrets</h2>
+<p>Secrets can be parsed as commandline arguments or as a dedicated file which holds the variables for the workflow. Secrets file has list of variables and associated values in <code>variable=value</code> form.</p>
+<p><img src="https://raw.githubusercontent.com/corestackdev/images/main/image-20210429173740422.png" alt="image-20210429173740422"></p>
+<h2 id="runner-image">Runner Image</h2>
+<p>Most images from docker hub are capable of running the workflows. Runner defined in the workflow file can be superseeded by a custom docker image as an argument in CLI.</p>
+<h2 id="executiontesting-the-workflow">Execution/Testing the Workflow</h2>
+<p>Start by cloning the github repository where the github actions are created.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ git clone &lt;git url&gt;
+</code></pre></div><p>Change directory to the cloned git path and execute the runner</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ act -r --secret-file ~/dev/act/secrets -P self-hosted<span style="color:#f92672">=</span>karthickk/github-runner:latest
+</code></pre></div><ul>
+<li>-r - enable re-using the same docker image for successive runs</li>
+<li>&ndash;secret-file - file which holds the secrets</li>
+<li>self-hosted - is the referenced runner in my workflow file which is overriden by a docker hub image (karthickk/github-runner:latest)</li>
+</ul>
+<h2 id="limitations">Limitations</h2>
+<p>The workflows runs on the latest commit code. GitHub actions does not allow us to specify a commit code based trigger in the workflow file. However, below is a workaround to run the workflow/action against a  specific commit.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cd &lt;git cloned path&gt;
+$ git reset –hard &lt;commit-hash&gt;
+$ act -r --secret-file ~/dev/act/secrets -P self-hosted<span style="color:#f92672">=</span>karthickk/github-runner:latest
+</code></pre></div>]]></content>
         </item>
         
         <item>
