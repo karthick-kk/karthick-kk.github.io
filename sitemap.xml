@@ -2,26 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://karthick.it/tags/arch/</loc>
+    <lastmod>2021-05-10T20:11:40+05:30</lastmod>
+  </url><url>
+    <loc>https://karthick.it/</loc>
+    <lastmod>2021-05-10T20:11:40+05:30</lastmod>
+  </url><url>
+    <loc>https://karthick.it/posts/</loc>
+    <lastmod>2021-05-10T20:11:40+05:30</lastmod>
+  </url><url>
+    <loc>https://karthick.it/tags/</loc>
+    <lastmod>2021-05-10T20:11:40+05:30</lastmod>
+  </url><url>
+    <loc>https://karthick.it/tags/tor/</loc>
+    <lastmod>2021-05-10T20:11:40+05:30</lastmod>
+  </url><url>
+    <loc>https://karthick.it/posts/2021/05/tor-toggle-for-firefox-on-arch/</loc>
+    <lastmod>2021-05-10T20:11:40+05:30</lastmod>
+  </url><url>
     <loc>https://karthick.it/tags/devops/</loc>
     <lastmod>2021-04-29T17:58:48+05:30</lastmod>
   </url><url>
     <loc>https://karthick.it/tags/github/</loc>
     <lastmod>2021-04-29T17:58:48+05:30</lastmod>
   </url><url>
-    <loc>https://karthick.it/</loc>
-    <lastmod>2021-04-29T17:58:48+05:30</lastmod>
-  </url><url>
-    <loc>https://karthick.it/posts/</loc>
-    <lastmod>2021-04-29T17:58:48+05:30</lastmod>
-  </url><url>
     <loc>https://karthick.it/posts/2021/04/running-github-actions-locally/</loc>
     <lastmod>2021-04-29T17:58:48+05:30</lastmod>
-  </url><url>
-    <loc>https://karthick.it/tags/</loc>
-    <lastmod>2021-04-29T17:58:48+05:30</lastmod>
-  </url><url>
-    <loc>https://karthick.it/tags/arch/</loc>
-    <lastmod>2021-04-09T09:19:16+05:30</lastmod>
   </url><url>
     <loc>https://karthick.it/tags/cli/</loc>
     <lastmod>2021-04-09T09:19:16+05:30</lastmod>

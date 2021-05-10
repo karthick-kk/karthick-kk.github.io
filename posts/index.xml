@@ -6,8 +6,39 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Thu, 29 Apr 2021 17:58:48 +0530</lastBuildDate>
+        <lastBuildDate>Mon, 10 May 2021 20:11:40 +0530</lastBuildDate>
         <atom:link href="https://karthick.it/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Tor toggle for Firefox on Arch</title>
+            <link>https://karthick.it/posts/2021/05/tor-toggle-for-firefox-on-arch/</link>
+            <pubDate>Mon, 10 May 2021 20:11:40 +0530</pubDate>
+            
+            <guid>https://karthick.it/posts/2021/05/tor-toggle-for-firefox-on-arch/</guid>
+            <description>This article explains how to configure tor/onion network for firefox browser on arch linux. Tor browser(https://www.torproject.org) still remains the recommended or easiest means of using tor network for browsing with privacy.
+ Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo systemctl enable tor $ sudo systemctl start tor Starting privoxy Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic.</description>
+            <content type="html"><![CDATA[<hr>
+<p>This article explains how to configure tor/onion network for firefox browser on arch linux. Tor browser(<a href="https://www.torproject.org">https://www.torproject.org</a>) still remains the recommended or easiest means of using tor network for browsing with privacy.</p>
+<hr>
+<h2 id="install-tor-and-privoxy">Install tor and privoxy</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ yay -S tor
+$ yay -S privoxy
+</code></pre></div><h2 id="starting-tor">Starting tor</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ sudo systemctl enable tor
+$ sudo systemctl start tor
+</code></pre></div><h2 id="starting-privoxy">Starting privoxy</h2>
+<p>Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic. Add the line at the end of the file <code>/etc/privoxy/config</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">forward-socks5 / localhost:9050 .
+</code></pre></div><h2 id="configure-network-proxy-setting">Configure network proxy setting</h2>
+<p>Open Firefox-&gt;Preferences and change the network settings to use the new proxy configuration</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">HTTP Proxy -&gt; localhost Port 8118
+SOCKS Host -&gt; localhost Port 9050
+</code></pre></div><p><img src="https://raw.githubusercontent.com/corestackdev/images/main/image-20210510211801331.png" alt="image-20210510211801331"></p>
+<h2 id="install-proxy-toggle-addon">Install proxy toggle addon</h2>
+<p>Install the proxy toggle addon from <a href="https://addons.mozilla.org/en-US/firefox/addon/proxy-toggle-button">https://addons.mozilla.org/en-US/firefox/addon/proxy-toggle-button</a> to enable/disable <code>tor proxy</code></p>
+<p><img src="../../../../.config/Typora/typora-user-images/image-20210510212256353.png" alt="image-20210510212256353"></p>
+]]></content>
+        </item>
         
         <item>
             <title>Running Github Actions Locally</title>
