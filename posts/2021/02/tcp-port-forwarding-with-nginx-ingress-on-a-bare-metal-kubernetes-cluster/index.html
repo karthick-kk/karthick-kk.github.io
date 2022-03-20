@@ -42,8 +42,8 @@
 
 
 <meta itemprop="name" content="TCP Port Forwarding with Nginx Ingress on a Bare Metal Kubernetes Cluster">
-<meta itemprop="description" content="Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing. If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap."><meta itemprop="datePublished" content="2021-02-18T15:19:18&#43;05:30" />
-<meta itemprop="dateModified" content="2021-02-18T15:19:18&#43;05:30" />
+<meta itemprop="description" content="Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing. If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap."><meta itemprop="datePublished" content="2021-02-18T15:19:18+05:30" />
+<meta itemprop="dateModified" content="2021-02-18T15:19:18+05:30" />
 <meta itemprop="wordCount" content="434"><meta itemprop="image" content="https://karthick.it"/>
 <meta itemprop="keywords" content="Configuration," />
 <meta name="twitter:card" content="summary_large_image"/>
@@ -58,8 +58,8 @@
 <meta property="og:description" content="Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing. If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://karthick.it/posts/2021/02/tcp-port-forwarding-with-nginx-ingress-on-a-bare-metal-kubernetes-cluster/" /><meta property="og:image" content="https://karthick.it"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-02-18T15:19:18&#43;05:30" />
-<meta property="article:modified_time" content="2021-02-18T15:19:18&#43;05:30" />
+<meta property="article:published_time" content="2021-02-18T15:19:18+05:30" />
+<meta property="article:modified_time" content="2021-02-18T15:19:18+05:30" />
 
 
 
@@ -176,11 +176,11 @@ If we need to get our services running on specific port number for external acce
 <h2 id="install-nginx-ingress-controller">Install Nginx Ingress Controller</h2>
 <p>Remove existing nginx controller configuration through helm or <code>kubectl delete ns ingress-nginx</code></p>
 <h3 id="install-nginx-ingress">Install nginx ingress</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.44.0/deploy/static/provider/baremetal/deploy.yaml
-</code></pre></div><h2 id="configuration-updates">Configuration Updates</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.44.0/deploy/static/provider/baremetal/deploy.yaml
+</span></span></code></pre></div><h2 id="configuration-updates">Configuration Updates</h2>
 <h3 id="update-nginx-service-configuration">Update nginx service configuration</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl edit service/ingress-nginx-controller -n ingress-nginx
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl edit service/ingress-nginx-controller -n ingress-nginx
+</span></span></code></pre></div><ul>
 <li>
 <p>The Ingress service type is set to NodePort. This has to be modified and set to LoadBalancer type <code>type: LoadBalancer</code></p>
 </li>
@@ -192,41 +192,41 @@ If we need to get our services running on specific port number for external acce
 </li>
 </ul>
 <p>To expose rabbitmq application ports, these are the typical changes</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">clusterIP</span>: <span style="color:#ae81ff">10.43.198.64</span>
-  <span style="color:#f92672">externalIPs</span>:
-  - <span style="color:#ae81ff">10.128.0.13</span>
-  <span style="color:#f92672">externalTrafficPolicy</span>: <span style="color:#ae81ff">Cluster</span>
-  <span style="color:#f92672">ports</span>:
-  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">http</span>
-    <span style="color:#f92672">nodePort</span>: <span style="color:#ae81ff">31954</span>
-    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">80</span>
-    <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
-    <span style="color:#f92672">targetPort</span>: <span style="color:#ae81ff">http</span>
-  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">https</span>
-    <span style="color:#f92672">nodePort</span>: <span style="color:#ae81ff">31997</span>
-    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">443</span>
-    <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
-    <span style="color:#f92672">targetPort</span>: <span style="color:#ae81ff">https</span>
-  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">rabbitmq-tcp-15672</span>
-    <span style="color:#f92672">nodePort</span>: <span style="color:#ae81ff">31555</span>
-    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">15672</span>
-    <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
-    <span style="color:#f92672">targetPort</span>: <span style="color:#ae81ff">15672</span>
-  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">rabbitmq-tcp-5672</span>
-    <span style="color:#f92672">nodePort</span>: <span style="color:#ae81ff">31556</span>
-    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">5672</span>
-    <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
-    <span style="color:#f92672">targetPort</span>: <span style="color:#ae81ff">5672</span>
-  <span style="color:#f92672">selector</span>:
-    <span style="color:#f92672">app.kubernetes.io/component</span>: <span style="color:#ae81ff">controller</span>
-    <span style="color:#f92672">app.kubernetes.io/instance</span>: <span style="color:#ae81ff">ingress-nginx</span>
-    <span style="color:#f92672">app.kubernetes.io/name</span>: <span style="color:#ae81ff">ingress-nginx</span>
-  <span style="color:#f92672">sessionAffinity</span>: <span style="color:#ae81ff">None</span>
-  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">LoadBalancer</span>
-</code></pre></div><h3 id="update-nginx-deployment-configuration">Update nginx Deployment configuration</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl edit deployment.apps/ingress-nginx-controller -n ingress-nginx
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">clusterIP</span>: <span style="color:#ae81ff">10.43.198.64</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">externalIPs</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">10.128.0.13</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">externalTrafficPolicy</span>: <span style="color:#ae81ff">Cluster</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">http</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">nodePort</span>: <span style="color:#ae81ff">31954</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">targetPort</span>: <span style="color:#ae81ff">http</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">https</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">nodePort</span>: <span style="color:#ae81ff">31997</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">443</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">targetPort</span>: <span style="color:#ae81ff">https</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">rabbitmq-tcp-15672</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">nodePort</span>: <span style="color:#ae81ff">31555</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">15672</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">targetPort</span>: <span style="color:#ae81ff">15672</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">rabbitmq-tcp-5672</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">nodePort</span>: <span style="color:#ae81ff">31556</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">5672</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">targetPort</span>: <span style="color:#ae81ff">5672</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">selector</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">app.kubernetes.io/component</span>: <span style="color:#ae81ff">controller</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">app.kubernetes.io/instance</span>: <span style="color:#ae81ff">ingress-nginx</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">app.kubernetes.io/name</span>: <span style="color:#ae81ff">ingress-nginx</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">sessionAffinity</span>: <span style="color:#ae81ff">None</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">LoadBalancer</span>
+</span></span></code></pre></div><h3 id="update-nginx-deployment-configuration">Update nginx Deployment configuration</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl edit deployment.apps/ingress-nginx-controller -n ingress-nginx
+</span></span></code></pre></div><ul>
 <li>
 <p>Update the controller args to support tcp and udp services.</p>
 <p>The 2 arguments must be added to the controller</p>
@@ -234,57 +234,57 @@ If we need to get our services running on specific port number for external acce
 <p><strong>&ndash;udp-services-configmap=$(POD_NAMESPACE)/udp-services</strong></p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">spec</span>:
-      <span style="color:#f92672">containers</span>:
-      - <span style="color:#f92672">args</span>:
-        - <span style="color:#ae81ff">/nginx-ingress-controller</span>
-        - --<span style="color:#ae81ff">election-id=ingress-controller-leader</span>
-        - --<span style="color:#ae81ff">ingress-class=nginx</span>
-        - --<span style="color:#ae81ff">configmap=$(POD_NAMESPACE)/ingress-nginx-controller</span>
-        - --<span style="color:#ae81ff">tcp-services-configmap=$(POD_NAMESPACE)/tcp-services</span>
-        - --<span style="color:#ae81ff">udp-services-configmap=$(POD_NAMESPACE)/udp-services</span>
-        - --<span style="color:#ae81ff">validating-webhook=:8443</span>
-        - --<span style="color:#ae81ff">validating-webhook-certificate=/usr/local/certificates/cert</span>
-        - --<span style="color:#ae81ff">validating-webhook-key=/usr/local/certificates/key</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>    <span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">args</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">/nginx-ingress-controller</span>
+</span></span><span style="display:flex;"><span>        - --<span style="color:#ae81ff">election-id=ingress-controller-leader</span>
+</span></span><span style="display:flex;"><span>        - --<span style="color:#ae81ff">ingress-class=nginx</span>
+</span></span><span style="display:flex;"><span>        - --<span style="color:#ae81ff">configmap=$(POD_NAMESPACE)/ingress-nginx-controller</span>
+</span></span><span style="display:flex;"><span>        - --<span style="color:#ae81ff">tcp-services-configmap=$(POD_NAMESPACE)/tcp-services</span>
+</span></span><span style="display:flex;"><span>        - --<span style="color:#ae81ff">udp-services-configmap=$(POD_NAMESPACE)/udp-services</span>
+</span></span><span style="display:flex;"><span>        - --<span style="color:#ae81ff">validating-webhook=:8443</span>
+</span></span><span style="display:flex;"><span>        - --<span style="color:#ae81ff">validating-webhook-certificate=/usr/local/certificates/cert</span>
+</span></span><span style="display:flex;"><span>        - --<span style="color:#ae81ff">validating-webhook-key=/usr/local/certificates/key</span>
+</span></span></code></pre></div><ul>
 <li>Add the ports to open up on controller pod(s)</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">        <span style="color:#f92672">ports</span>:
-        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">80</span>
-          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">http</span>
-          <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
-        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">443</span>
-          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">https</span>
-          <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
-        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">8443</span>
-          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">webhook</span>
-          <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
-        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">15672</span>
-          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">rabbitmqadm</span>
-          <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
-        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">5672</span>
-          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">rabbitmqamqp</span>
-          <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
-</code></pre></div><h3 id="configmap-changes">ConfigMap Changes</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>        <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">http</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">443</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">https</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">8443</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">webhook</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">15672</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">rabbitmqadm</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">5672</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">rabbitmqamqp</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
+</span></span></code></pre></div><h3 id="configmap-changes">ConfigMap Changes</h3>
 <p>Create a configmap data for the custom ports - configmap-port-expose.yaml</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">tcp-services</span>
-  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">ingress-nginx</span>
-<span style="color:#f92672">data</span>:
-  <span style="color:#f92672">15672</span>: <span style="color:#e6db74">&#34;rabbitmq/rabbittestha-rabbitmq:15672&#34;</span>
-  <span style="color:#f92672">5672</span>: <span style="color:#e6db74">&#34;rabbitmq/rabbittestha-rabbitmq:5672&#34;</span>
-</code></pre></div><p>Refers - <code>rabbitmq</code> namespace and <code>rabbittestha-rabbitmq</code> service within that namespace</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">tcp-services</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">ingress-nginx</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">data</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">15672</span>: <span style="color:#e6db74">&#34;rabbitmq/rabbittestha-rabbitmq:15672&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">5672</span>: <span style="color:#e6db74">&#34;rabbitmq/rabbittestha-rabbitmq:5672&#34;</span>
+</span></span></code></pre></div><p>Refers - <code>rabbitmq</code> namespace and <code>rabbittestha-rabbitmq</code> service within that namespace</p>
 <h2 id="testing">Testing</h2>
 <p>Connect to the TCP port using telnet and node IP</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ telnet 10.128.0.13 <span style="color:#ae81ff">15672</span>
-Trying 10.128.0.13...
-Connected to 10.128.0.13.
-Escape character is <span style="color:#e6db74">&#39;^]&#39;</span>.
-^<span style="color:#f92672">]</span>
-telnet&gt;
-</code></pre></div><p>With an external/Floating/LoadBalancer IP attached to this server, the service will be accessible from outside world</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ telnet 10.128.0.13 <span style="color:#ae81ff">15672</span>
+</span></span><span style="display:flex;"><span>Trying 10.128.0.13...
+</span></span><span style="display:flex;"><span>Connected to 10.128.0.13.
+</span></span><span style="display:flex;"><span>Escape character is <span style="color:#e6db74">&#39;^]&#39;</span>.
+</span></span><span style="display:flex;"><span>^<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>telnet&gt;
+</span></span></code></pre></div><p>With an external/Floating/LoadBalancer IP attached to this server, the service will be accessible from outside world</p>
 
       </div>
     </article>
@@ -463,7 +463,7 @@ telnet&gt;
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2021</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://karthick.it">Karthick K</a></span>
             
@@ -488,7 +488,7 @@ telnet&gt;
 
 
 
-<script type="text/javascript" src="https://karthick.it/bundle.min.a0f363fdf81cdc5cfacc447a79c33189eb000d090336cd04aac8ee256f423b3133b836c281944c19c75e38d0b0b449f01ce5807e37798b7ac94ac1db51983fc4.js" integrity="sha512-oPNj/fgc3Fz6zER6ecMxiesADQkDNs0EqsjuJW9COzEzuDbCgZRMGcdeONCwtEnwHOWAfjd5i3rJSsHbUZg/xA=="></script>
+<script type="text/javascript" src="https://karthick.it/bundle.min.e2a9675ced043d06ad6d3f13fafb0203d96c89eb2484878d5eb89d6da19559cbed55fb05ca9eae7be1e975cab83e3b2a1193afc357019620a509327c5a6a9c0f.js" integrity="sha512-4qlnXO0EPQatbT8T&#43;vsCA9lsieskhIeNXridbaGVWcvtVfsFyp6ue&#43;Hpdcq4PjsqEZOvw1cBliClCTJ8WmqcDw=="></script>
 
 
 

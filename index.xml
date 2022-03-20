@@ -73,7 +73,7 @@ Import the OVA on to installed VMware player. When prompted to retry/cancel, pro
       <guid>https://karthick.it/posts/2021/02/awx-upgrade-docker/</guid>
       <description>This article explains upgrade of awx services running on docker.
  Stop AWX Services In some case, tag latest needs to be replaced with current version running on the system.
-docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest docker stop awx_web docker rm awx_web docker rmi ansible/awx_web:latest Backup Inventory File cp ~/awx/installer/inventory ~/inventory Refresh AWX Code cd ~/awx/installer git stash git pull cd installer Run Upgrade export GPG_TTY=$(tty) cd installer # Review inventory (Update passwords and vars from backed up inventory file) ansible-playbook -i inventory install.</description>
+docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest  docker stop awx_web docker rm awx_web docker rmi ansible/awx_web:latest Backup Inventory File cp ~/awx/installer/inventory ~/inventory Refresh AWX Code cd ~/awx/installer git stash git pull cd installer Run Upgrade export GPG_TTY=$(tty) cd installer # Review inventory (Update passwords and vars from backed up inventory file) ansible-playbook -i inventory install.</description>
     </item>
     
     <item>

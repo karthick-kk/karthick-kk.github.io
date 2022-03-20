@@ -50,8 +50,8 @@ Server Spec VM - Any Network Interfaces:
  Boundary Binary Download URL: https://www.boundaryproject.io/downloads
 Boundary Server Boundary server has two components - controller and worker. A simple dev server can be started using boundary dev
 Server Spec VM - Any Network Interfaces:
-- 1 x NAT Network (10.x.x.x) - 1 x Host Only/Bridged Network (192.x.x.x/*)  Setting up Pre-requisite Install Postgresql Create docker-compose."><meta itemprop="datePublished" content="2020-10-28T14:34:08&#43;05:30" />
-<meta itemprop="dateModified" content="2020-10-28T14:34:08&#43;05:30" />
+- 1 x NAT Network (10.x.x.x) - 1 x Host Only/Bridged Network (192.x.x.x/*)  Setting up Pre-requisite Install Postgresql Create docker-compose."><meta itemprop="datePublished" content="2020-10-28T14:34:08+05:30" />
+<meta itemprop="dateModified" content="2020-10-28T14:34:08+05:30" />
 <meta itemprop="wordCount" content="776"><meta itemprop="image" content="https://karthick.it"/>
 <meta itemprop="keywords" content="boundary,hashicorp," />
 <meta name="twitter:card" content="summary_large_image"/>
@@ -74,8 +74,8 @@ Server Spec VM - Any Network Interfaces:
 - 1 x NAT Network (10.x.x.x) - 1 x Host Only/Bridged Network (192.x.x.x/*)  Setting up Pre-requisite Install Postgresql Create docker-compose." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://karthick.it/posts/2020/10/hashicorp-boundary-setup-and-demo/" /><meta property="og:image" content="https://karthick.it"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-10-28T14:34:08&#43;05:30" />
-<meta property="article:modified_time" content="2020-10-28T14:34:08&#43;05:30" />
+<meta property="article:published_time" content="2020-10-28T14:34:08+05:30" />
+<meta property="article:modified_time" content="2020-10-28T14:34:08+05:30" />
 
 
 
@@ -197,25 +197,24 @@ Network Interfaces:</p>
 <h3 id="setting-up-pre-requisite">Setting up Pre-requisite</h3>
 <h4 id="install-postgresql">Install Postgresql</h4>
 <p>Create <code>docker-compose.yaml</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;2&#39;</span>
-
-<span style="color:#f92672">services</span>:
-  <span style="color:#f92672">postgresql</span>:
-    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#39;docker.io/bitnami/postgresql:11-debian-10&#39;</span>
-    <span style="color:#f92672">ports</span>:
-      - <span style="color:#e6db74">&#39;5432:5432&#39;</span>
-    <span style="color:#f92672">volumes</span>:
-      - <span style="color:#e6db74">&#39;postgresql_data:/bitnami/postgresql&#39;</span>
-    <span style="color:#f92672">environment</span>:
-      - <span style="color:#e6db74">&#39;ALLOW_EMPTY_PASSWORD=yes&#39;</span>
-      - <span style="color:#ae81ff">POSTGRESQL_USERNAME=postgres</span>
-      - <span style="color:#ae81ff">POSTGRESQL_PASSWORD=password123</span>
-      - <span style="color:#ae81ff">POSTGRESQL_DATABASE=boundary</span>
-<span style="color:#f92672">volumes</span>:
-  <span style="color:#f92672">postgresql_data</span>:
-    <span style="color:#f92672">driver</span>: <span style="color:#ae81ff">local</span>
-
-</code></pre></div><p>Run postgresql docker</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;2&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">postgresql</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#39;docker.io/bitnami/postgresql:11-debian-10&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#39;5432:5432&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#39;postgresql_data:/bitnami/postgresql&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#39;ALLOW_EMPTY_PASSWORD=yes&#39;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">POSTGRESQL_USERNAME=postgres</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">POSTGRESQL_PASSWORD=password123</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">POSTGRESQL_DATABASE=boundary</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">postgresql_data</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">driver</span>: <span style="color:#ae81ff">local</span>
+</span></span></code></pre></div><p>Run postgresql docker</p>
 <p><code>docker-compose up -d</code></p>
 <h3 id="setting-up-controller-and-worker-on-a-single-node">Setting up controller and worker on a single node</h3>
 <h4 id="controller-config">Controller Config</h4>
@@ -223,154 +222,154 @@ Network Interfaces:</p>
 <blockquote>
 <p>/etc/boundary-controller.hcl</p>
 </blockquote>
-<pre><code># Disable memory lock: https://www.man7.org/linux/man-pages/man2/mlock.2.html
+<pre tabindex="0"><code># Disable memory lock: https://www.man7.org/linux/man-pages/man2/mlock.2.html
 disable_mlock = true
 
 # Controller configuration block
 controller {
   # This name attr must be unique across all controller instances if running in HA mode
-  name = &quot;demo-controller-1&quot;
-  description = &quot;A controller for a demo!&quot;
+  name = &#34;demo-controller-1&#34;
+  description = &#34;A controller for a demo!&#34;
 
-  # Database URL for postgres. This can be a direct &quot;postgres://&quot;
-  # URL, or it can be &quot;file://&quot; to read the contents of a file to
-  # supply the url, or &quot;env://&quot; to name an environment variable
+  # Database URL for postgres. This can be a direct &#34;postgres://&#34;
+  # URL, or it can be &#34;file://&#34; to read the contents of a file to
+  # supply the url, or &#34;env://&#34; to name an environment variable
   # that contains the URL.
   database {
-      url = &quot;postgresql://postgres:password123@localhost:5432/boundary?sslmode=disable&quot;
+      url = &#34;postgresql://postgres:password123@localhost:5432/boundary?sslmode=disable&#34;
   }
 }
 
 # API listener configuration block
-listener &quot;tcp&quot; {
+listener &#34;tcp&#34; {
   # Should be the address of the NIC that the controller server will be reached on
-  address = &quot;192.168.99.102&quot;
+  address = &#34;192.168.99.102&#34;
   # The purpose of this listener block
-  purpose = &quot;api&quot;
+  purpose = &#34;api&#34;
 
   tls_disable = true
 
   # Uncomment to enable CORS for the Admin UI. Be sure to set the allowed origin(s)
   # to appropriate values.
   #cors_enabled = true
-  #cors_allowed_origins = [&quot;yourcorp.yourdomain.com&quot;]
+  #cors_allowed_origins = [&#34;yourcorp.yourdomain.com&#34;]
 }
 
 # Data-plane listener configuration block (used for worker coordination)
-listener &quot;tcp&quot; {
+listener &#34;tcp&#34; {
   # Should be the IP of the NIC that the worker will connect on
-  address = &quot;192.168.99.102&quot;
+  address = &#34;192.168.99.102&#34;
   # The purpose of this listener
-  purpose = &quot;cluster&quot;
+  purpose = &#34;cluster&#34;
 
   tls_disable = true
 }
 
 # Root KMS configuration block: this is the root key for Boundary
 # Use a production KMS such as AWS KMS in production installs
-kms &quot;aead&quot; {
-  purpose = &quot;root&quot;
-  aead_type = &quot;aes-gcm&quot;
-  key = &quot;sP1fnF5Xz85RrXyELHFeZg9Ad2qt4Z4bgNHVGtD6ung=&quot;
-  key_id = &quot;global_root&quot;
+kms &#34;aead&#34; {
+  purpose = &#34;root&#34;
+  aead_type = &#34;aes-gcm&#34;
+  key = &#34;sP1fnF5Xz85RrXyELHFeZg9Ad2qt4Z4bgNHVGtD6ung=&#34;
+  key_id = &#34;global_root&#34;
 }
 
 # Worker authorization KMS
 # Use a production KMS such as AWS KMS for production installs
 # This key is the same key used in the worker configuration
-kms &quot;aead&quot; {
-  purpose = &quot;worker-auth&quot;
-  aead_type = &quot;aes-gcm&quot;
-  key = &quot;8fZBjCUfN0TzjEGLQldGY4+iE9AkOvCfjh7+p0GtRBQ=&quot;
-  key_id = &quot;global_worker-auth&quot;
+kms &#34;aead&#34; {
+  purpose = &#34;worker-auth&#34;
+  aead_type = &#34;aes-gcm&#34;
+  key = &#34;8fZBjCUfN0TzjEGLQldGY4+iE9AkOvCfjh7+p0GtRBQ=&#34;
+  key_id = &#34;global_worker-auth&#34;
 }
 
 # Recovery KMS block: configures the recovery key for Boundary
 # Use a production KMS such as AWS KMS for production installs
-kms &quot;aead&quot; {
-  purpose = &quot;recovery&quot;
-  aead_type = &quot;aes-gcm&quot;
-  key = &quot;8fZBjCUfN0TzjEGLQldGY4+iE9AkOvCfjh7+p0GtRBQ=&quot;
-  key_id = &quot;global_recovery&quot;
+kms &#34;aead&#34; {
+  purpose = &#34;recovery&#34;
+  aead_type = &#34;aes-gcm&#34;
+  key = &#34;8fZBjCUfN0TzjEGLQldGY4+iE9AkOvCfjh7+p0GtRBQ=&#34;
+  key_id = &#34;global_recovery&#34;
 }
 </code></pre><h4 id="worker-config">Worker Config</h4>
 <p>Create config file</p>
 <blockquote>
 <p>/etc/boundary-worker.hcl</p>
 </blockquote>
-<pre><code>listener &quot;tcp&quot; {
-    purpose = &quot;proxy&quot;
-    address = &quot;192.168.99.102&quot;
+<pre tabindex="0"><code>listener &#34;tcp&#34; {
+    purpose = &#34;proxy&#34;
+    address = &#34;192.168.99.102&#34;
     tls_disable = true
 }
 
 worker {
   # Name attr must be unique across workers
-  name = &quot;demo-worker-1&quot;
-  description = &quot;A default worker created demonstration&quot;
+  name = &#34;demo-worker-1&#34;
+  description = &#34;A default worker created demonstration&#34;
 
   # Workers must be able to reach controllers on :9202
   controllers = [
-    &quot;192.168.99.102&quot;
+    &#34;192.168.99.102&#34;
   ]
 
-  public_addr = &quot;192.168.99.102&quot;
+  public_addr = &#34;192.168.99.102&#34;
 }
 
 # must be same key as used on controller config
-kms &quot;aead&quot; {
-    purpose = &quot;worker-auth&quot;
-    aead_type = &quot;aes-gcm&quot;
-    key = &quot;8fZBjCUfN0TzjEGLQldGY4+iE9AkOvCfjh7+p0GtRBQ=&quot;
-    key_id = &quot;global_worker-auth&quot;
+kms &#34;aead&#34; {
+    purpose = &#34;worker-auth&#34;
+    aead_type = &#34;aes-gcm&#34;
+    key = &#34;8fZBjCUfN0TzjEGLQldGY4+iE9AkOvCfjh7+p0GtRBQ=&#34;
+    key_id = &#34;global_worker-auth&#34;
 }
 </code></pre><h4 id="setting-up-controller-and-worker-service">Setting up Controller and Worker Service</h4>
 <p>Create install script</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span><span style="color:#75715e"># Installs the boundary as a service for systemd on linux</span>
-<span style="color:#75715e"># Usage: ./install.sh &lt;worker|controller&gt;</span>
-
-TYPE<span style="color:#f92672">=</span>$1
-NAME<span style="color:#f92672">=</span>boundary
-
-sudo cat <span style="color:#e6db74">&lt;&lt; EOF &gt; /etc/systemd/system/${NAME}-${TYPE}.service
-</span><span style="color:#e6db74">[Unit]
-</span><span style="color:#e6db74">Description=${NAME} ${TYPE}
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">[Service]
-</span><span style="color:#e6db74">ExecStart=/usr/local/bin/${NAME} server -config /etc/${NAME}-${TYPE}.hcl
-</span><span style="color:#e6db74">User=boundary
-</span><span style="color:#e6db74">Group=boundary
-</span><span style="color:#e6db74">LimitMEMLOCK=infinity
-</span><span style="color:#e6db74">Capabilities=CAP_IPC_LOCK+ep
-</span><span style="color:#e6db74">CapabilityBoundingSet=CAP_SYSLOG CAP_IPC_LOCK
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">[Install]
-</span><span style="color:#e6db74">WantedBy=multi-user.target
-</span><span style="color:#e6db74">EOF</span>
-
-<span style="color:#75715e"># Add the boundary system user and group to ensure we have a no-login</span>
-<span style="color:#75715e"># user capable of owning and running Boundary</span>
-sudo adduser --system --group boundary <span style="color:#f92672">||</span> true
-sudo chown boundary:boundary /etc/<span style="color:#e6db74">${</span>NAME<span style="color:#e6db74">}</span>-<span style="color:#e6db74">${</span>TYPE<span style="color:#e6db74">}</span>.hcl
-sudo chown boundary:boundary /usr/local/bin/boundary
-
-<span style="color:#75715e"># Make sure to initialize the DB before starting the service. This will result in</span>
-<span style="color:#75715e"># a database already initizalized warning if another controller or worker has done this</span>
-<span style="color:#75715e"># already, making it a lazy, best effort initialization</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>TYPE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;controller&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-  sudo /usr/local/bin/boundary database init -config /etc/<span style="color:#e6db74">${</span>NAME<span style="color:#e6db74">}</span>-<span style="color:#e6db74">${</span>TYPE<span style="color:#e6db74">}</span>.hcl <span style="color:#f92672">||</span> true
-<span style="color:#66d9ef">fi</span>
-
-sudo chmod <span style="color:#ae81ff">664</span> /etc/systemd/system/<span style="color:#e6db74">${</span>NAME<span style="color:#e6db74">}</span>-<span style="color:#e6db74">${</span>TYPE<span style="color:#e6db74">}</span>.service
-sudo systemctl daemon-reload
-sudo systemctl enable <span style="color:#e6db74">${</span>NAME<span style="color:#e6db74">}</span>-<span style="color:#e6db74">${</span>TYPE<span style="color:#e6db74">}</span>
-sudo systemctl start <span style="color:#e6db74">${</span>NAME<span style="color:#e6db74">}</span>-<span style="color:#e6db74">${</span>TYPE<span style="color:#e6db74">}</span>
-</code></pre></div><p>Run script to setup controller and worker</p>
-<pre><code>sudo ./install.sh controller
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e"># Installs the boundary as a service for systemd on linux</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Usage: ./install.sh &lt;worker|controller&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>TYPE<span style="color:#f92672">=</span>$1
+</span></span><span style="display:flex;"><span>NAME<span style="color:#f92672">=</span>boundary
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo cat <span style="color:#e6db74">&lt;&lt; EOF &gt; /etc/systemd/system/${NAME}-${TYPE}.service
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Unit]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Description=${NAME} ${TYPE}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Service]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ExecStart=/usr/local/bin/${NAME} server -config /etc/${NAME}-${TYPE}.hcl
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">User=boundary
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Group=boundary
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">LimitMEMLOCK=infinity
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Capabilities=CAP_IPC_LOCK+ep
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">CapabilityBoundingSet=CAP_SYSLOG CAP_IPC_LOCK
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Install]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">WantedBy=multi-user.target
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add the boundary system user and group to ensure we have a no-login</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># user capable of owning and running Boundary</span>
+</span></span><span style="display:flex;"><span>sudo adduser --system --group boundary <span style="color:#f92672">||</span> true
+</span></span><span style="display:flex;"><span>sudo chown boundary:boundary /etc/<span style="color:#e6db74">${</span>NAME<span style="color:#e6db74">}</span>-<span style="color:#e6db74">${</span>TYPE<span style="color:#e6db74">}</span>.hcl
+</span></span><span style="display:flex;"><span>sudo chown boundary:boundary /usr/local/bin/boundary
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Make sure to initialize the DB before starting the service. This will result in</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># a database already initizalized warning if another controller or worker has done this</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># already, making it a lazy, best effort initialization</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>TYPE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;controller&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  sudo /usr/local/bin/boundary database init -config /etc/<span style="color:#e6db74">${</span>NAME<span style="color:#e6db74">}</span>-<span style="color:#e6db74">${</span>TYPE<span style="color:#e6db74">}</span>.hcl <span style="color:#f92672">||</span> true
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo chmod <span style="color:#ae81ff">664</span> /etc/systemd/system/<span style="color:#e6db74">${</span>NAME<span style="color:#e6db74">}</span>-<span style="color:#e6db74">${</span>TYPE<span style="color:#e6db74">}</span>.service
+</span></span><span style="display:flex;"><span>sudo systemctl daemon-reload
+</span></span><span style="display:flex;"><span>sudo systemctl enable <span style="color:#e6db74">${</span>NAME<span style="color:#e6db74">}</span>-<span style="color:#e6db74">${</span>TYPE<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>sudo systemctl start <span style="color:#e6db74">${</span>NAME<span style="color:#e6db74">}</span>-<span style="color:#e6db74">${</span>TYPE<span style="color:#e6db74">}</span>
+</span></span></code></pre></div><p>Run script to setup controller and worker</p>
+<pre tabindex="0"><code>sudo ./install.sh controller
 sudo ./install.sh worker
 </code></pre><p>When the controller is installed, initial auth information is created.</p>
-<pre><code>Initial auth information:
+<pre tabindex="0"><code>Initial auth information:
   Auth Method ID:     ampw_8KHJD8hQRJ
   Login Name:         admin
   Password:           ycgHbdayxhYoZG4HaMaj
@@ -379,14 +378,14 @@ sudo ./install.sh worker
 </blockquote>
 <h2 id="connecting-to-vm-via-boundary-server">Connecting to VM via Boundary Server</h2>
 <p>Authenticate server</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">BOUNDARY_ADDR<span style="color:#f92672">=</span>http://192.168.99.102:9200 boundary authenticate password -auth-method-id<span style="color:#f92672">=</span>ampw_8KHJD8hQRJ -login-name<span style="color:#f92672">=</span>admin -password<span style="color:#f92672">=</span>ycgHbdayxhYoZG4HaMaj
-</code></pre></div><p>Connect SSH</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">BOUNDARY_ADDR<span style="color:#f92672">=</span>http://192.168.99.102:9200 boundary connect ssh -target-id ttcp_yj50ER3Uq3 -token at_Zh5SfzpyYR_s1bWQSM96NgAY9UAy1W235eL3fiaui4QNBkhEkSnYy7ReY24ME2bYK3FtZGZWfX3C7NGPbPABNcgGusvRjQ1EFwc2AS7v1rq6Xxjv1fYnmwDbrLmV7UHdkP5y9ZUxFnN6BAtwRnTH82g2Q -- -l osboxes
-</code></pre></div><p>Users &amp; Access</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">boundary roles update -grant-scope-id<span style="color:#f92672">=</span>p_tkwQtiybAR -id<span style="color:#f92672">=</span>r_MJpRFZlFsO -token at_i0VuJvNsla_s1Dy8URtX8J23CUmcZt6v3SN3xdPYTFLFxztgF6bGB8JqPWZwVRGEkrpTqPa9Bc5xVRNY4v2o63b8WAfa1xTwLqufUMfXUz17JCpDjsi
-BOUNDARY_ADDR<span style="color:#f92672">=</span>http://192.168.50.10:9200 boundary roles list -scope-id p_tkwQtiybAR -token at_i0VuJvNsla_s1Dy8URtX8J23CUmcZt6v3SN3xdPYTFLFxztgF6bGB8JqPWZwVRGEkrpTqPa9Bc5xVRNY4v2o63b8WAfa1xTwLqufUMfXUz17JCpDjsi
-BOUNDARY_ADDR<span style="color:#f92672">=</span>http://192.168.50.10:9200 boundary connect ssh -target-id ttcp_jRA1wIGwVS -token at_i0VuJvNsla_s1Dy8URtX8J23CUmcZt6v3SN3xdPYTFLFxztgF6bGB8JqPWZwVRGEkrpTqPa9Bc5xVRNY4v2o63b8WAfa1xTwLqufUMfXUz17JCpDjsi -- -l vagrant
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>BOUNDARY_ADDR<span style="color:#f92672">=</span>http://192.168.99.102:9200 boundary authenticate password -auth-method-id<span style="color:#f92672">=</span>ampw_8KHJD8hQRJ -login-name<span style="color:#f92672">=</span>admin -password<span style="color:#f92672">=</span>ycgHbdayxhYoZG4HaMaj
+</span></span></code></pre></div><p>Connect SSH</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>BOUNDARY_ADDR<span style="color:#f92672">=</span>http://192.168.99.102:9200 boundary connect ssh -target-id ttcp_yj50ER3Uq3 -token at_Zh5SfzpyYR_s1bWQSM96NgAY9UAy1W235eL3fiaui4QNBkhEkSnYy7ReY24ME2bYK3FtZGZWfX3C7NGPbPABNcgGusvRjQ1EFwc2AS7v1rq6Xxjv1fYnmwDbrLmV7UHdkP5y9ZUxFnN6BAtwRnTH82g2Q -- -l osboxes
+</span></span></code></pre></div><p>Users &amp; Access</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>boundary roles update -grant-scope-id<span style="color:#f92672">=</span>p_tkwQtiybAR -id<span style="color:#f92672">=</span>r_MJpRFZlFsO -token at_i0VuJvNsla_s1Dy8URtX8J23CUmcZt6v3SN3xdPYTFLFxztgF6bGB8JqPWZwVRGEkrpTqPa9Bc5xVRNY4v2o63b8WAfa1xTwLqufUMfXUz17JCpDjsi
+</span></span><span style="display:flex;"><span>BOUNDARY_ADDR<span style="color:#f92672">=</span>http://192.168.50.10:9200 boundary roles list -scope-id p_tkwQtiybAR -token at_i0VuJvNsla_s1Dy8URtX8J23CUmcZt6v3SN3xdPYTFLFxztgF6bGB8JqPWZwVRGEkrpTqPa9Bc5xVRNY4v2o63b8WAfa1xTwLqufUMfXUz17JCpDjsi
+</span></span><span style="display:flex;"><span>BOUNDARY_ADDR<span style="color:#f92672">=</span>http://192.168.50.10:9200 boundary connect ssh -target-id ttcp_jRA1wIGwVS -token at_i0VuJvNsla_s1Dy8URtX8J23CUmcZt6v3SN3xdPYTFLFxztgF6bGB8JqPWZwVRGEkrpTqPa9Bc5xVRNY4v2o63b8WAfa1xTwLqufUMfXUz17JCpDjsi -- -l vagrant
+</span></span></code></pre></div>
       </div>
     </article>
 
@@ -558,7 +557,7 @@ BOUNDARY_ADDR<span style="color:#f92672">=</span>http://192.168.50.10:9200 bound
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2021</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://karthick.it">Karthick K</a></span>
             
@@ -583,7 +582,7 @@ BOUNDARY_ADDR<span style="color:#f92672">=</span>http://192.168.50.10:9200 bound
 
 
 
-<script type="text/javascript" src="https://karthick.it/bundle.min.a0f363fdf81cdc5cfacc447a79c33189eb000d090336cd04aac8ee256f423b3133b836c281944c19c75e38d0b0b449f01ce5807e37798b7ac94ac1db51983fc4.js" integrity="sha512-oPNj/fgc3Fz6zER6ecMxiesADQkDNs0EqsjuJW9COzEzuDbCgZRMGcdeONCwtEnwHOWAfjd5i3rJSsHbUZg/xA=="></script>
+<script type="text/javascript" src="https://karthick.it/bundle.min.e2a9675ced043d06ad6d3f13fafb0203d96c89eb2484878d5eb89d6da19559cbed55fb05ca9eae7be1e975cab83e3b2a1193afc357019620a509327c5a6a9c0f.js" integrity="sha512-4qlnXO0EPQatbT8T&#43;vsCA9lsieskhIeNXridbaGVWcvtVfsFyp6ue&#43;Hpdcq4PjsqEZOvw1cBliClCTJ8WmqcDw=="></script>
 
 
 
