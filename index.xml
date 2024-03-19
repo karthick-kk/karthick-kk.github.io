@@ -9,18 +9,6 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Mon, 10 May 2021 20:11:40 +0530</lastBuildDate><atom:link href="https://karthick.it/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>CV</title>
-      <link>https://karthick.it/resume/</link>
-      <pubDate>Fri, 28 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://karthick.it/resume/</guid>
-      <description>Karthick K DevOps Platform Automation Engineer +91 9840585161 karthick.kk@hotmail.com https://github.com/karthick-kk Chennai TL;DR - DevOps and Cloud Automation Engineer
-I’m currently working with Ericsson, as a Senior Infrastructure Automation Engineer, where I help developers streamline their workflows &amp;amp; build more awesome and effortless releases. I have a passion towards automating complex tasks using custom tooling and CI/CD pipelines.
-Today, I focus on Containerization, GitOps and DevSecOps implementation for continuous deployment.
-Certifications CKA: Certified Kubernetes Administrator The Linux Foundation, Issued Sep 2020 Automation with Ansible (D-407) Redhat, Issued May 2017 Red Hat Certified System Administrator in Red Hat OpenStack Redhat, Issued Mar 2019 Sun Certified Solaris Administrator Sun Microsystems, Issued Jun 2008 Non-Technical IELTS, ITIL Experience Ericsson Global Services [2021 - Present]:</description>
-    </item>
-    
-    <item>
       <title>Tor toggle for Firefox on Arch</title>
       <link>https://karthick.it/posts/2021/05/tor-toggle-for-firefox-on-arch/</link>
       <pubDate>Mon, 10 May 2021 20:11:40 +0530</pubDate>
@@ -121,6 +109,17 @@ sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/ma
 OpenGL-Compositor crash fix on wakeup/unlock event This is a simple workaround to recover from the kde compositor crashes that renders the screen with black artifacts with non-responding UI.
 The idea is to keep a script running in the background which capture the dbus event of lock/unlock screen to restart kwin window manager.
 Restart script restart_kwin.</description>
+    </item>
+    
+    <item>
+      <title>Encrypt Decrypt With Gpg</title>
+      <link>https://karthick.it/posts/2020/10/encrypt-decrypt-with-gpg/</link>
+      <pubDate>Fri, 30 Oct 2020 00:00:09 +0530</pubDate>
+      
+      <guid>https://karthick.it/posts/2020/10/encrypt-decrypt-with-gpg/</guid>
+      <description> This article explains encryption and decryption of files using GNU gpg
+Setup GNU gpg Generate Keys gpg --full-generate-key passphrase is optional Encrypting a file gpg -e -r &amp;#34;karthickk&amp;#34; .wekan.json This creates a file with an extension .gpg
+Decrypting a file gpg -o .wekan.json -d .wekan.json.gpg </description>
     </item>
     
   </channel>
