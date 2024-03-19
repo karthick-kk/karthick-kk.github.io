@@ -15,7 +15,7 @@
       
       <guid>https://karthick.it/posts/2021/05/tor-toggle-for-firefox-on-arch/</guid>
       <description>This article explains how to configure tor/onion network for firefox browser on arch linux. Tor browser(https://www.torproject.org) still remains the recommended or easiest means of using tor network for browsing with privacy.
- Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo systemctl enable tor $ sudo systemctl start tor Starting privoxy Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic.</description>
+Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo systemctl enable tor $ sudo systemctl start tor Starting privoxy Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic.</description>
     </item>
     
   </channel>

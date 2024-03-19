@@ -15,8 +15,9 @@
       
       <guid>https://karthick.it/posts/2020/11/clean-chroot-builds-on-arch-linux/</guid>
       <description>A clean chroot build is preferred when there are package dependencies during aur package installation. This article should allow us to perform one such clean chroot build using the guided aur package called clean chroot manager(ccm).
- Install CCM yay -S clean-chroot-manager Setup base config for chroot   Run the sudo ccm64 c command to generate a default clean-chroot-manager.conf
-  Create a chroot path running mkdir ~/chroot</description>
+Install CCM yay -S clean-chroot-manager Setup base config for chroot Run the sudo ccm64 c command to generate a default clean-chroot-manager.conf
+Create a chroot path running mkdir ~/chroot
+Edit this file and update the CHROOTPATH64=&amp;quot;/home/karthick-k/chroot&amp;quot; to a valid path</description>
     </item>
     
   </channel>

@@ -15,11 +15,11 @@
       
       <guid>https://karthick.it/posts/2021/02/converting-virtualbox-ova-to-vmware-compatible-ovf/</guid>
       <description>This guide use the possible freeware tools to perform the conversion.
- Conversion Need? Virtualbox does not generate Vmware Cloud/Vmware ESXi compatible OVA/OVF files
-Tools Required   Vmware Player
-  ovftool
+Conversion Need? Virtualbox does not generate Vmware Cloud/Vmware ESXi compatible OVA/OVF files
+Tools Required Vmware Player
+ovftool
 ** VMware account needed to download (free to signup) **
-  Conversion Process Step 1:
+Conversion Process Step 1:
 Export the VM as OVA from virtualbox
 Step 2:
 Import the OVA on to installed VMware player. When prompted to retry/cancel, proceed with retry importing, ignoring the warning messages any.</description>

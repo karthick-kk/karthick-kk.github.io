@@ -15,8 +15,8 @@
       
       <guid>https://karthick.it/posts/2020/10/encrypt-decrypt-with-gpg/</guid>
       <description> This article explains encryption and decryption of files using GNU gpg
- Setup GNU gpg Generate Keys gpg --full-generate-key  passphrase is optional  Encrypting a file gpg -e -r &amp;#34;karthickk&amp;#34; .wekan.json  This creates a file with an extension .gpg
- Decrypting a file gpg -o .wekan.json -d .wekan.json.gpg </description>
+Setup GNU gpg Generate Keys gpg --full-generate-key passphrase is optional Encrypting a file gpg -e -r &amp;#34;karthickk&amp;#34; .wekan.json This creates a file with an extension .gpg
+Decrypting a file gpg -o .wekan.json -d .wekan.json.gpg </description>
     </item>
     
   </channel>

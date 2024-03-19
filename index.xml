@@ -9,13 +9,25 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Mon, 10 May 2021 20:11:40 +0530</lastBuildDate><atom:link href="https://karthick.it/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>CV</title>
+      <link>https://karthick.it/resume/</link>
+      <pubDate>Fri, 28 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://karthick.it/resume/</guid>
+      <description>Karthick K DevOps Platform Automation Engineer +91 9840585161 karthick.kk@hotmail.com https://github.com/karthick-kk Chennai TL;DR - DevOps and Cloud Automation Engineer
+I’m currently working with Ericsson, as a Senior Infrastructure Automation Engineer, where I help developers streamline their workflows &amp;amp; build more awesome and effortless releases. I have a passion towards automating complex tasks using custom tooling and CI/CD pipelines.
+Today, I focus on Containerization, GitOps and DevSecOps implementation for continuous deployment.
+Certifications CKA: Certified Kubernetes Administrator The Linux Foundation, Issued Sep 2020 Automation with Ansible (D-407) Redhat, Issued May 2017 Red Hat Certified System Administrator in Red Hat OpenStack Redhat, Issued Mar 2019 Sun Certified Solaris Administrator Sun Microsystems, Issued Jun 2008 Non-Technical IELTS, ITIL Experience Ericsson Global Services [2021 - Present]:</description>
+    </item>
+    
+    <item>
       <title>Tor toggle for Firefox on Arch</title>
       <link>https://karthick.it/posts/2021/05/tor-toggle-for-firefox-on-arch/</link>
       <pubDate>Mon, 10 May 2021 20:11:40 +0530</pubDate>
       
       <guid>https://karthick.it/posts/2021/05/tor-toggle-for-firefox-on-arch/</guid>
       <description>This article explains how to configure tor/onion network for firefox browser on arch linux. Tor browser(https://www.torproject.org) still remains the recommended or easiest means of using tor network for browsing with privacy.
- Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo systemctl enable tor $ sudo systemctl start tor Starting privoxy Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic.</description>
+Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo systemctl enable tor $ sudo systemctl start tor Starting privoxy Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic.</description>
     </item>
     
     <item>
@@ -25,7 +37,7 @@
       
       <guid>https://karthick.it/posts/2021/04/running-github-actions-locally/</guid>
       <description>Actions are usually developed in the GitHub repository where the project itself is hosted. It is often required to modify these workflows multiple times during its development. This requires a commit to the repo everytime to execute/trigger these workflows.
- ACT ACT is an opensource project that allows us to test these github workflows locally rather than updating the workflow file directly on the github repository.
+ACT ACT is an opensource project that allows us to test these github workflows locally rather than updating the workflow file directly on the github repository.
 Refer README for the installation of act.</description>
     </item>
     
@@ -46,11 +58,11 @@ Runbook $ sudo systemctl start iwd $ sudo iwctl --passphrase &amp;lt;secret&amp;
       
       <guid>https://karthick.it/posts/2021/02/converting-virtualbox-ova-to-vmware-compatible-ovf/</guid>
       <description>This guide use the possible freeware tools to perform the conversion.
- Conversion Need? Virtualbox does not generate Vmware Cloud/Vmware ESXi compatible OVA/OVF files
-Tools Required   Vmware Player
-  ovftool
+Conversion Need? Virtualbox does not generate Vmware Cloud/Vmware ESXi compatible OVA/OVF files
+Tools Required Vmware Player
+ovftool
 ** VMware account needed to download (free to signup) **
-  Conversion Process Step 1:
+Conversion Process Step 1:
 Export the VM as OVA from virtualbox
 Step 2:
 Import the OVA on to installed VMware player. When prompted to retry/cancel, proceed with retry importing, ignoring the warning messages any.</description>
@@ -72,8 +84,8 @@ Import the OVA on to installed VMware player. When prompted to retry/cancel, pro
       
       <guid>https://karthick.it/posts/2021/02/awx-upgrade-docker/</guid>
       <description>This article explains upgrade of awx services running on docker.
- Stop AWX Services In some case, tag latest needs to be replaced with current version running on the system.
-docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest  docker stop awx_web docker rm awx_web docker rmi ansible/awx_web:latest Backup Inventory File cp ~/awx/installer/inventory ~/inventory Refresh AWX Code cd ~/awx/installer git stash git pull cd installer Run Upgrade export GPG_TTY=$(tty) cd installer # Review inventory (Update passwords and vars from backed up inventory file) ansible-playbook -i inventory install.</description>
+Stop AWX Services In some case, tag latest needs to be replaced with current version running on the system.
+docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest docker stop awx_web docker rm awx_web docker rmi ansible/awx_web:latest Backup Inventory File cp ~/awx/installer/inventory ~/inventory Refresh AWX Code cd ~/awx/installer git stash git pull cd installer Run Upgrade export GPG_TTY=$(tty) cd installer # Review inventory (Update passwords and vars from backed up inventory file) ansible-playbook -i inventory install.</description>
     </item>
     
     <item>
@@ -83,8 +95,9 @@ docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest  dock
       
       <guid>https://karthick.it/posts/2020/11/clean-chroot-builds-on-arch-linux/</guid>
       <description>A clean chroot build is preferred when there are package dependencies during aur package installation. This article should allow us to perform one such clean chroot build using the guided aur package called clean chroot manager(ccm).
- Install CCM yay -S clean-chroot-manager Setup base config for chroot   Run the sudo ccm64 c command to generate a default clean-chroot-manager.conf
-  Create a chroot path running mkdir ~/chroot</description>
+Install CCM yay -S clean-chroot-manager Setup base config for chroot Run the sudo ccm64 c command to generate a default clean-chroot-manager.conf
+Create a chroot path running mkdir ~/chroot
+Edit this file and update the CHROOTPATH64=&amp;quot;/home/karthick-k/chroot&amp;quot; to a valid path</description>
     </item>
     
     <item>
@@ -94,7 +107,7 @@ docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest  dock
       
       <guid>https://karthick.it/posts/2020/11/zsh-setup/</guid>
       <description>This guide is to provide some quick steps to setup zsh,oh-my-zsh framework with essential plugins and powerline10k theme
- Change default shell to zsh sudo usermod -s /usr/bin/zsh $USER Setup oh-my-zsh framework An excellent framework with extensible plugins and themes to manage zsh configurations.
+Change default shell to zsh sudo usermod -s /usr/bin/zsh $USER Setup oh-my-zsh framework An excellent framework with extensible plugins and themes to manage zsh configurations.
 sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;#34; Install essential plugins git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions Enable installed plugins Update ~/.zshrc file to enable the installed plugins</description>
     </item>
     
@@ -105,20 +118,9 @@ sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/ma
       
       <guid>https://karthick.it/posts/2020/11/opengl-compositor-crash-fix-restart/</guid>
       <description>A workaround to get rid of x11/compositor crash in KDE 5.x for Intel HD GPUs
- OpenGL-Compositor crash fix on wakeup/unlock event This is a simple workaround to recover from the kde compositor crashes that renders the screen with black artifacts with non-responding UI.
+OpenGL-Compositor crash fix on wakeup/unlock event This is a simple workaround to recover from the kde compositor crashes that renders the screen with black artifacts with non-responding UI.
 The idea is to keep a script running in the background which capture the dbus event of lock/unlock screen to restart kwin window manager.
-Restart script  restart_kwin.</description>
-    </item>
-    
-    <item>
-      <title>Encrypt Decrypt With Gpg</title>
-      <link>https://karthick.it/posts/2020/10/encrypt-decrypt-with-gpg/</link>
-      <pubDate>Fri, 30 Oct 2020 00:00:09 +0530</pubDate>
-      
-      <guid>https://karthick.it/posts/2020/10/encrypt-decrypt-with-gpg/</guid>
-      <description> This article explains encryption and decryption of files using GNU gpg
- Setup GNU gpg Generate Keys gpg --full-generate-key  passphrase is optional  Encrypting a file gpg -e -r &amp;#34;karthickk&amp;#34; .wekan.json  This creates a file with an extension .gpg
- Decrypting a file gpg -o .wekan.json -d .wekan.json.gpg </description>
+Restart script restart_kwin.</description>
     </item>
     
   </channel>

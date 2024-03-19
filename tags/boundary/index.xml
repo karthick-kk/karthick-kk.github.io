@@ -15,10 +15,11 @@
       
       <guid>https://karthick.it/posts/2020/10/hashicorp-boundary-setup-and-demo/</guid>
       <description>This article explain how to setup a boundary server to authenticate/connect to an internal VM
- Boundary Binary Download URL: https://www.boundaryproject.io/downloads
+Boundary Binary Download URL: https://www.boundaryproject.io/downloads
 Boundary Server Boundary server has two components - controller and worker. A simple dev server can be started using boundary dev
 Server Spec VM - Any Network Interfaces:
-- 1 x NAT Network (10.x.x.x) - 1 x Host Only/Bridged Network (192.x.x.x/*)  Setting up Pre-requisite Install Postgresql Create docker-compose.</description>
+- 1 x NAT Network (10.x.x.x) - 1 x Host Only/Bridged Network (192.x.x.x/*) Setting up Pre-requisite Install Postgresql Create docker-compose.yaml
+version: &amp;#39;2&amp;#39; services: postgresql: image: &amp;#39;docker.</description>
     </item>
     
   </channel>
