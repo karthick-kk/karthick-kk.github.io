@@ -9,6 +9,18 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Mon, 10 May 2021 20:11:40 +0530</lastBuildDate><atom:link href="https://karthick.it/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>CV</title>
+      <link>https://karthick.it/resume/</link>
+      <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://karthick.it/resume/</guid>
+      <description>🌀 Karthick K \ DevOps Platform Automation Engineer \ Focused on automating developer experiences, shepherding MLOps launches, and keeping everything secure and repeatable.
+| 📞 +91 98405 85161 | ✉️ karthick.kk@hotmail.com | 🌐 github.com/karthick-kk | 📍 Chennai |
+TL;DR: Driving reliable delivery through automation, IaC, and observability with a sprinkle of AIops insight and vault-secured secrets.
+Snapshot Pillar Focus ⚙️ Core Playbook Multicloud (AWS/Azure/GCP) + Kubernetes + Helm + Virtualization + Orchestration (Ansible/Terraform) + Unix 🧠 Adjacent Strengths Observability, template-driven provisioning, K3S/vCluster efficiency 💡 Impact Cut infra costs by 75%+, accelerated pipelines by 25 - 50%, and replaced manual toil with API-first automation Experience Pulse Year Role &amp;amp; Company Highlight 2021 – Present Senior Infrastructure Automation Engineer · Ericsson Led the MLOps delivery platform, introduced k3s vclusters, vault-first secrets flows, and Helm policies for safe rollouts.</description>
+    </item>
+    
+    <item>
       <title>Tor toggle for Firefox on Arch</title>
       <link>https://karthick.it/posts/2021/05/tor-toggle-for-firefox-on-arch/</link>
       <pubDate>Mon, 10 May 2021 20:11:40 +0530</pubDate>
@@ -109,17 +121,6 @@ sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/ma
 OpenGL-Compositor crash fix on wakeup/unlock event This is a simple workaround to recover from the kde compositor crashes that renders the screen with black artifacts with non-responding UI.
 The idea is to keep a script running in the background which capture the dbus event of lock/unlock screen to restart kwin window manager.
 Restart script restart_kwin.</description>
-    </item>
-    
-    <item>
-      <title>Encrypt Decrypt With Gpg</title>
-      <link>https://karthick.it/posts/2020/10/encrypt-decrypt-with-gpg/</link>
-      <pubDate>Fri, 30 Oct 2020 00:00:09 +0530</pubDate>
-      
-      <guid>https://karthick.it/posts/2020/10/encrypt-decrypt-with-gpg/</guid>
-      <description> This article explains encryption and decryption of files using GNU gpg
-Setup GNU gpg Generate Keys gpg --full-generate-key passphrase is optional Encrypting a file gpg -e -r &amp;#34;karthickk&amp;#34; .wekan.json This creates a file with an extension .gpg
-Decrypting a file gpg -o .wekan.json -d .wekan.json.gpg </description>
     </item>
     
   </channel>
