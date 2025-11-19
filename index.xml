@@ -11,13 +11,12 @@
     <item>
       <title>CV</title>
       <link>https://karthick.it/resume/</link>
-      <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 19 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>https://karthick.it/resume/</guid>
-      <description>🌀 Karthick K \ DevOps Platform Automation Engineer \ Focused on automating developer experiences, shepherding MLOps launches, and keeping everything secure and repeatable.
-| 📞 +91 98405 85161 | ✉️ karthick.kk@hotmail.com | 🌐 github.com/karthick-kk | 📍 Chennai |
-TL;DR: Driving reliable delivery through automation, IaC, and observability with a sprinkle of AIops insight and vault-secured secrets.
-Snapshot Pillar Focus ⚙️ Core Playbook Multicloud (AWS/Azure/GCP) + Kubernetes + Helm + Virtualization + Orchestration (Ansible/Terraform) + Unix 🧠 Adjacent Strengths Observability, template-driven provisioning, K3S/vCluster efficiency 💡 Impact Cut infra costs by 75%+, accelerated pipelines by 25 - 50%, and replaced manual toil with API-first automation Experience Pulse Year Role &amp;amp; Company Highlight 2021 – Present Senior Infrastructure Automation Engineer · Ericsson Led the MLOps delivery platform, introduced k3s vclusters, vault-first secrets flows, and Helm policies for safe rollouts.</description>
+      <description>Karthick K DevOps Platform Automation Engineer +91 9840585161 karthick.kk@hotmail.com https://github.com/karthick-kk Chennai TL;DR - DevOps and Cloud Automation Engineer
+I am currently working as a Senior Infrastructure Automation Engineer at Ericsson, where my area of expertise is streamlining developer workflows and enabling smooth releases. I am passionate about automating complex processes with specialized tooling and strong CI/CD pipelines, and I constantly work to improve operational effectiveness and drive innovation.
+I specialize in developing cutting-edge technologies in MLOps, Containerization, GitOps, and DevSecOps to facilitate continuous deployment and improve project results.</description>
     </item>
     
     <item>
