@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>boundary on Karthick-K</title>
-    <link>https://karthick.it/tags/boundary/</link>
-    <description>Recent content in boundary on Karthick-K</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 28 Oct 2020 14:34:08 +0530</lastBuildDate><atom:link href="https://karthick.it/tags/boundary/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hashicorp Boundary Setup and Demo</title>
-      <link>https://karthick.it/posts/2020/10/hashicorp-boundary-setup-and-demo/</link>
-      <pubDate>Wed, 28 Oct 2020 14:34:08 +0530</pubDate>
-      
-      <guid>https://karthick.it/posts/2020/10/hashicorp-boundary-setup-and-demo/</guid>
-      <description>This article explain how to setup a boundary server to authenticate/connect to an internal VM
-Boundary Binary Download URL: https://www.boundaryproject.io/downloads
-Boundary Server Boundary server has two components - controller and worker. A simple dev server can be started using boundary dev
-Server Spec VM - Any Network Interfaces:
-- 1 x NAT Network (10.x.x.x) - 1 x Host Only/Bridged Network (192.x.x.x/*) Setting up Pre-requisite Install Postgresql Create docker-compose.yaml
-version: &amp;#39;2&amp;#39; services: postgresql: image: &amp;#39;docker.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Boundary on Karthick-K</title>
+		<link>https://karthick.it/tags/boundary/</link>
+		<description>Recent content in Boundary on Karthick-K</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+			<copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+		
+		
+			<lastBuildDate>Wed, 28 Oct 2020 14:34:08 +0530</lastBuildDate>
+		
+			<atom:link href="https://karthick.it/tags/boundary/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Hashicorp Boundary Setup and Demo</title>
+				<link>https://karthick.it/posts/2020/10/hashicorp-boundary-setup-and-demo/</link>
+				<pubDate>Wed, 28 Oct 2020 14:34:08 +0530</pubDate>
+				<guid>https://karthick.it/posts/2020/10/hashicorp-boundary-setup-and-demo/</guid>
+				<description>&lt;hr&gt;&#xA;&lt;p&gt;This article explain how to setup a boundary server to authenticate/connect to an internal VM&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;boundary-binary-download&#34;&gt;Boundary Binary Download&lt;/h2&gt;&#xA;&lt;p&gt;URL: &lt;a href=&#34;https://www.boundaryproject.io/downloads&#34;&gt;https://www.boundaryproject.io/downloads&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;boundary-server&#34;&gt;Boundary Server&lt;/h2&gt;&#xA;&lt;p&gt;Boundary server has two components - controller and worker. A simple dev server can be started using &lt;code&gt;boundary dev&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;server-spec&#34;&gt;Server Spec&lt;/h3&gt;&#xA;&lt;p&gt;VM - Any&#xA;Network Interfaces:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;- 1 x NAT Network (10.x.x.x)&#xA;- 1 x Host Only/Bridged Network (192.x.x.x/*)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h3 id=&#34;setting-up-pre-requisite&#34;&gt;Setting up Pre-requisite&lt;/h3&gt;&#xA;&lt;h4 id=&#34;install-postgresql&#34;&gt;Install Postgresql&lt;/h4&gt;&#xA;&lt;p&gt;Create &lt;code&gt;docker-compose.yaml&lt;/code&gt;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;services&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;postgresql&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;docker.io/bitnami/postgresql:11-debian-10&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;ports&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;5432:5432&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;volumes&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;postgresql_data:/bitnami/postgresql&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;environment&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ALLOW_EMPTY_PASSWORD=yes&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#ae81ff&#34;&gt;POSTGRESQL_USERNAME=postgres&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#ae81ff&#34;&gt;POSTGRESQL_PASSWORD=password123&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#ae81ff&#34;&gt;POSTGRESQL_DATABASE=boundary&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;volumes&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;postgresql_data&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;driver&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;local&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Run postgresql docker&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

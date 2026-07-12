@@ -4,9 +4,10 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="Karthick K ">
-<meta name="description" content="This article explains how to configure tor/onion network for firefox browser on arch linux. Tor browser(https://www.torproject.org) still remains the recommended or easiest means of using tor network for browsing with privacy.
-Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo systemctl enable tor $ sudo systemctl start tor Starting privoxy Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic." />
+<meta name="author" content="">
+<meta name="description" content=" This article explains how to configure tor/onion network for firefox browser on arch linux. Tor browser(https://www.torproject.org) still remains the recommended or easiest means of using tor network for browsing with privacy.
+Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo systemctl enable tor $ sudo systemctl start tor Starting privoxy Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic. Add the line at the end of the file /etc/privoxy/config
+" />
 <meta name="keywords" content=", arch, tor" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
@@ -15,7 +16,7 @@ Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo system
 
     <title>
         
-            Tor toggle for Firefox on Arch :: Karthick-K  — Karthick&#39;s Personal Page
+            Tor toggle for Firefox on Arch :: Karthick-K 
         
     </title>
 
@@ -24,10 +25,12 @@ Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo system
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
+<link rel="stylesheet" type="text/css" href="https://karthick.it/css/main.css">
 
 
-<link rel="stylesheet" href="https://karthick.it/main.cda0b73d8b8a66a6247fc1fd9ec5171067ae813e5bf090ea2633dd14e9a460af.css">
-
+    
+        <link rel="stylesheet" type="text/css" href="css/resume.css">
+    
 
 
 
@@ -42,28 +45,37 @@ Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo system
 
 
 
-<meta itemprop="name" content="Tor toggle for Firefox on Arch">
-<meta itemprop="description" content="This article explains how to configure tor/onion network for firefox browser on arch linux. Tor browser(https://www.torproject.org) still remains the recommended or easiest means of using tor network for browsing with privacy.
-Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo systemctl enable tor $ sudo systemctl start tor Starting privoxy Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic."><meta itemprop="datePublished" content="2021-05-10T20:11:40+05:30" />
-<meta itemprop="dateModified" content="2021-05-10T20:11:40+05:30" />
-<meta itemprop="wordCount" content="135"><meta itemprop="image" content="https://karthick.it"/>
-<meta itemprop="keywords" content="arch,tor," />
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://karthick.it"/>
 
-<meta name="twitter:title" content="Tor toggle for Firefox on Arch"/>
-<meta name="twitter:description" content="This article explains how to configure tor/onion network for firefox browser on arch linux. Tor browser(https://www.torproject.org) still remains the recommended or easiest means of using tor network for browsing with privacy.
-Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo systemctl enable tor $ sudo systemctl start tor Starting privoxy Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic."/>
+	<meta itemprop="name" content="Tor toggle for Firefox on Arch">
+	<meta itemprop="description" content="This article explains how to configure tor/onion network for firefox browser on arch linux. Tor browser(https://www.torproject.org) still remains the recommended or easiest means of using tor network for browsing with privacy.
+Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo systemctl enable tor $ sudo systemctl start tor Starting privoxy Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic. Add the line at the end of the file /etc/privoxy/config">
+	<meta itemprop="datePublished" content="2021-05-10T20:11:40+05:30">
+	<meta itemprop="dateModified" content="2021-05-10T20:11:40+05:30">
+	<meta itemprop="wordCount" content="135">
+	<meta itemprop="image" content="https://karthick.it/">
+	<meta itemprop="keywords" content="Arch,Tor">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://karthick.it/">
+	<meta name="twitter:title" content="Tor toggle for Firefox on Arch">
+	<meta name="twitter:description" content="This article explains how to configure tor/onion network for firefox browser on arch linux. Tor browser(https://www.torproject.org) still remains the recommended or easiest means of using tor network for browsing with privacy.
+Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo systemctl enable tor $ sudo systemctl start tor Starting privoxy Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic. Add the line at the end of the file /etc/privoxy/config">
 
 
 
-    <meta property="og:title" content="Tor toggle for Firefox on Arch" />
-<meta property="og:description" content="This article explains how to configure tor/onion network for firefox browser on arch linux. Tor browser(https://www.torproject.org) still remains the recommended or easiest means of using tor network for browsing with privacy.
-Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo systemctl enable tor $ sudo systemctl start tor Starting privoxy Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://karthick.it/posts/2021/05/tor-toggle-for-firefox-on-arch/" /><meta property="og:image" content="https://karthick.it"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-05-10T20:11:40+05:30" />
-<meta property="article:modified_time" content="2021-05-10T20:11:40+05:30" />
+    <meta property="og:url" content="https://karthick.it/posts/2021/05/tor-toggle-for-firefox-on-arch/">
+	<meta property="og:site_name" content="Karthick-K">
+	<meta property="og:title" content="Tor toggle for Firefox on Arch">
+	<meta property="og:description" content="This article explains how to configure tor/onion network for firefox browser on arch linux. Tor browser(https://www.torproject.org) still remains the recommended or easiest means of using tor network for browsing with privacy.
+Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo systemctl enable tor $ sudo systemctl start tor Starting privoxy Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic. Add the line at the end of the file /etc/privoxy/config">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2021-05-10T20:11:40+05:30">
+		<meta property="article:modified_time" content="2021-05-10T20:11:40+05:30">
+		<meta property="article:tag" content="Arch">
+		<meta property="article:tag" content="Tor">
+		<meta property="og:image" content="https://karthick.it/">
 
 
 
@@ -168,17 +180,17 @@ Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo system
 <p>This article explains how to configure tor/onion network for firefox browser on arch linux. Tor browser(<a href="https://www.torproject.org">https://www.torproject.org</a>) still remains the recommended or easiest means of using tor network for browsing with privacy.</p>
 <hr>
 <h2 id="install-tor-and-privoxy">Install tor and privoxy</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ yay -S tor
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ yay -S tor
 </span></span><span style="display:flex;"><span>$ yay -S privoxy
 </span></span></code></pre></div><h2 id="starting-tor">Starting tor</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ sudo systemctl enable tor
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ sudo systemctl enable tor
 </span></span><span style="display:flex;"><span>$ sudo systemctl start tor
 </span></span></code></pre></div><h2 id="starting-privoxy">Starting privoxy</h2>
 <p>Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic. Add the line at the end of the file <code>/etc/privoxy/config</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>forward-socks5 / localhost:9050 .
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>forward-socks5 / localhost:9050 .
 </span></span></code></pre></div><h2 id="configure-network-proxy-setting">Configure network proxy setting</h2>
 <p>Open Firefox-&gt;Preferences and change the network settings to use the new proxy configuration</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>HTTP Proxy -&gt; localhost Port 8118
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>HTTP Proxy -&gt; localhost Port 8118
 </span></span><span style="display:flex;"><span>SOCKS Host -&gt; localhost Port 9050
 </span></span></code></pre></div><p><img src="https://raw.githubusercontent.com/corestackdev/images/main/image-20210510211801331.png" alt="image-20210510211801331"></p>
 <h2 id="install-proxy-toggle-addon">Install proxy toggle addon</h2>
@@ -356,9 +368,7 @@ Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo system
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2025</span>
-            
-                <span><a href="https://karthick.it">Karthick K</a></span>
+            <span>&copy; 2026</span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
@@ -376,12 +386,7 @@ Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo system
             
         </div>
 
-        
-
-
-
-
-<script type="text/javascript" src="https://karthick.it/bundle.min.8cc3758efe48ef82e2eb9a5f317b44c0805353a43762207be6fe8ffb05815cce7a19d37f6bf387c378a3bdfc3029981668d645374a33db4ee3480e15a4bfdc7c.js" integrity="sha512-jMN1jv5I74Li65pfMXtEwIBTU6Q3YiB75v6P&#43;wWBXM56GdN/a/OHw3ijvfwwKZgWaNZFN0oz207jSA4VpL/cfA=="></script>
+        <script type="text/javascript" src="https://karthick.it/js/bundle.js"></script>
 
 
 

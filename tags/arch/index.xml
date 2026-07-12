@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Arch on Karthick-K</title>
-    <link>https://karthick.it/tags/arch/</link>
-    <description>Recent content in Arch on Karthick-K</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 10 May 2021 20:11:40 +0530</lastBuildDate><atom:link href="https://karthick.it/tags/arch/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Tor toggle for Firefox on Arch</title>
-      <link>https://karthick.it/posts/2021/05/tor-toggle-for-firefox-on-arch/</link>
-      <pubDate>Mon, 10 May 2021 20:11:40 +0530</pubDate>
-      
-      <guid>https://karthick.it/posts/2021/05/tor-toggle-for-firefox-on-arch/</guid>
-      <description>This article explains how to configure tor/onion network for firefox browser on arch linux. Tor browser(https://www.torproject.org) still remains the recommended or easiest means of using tor network for browsing with privacy.
-Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo systemctl enable tor $ sudo systemctl start tor Starting privoxy Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic.</description>
-    </item>
-    
-    <item>
-      <title>Wireless LAN CLI Configuration under Arch Linux</title>
-      <link>https://karthick.it/posts/2021/04/wireless-lan-cli-configuration-under-arch-linux/</link>
-      <pubDate>Fri, 09 Apr 2021 09:19:16 +0530</pubDate>
-      
-      <guid>https://karthick.it/posts/2021/04/wireless-lan-cli-configuration-under-arch-linux/</guid>
-      <description>Steps to configure a wireless adapter to connect to nearby access point by shell commands
-Runbook $ sudo systemctl start iwd $ sudo iwctl --passphrase &amp;lt;secret&amp;gt; station wlan0 connect &amp;lt;accesspoint&amp;gt; $ sudo systemctl start dhcpcd@wlan0 </description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Arch on Karthick-K</title>
+		<link>https://karthick.it/tags/arch/</link>
+		<description>Recent content in Arch on Karthick-K</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+			<copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+		
+		
+			<lastBuildDate>Mon, 10 May 2021 20:11:40 +0530</lastBuildDate>
+		
+			<atom:link href="https://karthick.it/tags/arch/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Tor toggle for Firefox on Arch</title>
+				<link>https://karthick.it/posts/2021/05/tor-toggle-for-firefox-on-arch/</link>
+				<pubDate>Mon, 10 May 2021 20:11:40 +0530</pubDate>
+				<guid>https://karthick.it/posts/2021/05/tor-toggle-for-firefox-on-arch/</guid>
+				<description>&lt;hr&gt;&#xA;&lt;p&gt;This article explains how to configure tor/onion network for firefox browser on arch linux. Tor browser(&lt;a href=&#34;https://www.torproject.org&#34;&gt;https://www.torproject.org&lt;/a&gt;) still remains the recommended or easiest means of using tor network for browsing with privacy.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;install-tor-and-privoxy&#34;&gt;Install tor and privoxy&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ yay -S tor&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ yay -S privoxy&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;starting-tor&#34;&gt;Starting tor&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo systemctl enable tor&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo systemctl start tor&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;starting-privoxy&#34;&gt;Starting privoxy&lt;/h2&gt;&#xA;&lt;p&gt;Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic. Add the line at the end of the file &lt;code&gt;/etc/privoxy/config&lt;/code&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Wireless LAN CLI Configuration under Arch Linux</title>
+				<link>https://karthick.it/posts/2021/04/wireless-lan-cli-configuration-under-arch-linux/</link>
+				<pubDate>Fri, 09 Apr 2021 09:19:16 +0530</pubDate>
+				<guid>https://karthick.it/posts/2021/04/wireless-lan-cli-configuration-under-arch-linux/</guid>
+				<description>&lt;p&gt;Steps to configure a wireless adapter to connect to nearby access point by shell commands&lt;/p&gt;&#xA;&lt;h4 id=&#34;runbook&#34;&gt;Runbook&lt;/h4&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo systemctl start iwd&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo iwctl --passphrase &amp;lt;secret&amp;gt; station wlan0 connect &amp;lt;accesspoint&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo systemctl start dhcpcd@wlan0&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+			</item>
+	</channel>
 </rss>

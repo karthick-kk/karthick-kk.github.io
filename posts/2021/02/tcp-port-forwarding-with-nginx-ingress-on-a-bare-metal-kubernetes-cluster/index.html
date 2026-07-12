@@ -4,8 +4,9 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="Karthick K ">
-<meta name="description" content="Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing. If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap." />
+<meta name="author" content="">
+<meta name="description" content=" Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing. If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap. This article covers them each and is applicable for k8s cluster running on cloud/on-premise.
+" />
 <meta name="keywords" content=", Configuration" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
@@ -14,7 +15,7 @@
 
     <title>
         
-            TCP Port Forwarding with Nginx Ingress on a Bare Metal Kubernetes Cluster :: Karthick-K  — Karthick&#39;s Personal Page
+            TCP Port Forwarding with Nginx Ingress on a Bare Metal Kubernetes Cluster :: Karthick-K 
         
     </title>
 
@@ -23,10 +24,12 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
+<link rel="stylesheet" type="text/css" href="https://karthick.it/css/main.css">
 
 
-<link rel="stylesheet" href="https://karthick.it/main.cda0b73d8b8a66a6247fc1fd9ec5171067ae813e5bf090ea2633dd14e9a460af.css">
-
+    
+        <link rel="stylesheet" type="text/css" href="css/resume.css">
+    
 
 
 
@@ -41,25 +44,33 @@
 
 
 
-<meta itemprop="name" content="TCP Port Forwarding with Nginx Ingress on a Bare Metal Kubernetes Cluster">
-<meta itemprop="description" content="Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing. If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap."><meta itemprop="datePublished" content="2021-02-18T15:19:18+05:30" />
-<meta itemprop="dateModified" content="2021-02-18T15:19:18+05:30" />
-<meta itemprop="wordCount" content="434"><meta itemprop="image" content="https://karthick.it"/>
-<meta itemprop="keywords" content="Configuration," />
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://karthick.it"/>
 
-<meta name="twitter:title" content="TCP Port Forwarding with Nginx Ingress on a Bare Metal Kubernetes Cluster"/>
-<meta name="twitter:description" content="Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing. If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap."/>
+	<meta itemprop="name" content="TCP Port Forwarding with Nginx Ingress on a Bare Metal Kubernetes Cluster">
+	<meta itemprop="description" content="Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing. If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap. This article covers them each and is applicable for k8s cluster running on cloud/on-premise.">
+	<meta itemprop="datePublished" content="2021-02-18T15:19:18+05:30">
+	<meta itemprop="dateModified" content="2021-02-18T15:19:18+05:30">
+	<meta itemprop="wordCount" content="434">
+	<meta itemprop="image" content="https://karthick.it/">
+	<meta itemprop="keywords" content="Configuration">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://karthick.it/">
+	<meta name="twitter:title" content="TCP Port Forwarding with Nginx Ingress on a Bare Metal Kubernetes Cluster">
+	<meta name="twitter:description" content="Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing. If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap. This article covers them each and is applicable for k8s cluster running on cloud/on-premise.">
 
 
 
-    <meta property="og:title" content="TCP Port Forwarding with Nginx Ingress on a Bare Metal Kubernetes Cluster" />
-<meta property="og:description" content="Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing. If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://karthick.it/posts/2021/02/tcp-port-forwarding-with-nginx-ingress-on-a-bare-metal-kubernetes-cluster/" /><meta property="og:image" content="https://karthick.it"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-02-18T15:19:18+05:30" />
-<meta property="article:modified_time" content="2021-02-18T15:19:18+05:30" />
+    <meta property="og:url" content="https://karthick.it/posts/2021/02/tcp-port-forwarding-with-nginx-ingress-on-a-bare-metal-kubernetes-cluster/">
+	<meta property="og:site_name" content="Karthick-K">
+	<meta property="og:title" content="TCP Port Forwarding with Nginx Ingress on a Bare Metal Kubernetes Cluster">
+	<meta property="og:description" content="Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing. If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap. This article covers them each and is applicable for k8s cluster running on cloud/on-premise.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2021-02-18T15:19:18+05:30">
+		<meta property="article:modified_time" content="2021-02-18T15:19:18+05:30">
+		<meta property="article:tag" content="Configuration">
+		<meta property="og:image" content="https://karthick.it/">
 
 
 
@@ -175,10 +186,10 @@ If we need to get our services running on specific port number for external acce
 <h2 id="install-nginx-ingress-controller">Install Nginx Ingress Controller</h2>
 <p>Remove existing nginx controller configuration through helm or <code>kubectl delete ns ingress-nginx</code></p>
 <h3 id="install-nginx-ingress">Install nginx ingress</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.44.0/deploy/static/provider/baremetal/deploy.yaml
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.44.0/deploy/static/provider/baremetal/deploy.yaml
 </span></span></code></pre></div><h2 id="configuration-updates">Configuration Updates</h2>
 <h3 id="update-nginx-service-configuration">Update nginx service configuration</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl edit service/ingress-nginx-controller -n ingress-nginx
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl edit service/ingress-nginx-controller -n ingress-nginx
 </span></span></code></pre></div><ul>
 <li>
 <p>The Ingress service type is set to NodePort. This has to be modified and set to LoadBalancer type <code>type: LoadBalancer</code></p>
@@ -191,7 +202,7 @@ If we need to get our services running on specific port number for external acce
 </li>
 </ul>
 <p>To expose rabbitmq application ports, these are the typical changes</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">clusterIP</span>: <span style="color:#ae81ff">10.43.198.64</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">externalIPs</span>:
 </span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">10.128.0.13</span>
@@ -224,7 +235,7 @@ If we need to get our services running on specific port number for external acce
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">sessionAffinity</span>: <span style="color:#ae81ff">None</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">LoadBalancer</span>
 </span></span></code></pre></div><h3 id="update-nginx-deployment-configuration">Update nginx Deployment configuration</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl edit deployment.apps/ingress-nginx-controller -n ingress-nginx
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl edit deployment.apps/ingress-nginx-controller -n ingress-nginx
 </span></span></code></pre></div><ul>
 <li>
 <p>Update the controller args to support tcp and udp services.</p>
@@ -233,7 +244,7 @@ If we need to get our services running on specific port number for external acce
 <p><strong>&ndash;udp-services-configmap=$(POD_NAMESPACE)/udp-services</strong></p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>    <span style="color:#f92672">spec</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>    <span style="color:#f92672">spec</span>:
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">containers</span>:
 </span></span><span style="display:flex;"><span>      - <span style="color:#f92672">args</span>:
 </span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">/nginx-ingress-controller</span>
@@ -248,7 +259,7 @@ If we need to get our services running on specific port number for external acce
 </span></span></code></pre></div><ul>
 <li>Add the ports to open up on controller pod(s)</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>        <span style="color:#f92672">ports</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>        <span style="color:#f92672">ports</span>:
 </span></span><span style="display:flex;"><span>        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">80</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">http</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
@@ -266,7 +277,7 @@ If we need to get our services running on specific port number for external acce
 </span></span><span style="display:flex;"><span>          <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
 </span></span></code></pre></div><h3 id="configmap-changes">ConfigMap Changes</h3>
 <p>Create a configmap data for the custom ports - configmap-port-expose.yaml</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">tcp-services</span>
@@ -277,7 +288,7 @@ If we need to get our services running on specific port number for external acce
 </span></span></code></pre></div><p>Refers - <code>rabbitmq</code> namespace and <code>rabbittestha-rabbitmq</code> service within that namespace</p>
 <h2 id="testing">Testing</h2>
 <p>Connect to the TCP port using telnet and node IP</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ telnet 10.128.0.13 <span style="color:#ae81ff">15672</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ telnet 10.128.0.13 <span style="color:#ae81ff">15672</span>
 </span></span><span style="display:flex;"><span>Trying 10.128.0.13...
 </span></span><span style="display:flex;"><span>Connected to 10.128.0.13.
 </span></span><span style="display:flex;"><span>Escape character is <span style="color:#e6db74">&#39;^]&#39;</span>.
@@ -462,9 +473,7 @@ If we need to get our services running on specific port number for external acce
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2025</span>
-            
-                <span><a href="https://karthick.it">Karthick K</a></span>
+            <span>&copy; 2026</span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
@@ -482,12 +491,7 @@ If we need to get our services running on specific port number for external acce
             
         </div>
 
-        
-
-
-
-
-<script type="text/javascript" src="https://karthick.it/bundle.min.8cc3758efe48ef82e2eb9a5f317b44c0805353a43762207be6fe8ffb05815cce7a19d37f6bf387c378a3bdfc3029981668d645374a33db4ee3480e15a4bfdc7c.js" integrity="sha512-jMN1jv5I74Li65pfMXtEwIBTU6Q3YiB75v6P&#43;wWBXM56GdN/a/OHw3ijvfwwKZgWaNZFN0oz207jSA4VpL/cfA=="></script>
+        <script type="text/javascript" src="https://karthick.it/js/bundle.js"></script>
 
 
 

@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Upgrade on Karthick-K</title>
-    <link>https://karthick.it/tags/upgrade/</link>
-    <description>Recent content in Upgrade on Karthick-K</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 12 Feb 2021 10:15:03 +0530</lastBuildDate><atom:link href="https://karthick.it/tags/upgrade/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Awx Upgrade Docker</title>
-      <link>https://karthick.it/posts/2021/02/awx-upgrade-docker/</link>
-      <pubDate>Fri, 12 Feb 2021 10:15:03 +0530</pubDate>
-      
-      <guid>https://karthick.it/posts/2021/02/awx-upgrade-docker/</guid>
-      <description>This article explains upgrade of awx services running on docker.
-Stop AWX Services In some case, tag latest needs to be replaced with current version running on the system.
-docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest docker stop awx_web docker rm awx_web docker rmi ansible/awx_web:latest Backup Inventory File cp ~/awx/installer/inventory ~/inventory Refresh AWX Code cd ~/awx/installer git stash git pull cd installer Run Upgrade export GPG_TTY=$(tty) cd installer # Review inventory (Update passwords and vars from backed up inventory file) ansible-playbook -i inventory install.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Upgrade on Karthick-K</title>
+		<link>https://karthick.it/tags/upgrade/</link>
+		<description>Recent content in Upgrade on Karthick-K</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+			<copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+		
+		
+			<lastBuildDate>Fri, 12 Feb 2021 10:15:03 +0530</lastBuildDate>
+		
+			<atom:link href="https://karthick.it/tags/upgrade/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Awx Upgrade Docker</title>
+				<link>https://karthick.it/posts/2021/02/awx-upgrade-docker/</link>
+				<pubDate>Fri, 12 Feb 2021 10:15:03 +0530</pubDate>
+				<guid>https://karthick.it/posts/2021/02/awx-upgrade-docker/</guid>
+				<description>&lt;hr&gt;&#xA;&lt;p&gt;This article explains upgrade of awx services running on docker.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;stop-awx-services&#34;&gt;Stop AWX Services&lt;/h2&gt;&#xA;&lt;p&gt;In some case, tag &lt;code&gt;latest&lt;/code&gt; needs to be replaced with current version running on the system.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker stop awx_task&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker rm awx_task&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker rmi ansible/awx_task:latest&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker stop awx_web&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker rm awx_web&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker rmi ansible/awx_web:latest&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;backup-inventory-file&#34;&gt;Backup Inventory File&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cp ~/awx/installer/inventory ~/inventory&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;refresh-awx-code&#34;&gt;Refresh AWX Code&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd ~/awx/installer&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git stash&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git pull&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd installer&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;run-upgrade&#34;&gt;Run Upgrade&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;export GPG_TTY=$(tty)&#xA;cd installer&#xA;# Review inventory (Update passwords and vars from backed up inventory file)&#xA;ansible-playbook -i inventory install.yml&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;&#xA;&lt;p&gt;If prompted for passphrase input, provide docker hub login password&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

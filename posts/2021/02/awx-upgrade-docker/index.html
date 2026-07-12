@@ -4,10 +4,11 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="Karthick K ">
-<meta name="description" content="This article explains upgrade of awx services running on docker.
+<meta name="author" content="">
+<meta name="description" content=" This article explains upgrade of awx services running on docker.
 Stop AWX Services In some case, tag latest needs to be replaced with current version running on the system.
-docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest docker stop awx_web docker rm awx_web docker rmi ansible/awx_web:latest Backup Inventory File cp ~/awx/installer/inventory ~/inventory Refresh AWX Code cd ~/awx/installer git stash git pull cd installer Run Upgrade export GPG_TTY=$(tty) cd installer # Review inventory (Update passwords and vars from backed up inventory file) ansible-playbook -i inventory install." />
+docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest docker stop awx_web docker rm awx_web docker rmi ansible/awx_web:latest Backup Inventory File cp ~/awx/installer/inventory ~/inventory Refresh AWX Code cd ~/awx/installer git stash git pull cd installer Run Upgrade export GPG_TTY=$(tty) cd installer # Review inventory (Update passwords and vars from backed up inventory file) ansible-playbook -i inventory install.yml If prompted for passphrase input, provide docker hub login password
+" />
 <meta name="keywords" content=", Upgrade" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
@@ -16,7 +17,7 @@ docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest docke
 
     <title>
         
-            Awx Upgrade Docker :: Karthick-K  — Karthick&#39;s Personal Page
+            Awx Upgrade Docker :: Karthick-K 
         
     </title>
 
@@ -25,10 +26,12 @@ docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest docke
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
+<link rel="stylesheet" type="text/css" href="https://karthick.it/css/main.css">
 
 
-<link rel="stylesheet" href="https://karthick.it/main.cda0b73d8b8a66a6247fc1fd9ec5171067ae813e5bf090ea2633dd14e9a460af.css">
-
+    
+        <link rel="stylesheet" type="text/css" href="css/resume.css">
+    
 
 
 
@@ -43,31 +46,39 @@ docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest docke
 
 
 
-<meta itemprop="name" content="Awx Upgrade Docker">
-<meta itemprop="description" content="This article explains upgrade of awx services running on docker.
+
+	<meta itemprop="name" content="Awx Upgrade Docker">
+	<meta itemprop="description" content="This article explains upgrade of awx services running on docker.
 Stop AWX Services In some case, tag latest needs to be replaced with current version running on the system.
-docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest docker stop awx_web docker rm awx_web docker rmi ansible/awx_web:latest Backup Inventory File cp ~/awx/installer/inventory ~/inventory Refresh AWX Code cd ~/awx/installer git stash git pull cd installer Run Upgrade export GPG_TTY=$(tty) cd installer # Review inventory (Update passwords and vars from backed up inventory file) ansible-playbook -i inventory install."><meta itemprop="datePublished" content="2021-02-12T10:15:03+05:30" />
-<meta itemprop="dateModified" content="2021-02-12T10:15:03+05:30" />
-<meta itemprop="wordCount" content="104"><meta itemprop="image" content="https://karthick.it"/>
-<meta itemprop="keywords" content="Upgrade," />
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://karthick.it"/>
+docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest docker stop awx_web docker rm awx_web docker rmi ansible/awx_web:latest Backup Inventory File cp ~/awx/installer/inventory ~/inventory Refresh AWX Code cd ~/awx/installer git stash git pull cd installer Run Upgrade export GPG_TTY=$(tty) cd installer # Review inventory (Update passwords and vars from backed up inventory file) ansible-playbook -i inventory install.yml If prompted for passphrase input, provide docker hub login password">
+	<meta itemprop="datePublished" content="2021-02-12T10:15:03+05:30">
+	<meta itemprop="dateModified" content="2021-02-12T10:15:03+05:30">
+	<meta itemprop="wordCount" content="104">
+	<meta itemprop="image" content="https://karthick.it/">
+	<meta itemprop="keywords" content="Upgrade">
 
-<meta name="twitter:title" content="Awx Upgrade Docker"/>
-<meta name="twitter:description" content="This article explains upgrade of awx services running on docker.
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://karthick.it/">
+	<meta name="twitter:title" content="Awx Upgrade Docker">
+	<meta name="twitter:description" content="This article explains upgrade of awx services running on docker.
 Stop AWX Services In some case, tag latest needs to be replaced with current version running on the system.
-docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest docker stop awx_web docker rm awx_web docker rmi ansible/awx_web:latest Backup Inventory File cp ~/awx/installer/inventory ~/inventory Refresh AWX Code cd ~/awx/installer git stash git pull cd installer Run Upgrade export GPG_TTY=$(tty) cd installer # Review inventory (Update passwords and vars from backed up inventory file) ansible-playbook -i inventory install."/>
+docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest docker stop awx_web docker rm awx_web docker rmi ansible/awx_web:latest Backup Inventory File cp ~/awx/installer/inventory ~/inventory Refresh AWX Code cd ~/awx/installer git stash git pull cd installer Run Upgrade export GPG_TTY=$(tty) cd installer # Review inventory (Update passwords and vars from backed up inventory file) ansible-playbook -i inventory install.yml If prompted for passphrase input, provide docker hub login password">
 
 
 
-    <meta property="og:title" content="Awx Upgrade Docker" />
-<meta property="og:description" content="This article explains upgrade of awx services running on docker.
+    <meta property="og:url" content="https://karthick.it/posts/2021/02/awx-upgrade-docker/">
+	<meta property="og:site_name" content="Karthick-K">
+	<meta property="og:title" content="Awx Upgrade Docker">
+	<meta property="og:description" content="This article explains upgrade of awx services running on docker.
 Stop AWX Services In some case, tag latest needs to be replaced with current version running on the system.
-docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest docker stop awx_web docker rm awx_web docker rmi ansible/awx_web:latest Backup Inventory File cp ~/awx/installer/inventory ~/inventory Refresh AWX Code cd ~/awx/installer git stash git pull cd installer Run Upgrade export GPG_TTY=$(tty) cd installer # Review inventory (Update passwords and vars from backed up inventory file) ansible-playbook -i inventory install." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://karthick.it/posts/2021/02/awx-upgrade-docker/" /><meta property="og:image" content="https://karthick.it"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-02-12T10:15:03+05:30" />
-<meta property="article:modified_time" content="2021-02-12T10:15:03+05:30" />
+docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest docker stop awx_web docker rm awx_web docker rmi ansible/awx_web:latest Backup Inventory File cp ~/awx/installer/inventory ~/inventory Refresh AWX Code cd ~/awx/installer git stash git pull cd installer Run Upgrade export GPG_TTY=$(tty) cd installer # Review inventory (Update passwords and vars from backed up inventory file) ansible-playbook -i inventory install.yml If prompted for passphrase input, provide docker hub login password">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2021-02-12T10:15:03+05:30">
+		<meta property="article:modified_time" content="2021-02-12T10:15:03+05:30">
+		<meta property="article:tag" content="Upgrade">
+		<meta property="og:image" content="https://karthick.it/">
 
 
 
@@ -173,7 +184,7 @@ docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest docke
 <hr>
 <h2 id="stop-awx-services">Stop AWX Services</h2>
 <p>In some case, tag <code>latest</code> needs to be replaced with current version running on the system.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker stop awx_task
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker stop awx_task
 </span></span><span style="display:flex;"><span>docker rm awx_task
 </span></span><span style="display:flex;"><span>docker rmi ansible/awx_task:latest
 </span></span><span style="display:flex;"><span>
@@ -181,9 +192,9 @@ docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest docke
 </span></span><span style="display:flex;"><span>docker rm awx_web
 </span></span><span style="display:flex;"><span>docker rmi ansible/awx_web:latest
 </span></span></code></pre></div><h2 id="backup-inventory-file">Backup Inventory File</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cp ~/awx/installer/inventory ~/inventory
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cp ~/awx/installer/inventory ~/inventory
 </span></span></code></pre></div><h2 id="refresh-awx-code">Refresh AWX Code</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cd ~/awx/installer
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cd ~/awx/installer
 </span></span><span style="display:flex;"><span>git stash
 </span></span><span style="display:flex;"><span>git pull
 </span></span><span style="display:flex;"><span>cd installer
@@ -196,7 +207,7 @@ ansible-playbook -i inventory install.yml
 <p>If prompted for passphrase input, provide docker hub login password</p>
 </blockquote>
 <h2 id="start-awx-services">Start AWX Services</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cd ~/.awx/awxcompose
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cd ~/.awx/awxcompose
 </span></span><span style="display:flex;"><span>docker-compose up -d
 </span></span></code></pre></div>
       </div>
@@ -376,9 +387,7 @@ ansible-playbook -i inventory install.yml
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2025</span>
-            
-                <span><a href="https://karthick.it">Karthick K</a></span>
+            <span>&copy; 2026</span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
@@ -396,12 +405,7 @@ ansible-playbook -i inventory install.yml
             
         </div>
 
-        
-
-
-
-
-<script type="text/javascript" src="https://karthick.it/bundle.min.8cc3758efe48ef82e2eb9a5f317b44c0805353a43762207be6fe8ffb05815cce7a19d37f6bf387c378a3bdfc3029981668d645374a33db4ee3480e15a4bfdc7c.js" integrity="sha512-jMN1jv5I74Li65pfMXtEwIBTU6Q3YiB75v6P&#43;wWBXM56GdN/a/OHw3ijvfwwKZgWaNZFN0oz207jSA4VpL/cfA=="></script>
+        <script type="text/javascript" src="https://karthick.it/js/bundle.js"></script>
 
 
 

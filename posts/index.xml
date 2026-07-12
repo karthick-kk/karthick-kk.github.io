@@ -15,23 +15,32 @@
             <pubDate>Mon, 10 May 2021 20:11:40 +0530</pubDate>
             
             <guid>https://karthick.it/posts/2021/05/tor-toggle-for-firefox-on-arch/</guid>
-            <description>This article explains how to configure tor/onion network for firefox browser on arch linux. Tor browser(https://www.torproject.org) still remains the recommended or easiest means of using tor network for browsing with privacy.
-Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo systemctl enable tor $ sudo systemctl start tor Starting privoxy Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic.</description>
+            <description>&lt;hr&gt;
+&lt;p&gt;This article explains how to configure tor/onion network for firefox browser on arch linux. Tor browser(&lt;a href=&#34;https://www.torproject.org&#34;&gt;https://www.torproject.org&lt;/a&gt;) still remains the recommended or easiest means of using tor network for browsing with privacy.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;install-tor-and-privoxy&#34;&gt;Install tor and privoxy&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ yay -S tor
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ yay -S privoxy
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;starting-tor&#34;&gt;Starting tor&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo systemctl enable tor
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo systemctl start tor
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;starting-privoxy&#34;&gt;Starting privoxy&lt;/h2&gt;
+&lt;p&gt;Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic. Add the line at the end of the file &lt;code&gt;/etc/privoxy/config&lt;/code&gt;&lt;/p&gt;</description>
             <content type="html"><![CDATA[<hr>
 <p>This article explains how to configure tor/onion network for firefox browser on arch linux. Tor browser(<a href="https://www.torproject.org">https://www.torproject.org</a>) still remains the recommended or easiest means of using tor network for browsing with privacy.</p>
 <hr>
 <h2 id="install-tor-and-privoxy">Install tor and privoxy</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ yay -S tor
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ yay -S tor
 </span></span><span style="display:flex;"><span>$ yay -S privoxy
 </span></span></code></pre></div><h2 id="starting-tor">Starting tor</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ sudo systemctl enable tor
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ sudo systemctl enable tor
 </span></span><span style="display:flex;"><span>$ sudo systemctl start tor
 </span></span></code></pre></div><h2 id="starting-privoxy">Starting privoxy</h2>
 <p>Tor client runs on port 9050. Privoxy should be configured to use this socks port to forward all http/https traffic. Add the line at the end of the file <code>/etc/privoxy/config</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>forward-socks5 / localhost:9050 .
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>forward-socks5 / localhost:9050 .
 </span></span></code></pre></div><h2 id="configure-network-proxy-setting">Configure network proxy setting</h2>
 <p>Open Firefox-&gt;Preferences and change the network settings to use the new proxy configuration</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>HTTP Proxy -&gt; localhost Port 8118
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>HTTP Proxy -&gt; localhost Port 8118
 </span></span><span style="display:flex;"><span>SOCKS Host -&gt; localhost Port 9050
 </span></span></code></pre></div><p><img src="https://raw.githubusercontent.com/corestackdev/images/main/image-20210510211801331.png" alt="image-20210510211801331"></p>
 <h2 id="install-proxy-toggle-addon">Install proxy toggle addon</h2>
@@ -46,9 +55,12 @@ Install tor and privoxy $ yay -S tor $ yay -S privoxy Starting tor $ sudo system
             <pubDate>Thu, 29 Apr 2021 17:58:48 +0530</pubDate>
             
             <guid>https://karthick.it/posts/2021/04/running-github-actions-locally/</guid>
-            <description>Actions are usually developed in the GitHub repository where the project itself is hosted. It is often required to modify these workflows multiple times during its development. This requires a commit to the repo everytime to execute/trigger these workflows.
-ACT ACT is an opensource project that allows us to test these github workflows locally rather than updating the workflow file directly on the github repository.
-Refer README for the installation of act.</description>
+            <description>&lt;hr&gt;
+&lt;p&gt;Actions are usually developed in the GitHub repository where the project itself is hosted. It is often required to modify these workflows multiple times during its development. This requires a commit to the repo everytime to execute/trigger these workflows.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;act&#34;&gt;ACT&lt;/h2&gt;
+&lt;p&gt;ACT is an opensource project that allows us to test these github workflows locally rather than updating the workflow file directly on the github repository.&lt;/p&gt;
+&lt;p&gt;Refer README for the installation of act.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<hr>
 <p>Actions are usually developed in the GitHub repository where the project itself is hosted. It is often required to modify these workflows multiple times during its development. This requires a commit to the repo everytime to execute/trigger these workflows.</p>
 <hr>
@@ -63,9 +75,9 @@ Refer README for the installation of act.</description>
 <p>Most images from docker hub are capable of running the workflows. Runner defined in the workflow file can be superseeded by a custom docker image as an argument in CLI.</p>
 <h2 id="executiontesting-the-workflow">Execution/Testing the Workflow</h2>
 <p>Start by cloning the github repository where the github actions are created.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ git clone &lt;git url&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ git clone &lt;git url&gt;
 </span></span></code></pre></div><p>Change directory to the cloned git path and execute the runner</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ act -r --secret-file ~/dev/act/secrets -P self-hosted<span style="color:#f92672">=</span>karthickk/github-runner:latest
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ act -r --secret-file ~/dev/act/secrets -P self-hosted<span style="color:#f92672">=</span>karthickk/github-runner:latest
 </span></span></code></pre></div><ul>
 <li>-r - enable re-using the same docker image for successive runs</li>
 <li>&ndash;secret-file - file which holds the secrets</li>
@@ -73,7 +85,7 @@ Refer README for the installation of act.</description>
 </ul>
 <h2 id="limitations">Limitations</h2>
 <p>The workflows runs against the latest commit code. GitHub actions cannot be triggered based on a commit ID. However, below is a workaround to run the workflow/action against a  specific commit.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ cd &lt;git cloned path&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ cd &lt;git cloned path&gt;
 </span></span><span style="display:flex;"><span>$ git reset –hard &lt;commit-hash&gt;
 </span></span><span style="display:flex;"><span>$ act -r --secret-file ~/dev/act/secrets -P self-hosted<span style="color:#f92672">=</span>karthickk/github-runner:latest
 </span></span></code></pre></div>]]></content>
@@ -85,11 +97,15 @@ Refer README for the installation of act.</description>
             <pubDate>Fri, 09 Apr 2021 09:19:16 +0530</pubDate>
             
             <guid>https://karthick.it/posts/2021/04/wireless-lan-cli-configuration-under-arch-linux/</guid>
-            <description>Steps to configure a wireless adapter to connect to nearby access point by shell commands
-Runbook $ sudo systemctl start iwd $ sudo iwctl --passphrase &amp;lt;secret&amp;gt; station wlan0 connect &amp;lt;accesspoint&amp;gt; $ sudo systemctl start dhcpcd@wlan0 </description>
+            <description>&lt;p&gt;Steps to configure a wireless adapter to connect to nearby access point by shell commands&lt;/p&gt;
+&lt;h4 id=&#34;runbook&#34;&gt;Runbook&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo systemctl start iwd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo iwctl --passphrase &amp;lt;secret&amp;gt; station wlan0 connect &amp;lt;accesspoint&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo systemctl start dhcpcd@wlan0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
             <content type="html"><![CDATA[<p>Steps to configure a wireless adapter to connect to nearby access point by shell commands</p>
 <h4 id="runbook">Runbook</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ sudo systemctl start iwd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ sudo systemctl start iwd
 </span></span><span style="display:flex;"><span>$ sudo iwctl --passphrase &lt;secret&gt; station wlan0 connect &lt;accesspoint&gt;
 </span></span><span style="display:flex;"><span>$ sudo systemctl start dhcpcd@wlan0
 </span></span></code></pre></div>]]></content>
@@ -101,15 +117,26 @@ Runbook $ sudo systemctl start iwd $ sudo iwctl --passphrase &amp;lt;secret&amp;
             <pubDate>Tue, 23 Feb 2021 14:29:17 +0530</pubDate>
             
             <guid>https://karthick.it/posts/2021/02/converting-virtualbox-ova-to-vmware-compatible-ovf/</guid>
-            <description>This guide use the possible freeware tools to perform the conversion.
-Conversion Need? Virtualbox does not generate Vmware Cloud/Vmware ESXi compatible OVA/OVF files
-Tools Required Vmware Player
-ovftool
-** VMware account needed to download (free to signup) **
-Conversion Process Step 1:
-Export the VM as OVA from virtualbox
-Step 2:
-Import the OVA on to installed VMware player. When prompted to retry/cancel, proceed with retry importing, ignoring the warning messages any.</description>
+            <description>&lt;hr&gt;
+&lt;p&gt;This guide use the possible freeware tools to perform the conversion.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;conversion-need&#34;&gt;Conversion Need?&lt;/h2&gt;
+&lt;p&gt;Virtualbox does not generate Vmware Cloud/Vmware ESXi compatible OVA/OVF files&lt;/p&gt;
+&lt;h2 id=&#34;tools-required&#34;&gt;Tools Required&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Vmware Player&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ovftool&lt;/p&gt;
+&lt;p&gt;** VMware account needed to download (free to signup) **&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;conversion-process&#34;&gt;Conversion Process&lt;/h2&gt;
+&lt;p&gt;Step 1:&lt;/p&gt;
+&lt;p&gt;Export the VM as OVA from virtualbox&lt;/p&gt;
+&lt;p&gt;Step 2:&lt;/p&gt;
+&lt;p&gt;Import the OVA on to installed VMware player. When prompted to retry/cancel, proceed with retry importing, ignoring the warning messages any.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<hr>
 <p>This guide use the possible freeware tools to perform the conversion.</p>
 <hr>
@@ -132,7 +159,7 @@ Import the OVA on to installed VMware player. When prompted to retry/cancel, pro
 <p>Import the OVA on to installed VMware player. When prompted to retry/cancel, proceed with retry importing, ignoring the warning messages any.</p>
 <p>Step 3:</p>
 <p>Run the ovftool to generate the .ovf,.mf and .vmdk files of the imported VM</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ovftool ~/vmware/OL8/OL8.vmx ~/ol8-vmware-exported.ovf                           
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ovftool ~/vmware/OL8/OL8.vmx ~/ol8-vmware-exported.ovf                           
 </span></span><span style="display:flex;"><span>Opening VMX source: /home/karthick-k/vmware/OL8/OL8.vmx
 </span></span><span style="display:flex;"><span>Opening OVF target: /home/karthick-k/ol8-vmware-exported.ovf
 </span></span><span style="display:flex;"><span>Writing OVF package: /home/karthick-k/ol8-vmware-exported.ovf
@@ -159,7 +186,9 @@ Import the OVA on to installed VMware player. When prompted to retry/cancel, pro
             <pubDate>Thu, 18 Feb 2021 15:19:18 +0530</pubDate>
             
             <guid>https://karthick.it/posts/2021/02/tcp-port-forwarding-with-nginx-ingress-on-a-bare-metal-kubernetes-cluster/</guid>
-            <description>Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or kubectl port-forward procedure. The former runs on port numbers above 30000 and the later is commonly used for testing. If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap.</description>
+            <description>&lt;hr&gt;
+&lt;p&gt;Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or &lt;code&gt;kubectl port-forward&lt;/code&gt; procedure. The former runs on port numbers above 30000 and the later is commonly used for testing.
+If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap. This article covers them each and is applicable for k8s cluster running on cloud/on-premise.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<hr>
 <p>Ingress is meant for 80 and 443 traffic redirects to services running within the cluster. Exposing a service to outside world other than the HTTP traffic is normally done by NodePort service or <code>kubectl port-forward</code> procedure. The former runs on port numbers above 30000 and the later is commonly used for testing.
 If we need to get our services running on specific port number for external access, then additional configurations are required on the ingress deployment,service and configmap. This article covers them each and is applicable for k8s cluster running on cloud/on-premise.</p>
@@ -167,10 +196,10 @@ If we need to get our services running on specific port number for external acce
 <h2 id="install-nginx-ingress-controller">Install Nginx Ingress Controller</h2>
 <p>Remove existing nginx controller configuration through helm or <code>kubectl delete ns ingress-nginx</code></p>
 <h3 id="install-nginx-ingress">Install nginx ingress</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.44.0/deploy/static/provider/baremetal/deploy.yaml
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.44.0/deploy/static/provider/baremetal/deploy.yaml
 </span></span></code></pre></div><h2 id="configuration-updates">Configuration Updates</h2>
 <h3 id="update-nginx-service-configuration">Update nginx service configuration</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl edit service/ingress-nginx-controller -n ingress-nginx
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl edit service/ingress-nginx-controller -n ingress-nginx
 </span></span></code></pre></div><ul>
 <li>
 <p>The Ingress service type is set to NodePort. This has to be modified and set to LoadBalancer type <code>type: LoadBalancer</code></p>
@@ -183,7 +212,7 @@ If we need to get our services running on specific port number for external acce
 </li>
 </ul>
 <p>To expose rabbitmq application ports, these are the typical changes</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">clusterIP</span>: <span style="color:#ae81ff">10.43.198.64</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">externalIPs</span>:
 </span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">10.128.0.13</span>
@@ -216,7 +245,7 @@ If we need to get our services running on specific port number for external acce
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">sessionAffinity</span>: <span style="color:#ae81ff">None</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">LoadBalancer</span>
 </span></span></code></pre></div><h3 id="update-nginx-deployment-configuration">Update nginx Deployment configuration</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl edit deployment.apps/ingress-nginx-controller -n ingress-nginx
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl edit deployment.apps/ingress-nginx-controller -n ingress-nginx
 </span></span></code></pre></div><ul>
 <li>
 <p>Update the controller args to support tcp and udp services.</p>
@@ -225,7 +254,7 @@ If we need to get our services running on specific port number for external acce
 <p><strong>&ndash;udp-services-configmap=$(POD_NAMESPACE)/udp-services</strong></p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>    <span style="color:#f92672">spec</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>    <span style="color:#f92672">spec</span>:
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">containers</span>:
 </span></span><span style="display:flex;"><span>      - <span style="color:#f92672">args</span>:
 </span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">/nginx-ingress-controller</span>
@@ -240,7 +269,7 @@ If we need to get our services running on specific port number for external acce
 </span></span></code></pre></div><ul>
 <li>Add the ports to open up on controller pod(s)</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>        <span style="color:#f92672">ports</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>        <span style="color:#f92672">ports</span>:
 </span></span><span style="display:flex;"><span>        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">80</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">http</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
@@ -258,7 +287,7 @@ If we need to get our services running on specific port number for external acce
 </span></span><span style="display:flex;"><span>          <span style="color:#f92672">protocol</span>: <span style="color:#ae81ff">TCP</span>
 </span></span></code></pre></div><h3 id="configmap-changes">ConfigMap Changes</h3>
 <p>Create a configmap data for the custom ports - configmap-port-expose.yaml</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">tcp-services</span>
@@ -269,7 +298,7 @@ If we need to get our services running on specific port number for external acce
 </span></span></code></pre></div><p>Refers - <code>rabbitmq</code> namespace and <code>rabbittestha-rabbitmq</code> service within that namespace</p>
 <h2 id="testing">Testing</h2>
 <p>Connect to the TCP port using telnet and node IP</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ telnet 10.128.0.13 <span style="color:#ae81ff">15672</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ telnet 10.128.0.13 <span style="color:#ae81ff">15672</span>
 </span></span><span style="display:flex;"><span>Trying 10.128.0.13...
 </span></span><span style="display:flex;"><span>Connected to 10.128.0.13.
 </span></span><span style="display:flex;"><span>Escape character is <span style="color:#e6db74">&#39;^]&#39;</span>.
@@ -285,15 +314,38 @@ If we need to get our services running on specific port number for external acce
             <pubDate>Fri, 12 Feb 2021 10:15:03 +0530</pubDate>
             
             <guid>https://karthick.it/posts/2021/02/awx-upgrade-docker/</guid>
-            <description>This article explains upgrade of awx services running on docker.
-Stop AWX Services In some case, tag latest needs to be replaced with current version running on the system.
-docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest docker stop awx_web docker rm awx_web docker rmi ansible/awx_web:latest Backup Inventory File cp ~/awx/installer/inventory ~/inventory Refresh AWX Code cd ~/awx/installer git stash git pull cd installer Run Upgrade export GPG_TTY=$(tty) cd installer # Review inventory (Update passwords and vars from backed up inventory file) ansible-playbook -i inventory install.</description>
+            <description>&lt;hr&gt;
+&lt;p&gt;This article explains upgrade of awx services running on docker.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;stop-awx-services&#34;&gt;Stop AWX Services&lt;/h2&gt;
+&lt;p&gt;In some case, tag &lt;code&gt;latest&lt;/code&gt; needs to be replaced with current version running on the system.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker stop awx_task
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker rm awx_task
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker rmi ansible/awx_task:latest
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker stop awx_web
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker rm awx_web
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker rmi ansible/awx_web:latest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;backup-inventory-file&#34;&gt;Backup Inventory File&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cp ~/awx/installer/inventory ~/inventory
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;refresh-awx-code&#34;&gt;Refresh AWX Code&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd ~/awx/installer
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git stash
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git pull
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd installer
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;run-upgrade&#34;&gt;Run Upgrade&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;export GPG_TTY=$(tty)
+cd installer
+# Review inventory (Update passwords and vars from backed up inventory file)
+ansible-playbook -i inventory install.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;If prompted for passphrase input, provide docker hub login password&lt;/p&gt;</description>
             <content type="html"><![CDATA[<hr>
 <p>This article explains upgrade of awx services running on docker.</p>
 <hr>
 <h2 id="stop-awx-services">Stop AWX Services</h2>
 <p>In some case, tag <code>latest</code> needs to be replaced with current version running on the system.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker stop awx_task
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker stop awx_task
 </span></span><span style="display:flex;"><span>docker rm awx_task
 </span></span><span style="display:flex;"><span>docker rmi ansible/awx_task:latest
 </span></span><span style="display:flex;"><span>
@@ -301,9 +353,9 @@ docker stop awx_task docker rm awx_task docker rmi ansible/awx_task:latest docke
 </span></span><span style="display:flex;"><span>docker rm awx_web
 </span></span><span style="display:flex;"><span>docker rmi ansible/awx_web:latest
 </span></span></code></pre></div><h2 id="backup-inventory-file">Backup Inventory File</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cp ~/awx/installer/inventory ~/inventory
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cp ~/awx/installer/inventory ~/inventory
 </span></span></code></pre></div><h2 id="refresh-awx-code">Refresh AWX Code</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cd ~/awx/installer
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cd ~/awx/installer
 </span></span><span style="display:flex;"><span>git stash
 </span></span><span style="display:flex;"><span>git pull
 </span></span><span style="display:flex;"><span>cd installer
@@ -316,7 +368,7 @@ ansible-playbook -i inventory install.yml
 <p>If prompted for passphrase input, provide docker hub login password</p>
 </blockquote>
 <h2 id="start-awx-services">Start AWX Services</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cd ~/.awx/awxcompose
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cd ~/.awx/awxcompose
 </span></span><span style="display:flex;"><span>docker-compose up -d
 </span></span></code></pre></div>]]></content>
         </item>
@@ -327,16 +379,28 @@ ansible-playbook -i inventory install.yml
             <pubDate>Tue, 10 Nov 2020 16:23:49 +0530</pubDate>
             
             <guid>https://karthick.it/posts/2020/11/clean-chroot-builds-on-arch-linux/</guid>
-            <description>A clean chroot build is preferred when there are package dependencies during aur package installation. This article should allow us to perform one such clean chroot build using the guided aur package called clean chroot manager(ccm).
-Install CCM yay -S clean-chroot-manager Setup base config for chroot Run the sudo ccm64 c command to generate a default clean-chroot-manager.conf
-Create a chroot path running mkdir ~/chroot
-Edit this file and update the CHROOTPATH64=&amp;quot;/home/karthick-k/chroot&amp;quot; to a valid path</description>
+            <description>&lt;hr&gt;
+&lt;p&gt;A clean chroot build is preferred when there are package dependencies during aur package installation.
+This article should allow us to perform one such clean chroot build using the guided aur package called &lt;a href=&#34;https://github.com/graysky2/clean-chroot-manager&#34;&gt;clean chroot manager(ccm)&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;install-ccm&#34;&gt;Install CCM&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;yay -S clean-chroot-manager
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;setup-base-config-for-chroot&#34;&gt;Setup base config for chroot&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Run the &lt;code&gt;sudo ccm64 c&lt;/code&gt; command to generate a default &lt;strong&gt;clean-chroot-manager.conf&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create a chroot path running &lt;code&gt;mkdir ~/chroot&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Edit this file and update the &lt;code&gt;CHROOTPATH64=&amp;quot;/home/karthick-k/chroot&amp;quot;&lt;/code&gt; to a valid path&lt;/p&gt;</description>
             <content type="html"><![CDATA[<hr>
 <p>A clean chroot build is preferred when there are package dependencies during aur package installation.
 This article should allow us to perform one such clean chroot build using the guided aur package called <a href="https://github.com/graysky2/clean-chroot-manager">clean chroot manager(ccm)</a>.</p>
 <hr>
 <h3 id="install-ccm">Install CCM</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yay -S clean-chroot-manager
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yay -S clean-chroot-manager
 </span></span></code></pre></div><h3 id="setup-base-config-for-chroot">Setup base config for chroot</h3>
 <ul>
 <li>
@@ -349,16 +413,16 @@ This article should allow us to perform one such clean chroot build using the gu
 <p>Edit this file and update the <code>CHROOTPATH64=&quot;/home/karthick-k/chroot&quot;</code> to a valid path</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>nano ~/.config/clean-chroot-manager.conf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>nano ~/.config/clean-chroot-manager.conf
 </span></span></code></pre></div><h3 id="build-a-new-aur-package-from-chroot">Build a new aur package from chroot</h3>
 <ul>
 <li>We could use any package source from aur. I&rsquo;m using <a href="https://aur.archlinux.org/packages/teams-for-linux/">teams for linux</a> in this case</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone https://aur.archlinux.org/teams-for-linux.git
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone https://aur.archlinux.org/teams-for-linux.git
 </span></span></code></pre></div><ul>
 <li>Change directory to <strong>PKGBUILD</strong> folder of the aur package</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cd teams-for-linux; ls -l                       
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cd teams-for-linux; ls -l                       
 </span></span><span style="display:flex;"><span>total <span style="color:#ae81ff">164</span>
 </span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#ae81ff">1</span> karthick-k karthick-k    <span style="color:#ae81ff">459</span> Nov <span style="color:#ae81ff">10</span> 14:01 index.patch
 </span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#ae81ff">1</span> karthick-k karthick-k   <span style="color:#ae81ff">1833</span> Nov <span style="color:#ae81ff">10</span> 14:01 PKGBUILD
@@ -366,16 +430,16 @@ This article should allow us to perform one such clean chroot build using the gu
 </span></span></code></pre></div><ul>
 <li>Build the package</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo ccm64 s
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo ccm64 s
 </span></span></code></pre></div><ul>
 <li>List the package that are built</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo ccm64 l
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo ccm64 l
 </span></span><span style="display:flex;"><span><span style="color:#f92672">==</span>&gt; Listing out packages in buildroot repo...
 </span></span><span style="display:flex;"><span>total 63M
 </span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#ae81ff">1</span> root root 63M Nov <span style="color:#ae81ff">10</span> 14:34 teams-for-linux-1.0.5-1-x86_64.pkg.tar.zst
 </span></span></code></pre></div><h3 id="install-the-package">Install the package</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo pacman -U teams-for-linux-1.0.5-1-x86_64.pkg.tar.zst
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo pacman -U teams-for-linux-1.0.5-1-x86_64.pkg.tar.zst
 </span></span></code></pre></div>]]></content>
         </item>
         
@@ -385,19 +449,32 @@ This article should allow us to perform one such clean chroot build using the gu
             <pubDate>Thu, 05 Nov 2020 18:32:55 +0530</pubDate>
             
             <guid>https://karthick.it/posts/2020/11/zsh-setup/</guid>
-            <description>This guide is to provide some quick steps to setup zsh,oh-my-zsh framework with essential plugins and powerline10k theme
-Change default shell to zsh sudo usermod -s /usr/bin/zsh $USER Setup oh-my-zsh framework An excellent framework with extensible plugins and themes to manage zsh configurations.
-sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;#34; Install essential plugins git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions Enable installed plugins Update ~/.zshrc file to enable the installed plugins</description>
+            <description>&lt;hr&gt;
+&lt;p&gt;This guide is to provide some quick steps to setup zsh,oh-my-zsh framework with essential plugins and powerline10k theme&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;change-default-shell-to-zsh&#34;&gt;Change default shell to zsh&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo usermod -s /usr/bin/zsh $USER
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;setup-oh-my-zsh-framework&#34;&gt;Setup oh-my-zsh framework&lt;/h2&gt;
+&lt;p&gt;An excellent framework with extensible plugins and themes to manage zsh configurations.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sh -c &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;install-essential-plugins&#34;&gt;Install essential plugins&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/zsh-users/zsh-syntax-highlighting.git &lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;ZSH_CUSTOM&lt;span style=&#34;color:#66d9ef&#34;&gt;:-&lt;/span&gt;~/.oh-my-zsh/custom&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;/plugins/zsh-syntax-highlighting
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/zsh-users/zsh-autosuggestions.git &lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;ZSH_CUSTOM&lt;span style=&#34;color:#66d9ef&#34;&gt;:-&lt;/span&gt;~/.oh-my-zsh/custom&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;/plugins/zsh-autosuggestions
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;enable-installed-plugins&#34;&gt;Enable installed plugins&lt;/h3&gt;
+&lt;p&gt;Update &lt;code&gt;~/.zshrc&lt;/code&gt; file to enable the installed &lt;strong&gt;plugins&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-i\&#34; data-lang=&#34;i\&#34;&gt;plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;installing-powerlevel10k-theme&#34;&gt;Installing Powerlevel10K Theme&lt;/h2&gt;
+&lt;p&gt;Although zsh comes with many pre-installed themes, this external community supported theme standsout.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<hr>
 <p>This guide is to provide some quick steps to setup zsh,oh-my-zsh framework with essential plugins and powerline10k theme</p>
 <hr>
 <h2 id="change-default-shell-to-zsh">Change default shell to zsh</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo usermod -s /usr/bin/zsh $USER
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo usermod -s /usr/bin/zsh $USER
 </span></span></code></pre></div><h2 id="setup-oh-my-zsh-framework">Setup oh-my-zsh framework</h2>
 <p>An excellent framework with extensible plugins and themes to manage zsh configurations.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sh -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sh -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
 </span></span></code></pre></div><h3 id="install-essential-plugins">Install essential plugins</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span style="color:#e6db74">${</span>ZSH_CUSTOM<span style="color:#66d9ef">:-</span>~/.oh-my-zsh/custom<span style="color:#e6db74">}</span>/plugins/zsh-syntax-highlighting
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span style="color:#e6db74">${</span>ZSH_CUSTOM<span style="color:#66d9ef">:-</span>~/.oh-my-zsh/custom<span style="color:#e6db74">}</span>/plugins/zsh-syntax-highlighting
 </span></span><span style="display:flex;"><span>git clone https://github.com/zsh-users/zsh-autosuggestions.git <span style="color:#e6db74">${</span>ZSH_CUSTOM<span style="color:#66d9ef">:-</span>~/.oh-my-zsh/custom<span style="color:#e6db74">}</span>/plugins/zsh-autosuggestions
 </span></span></code></pre></div><h3 id="enable-installed-plugins">Enable installed plugins</h3>
 <p>Update <code>~/.zshrc</code> file to enable the installed <strong>plugins</strong></p>
@@ -405,9 +482,9 @@ sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/ma
 </code></pre><h2 id="installing-powerlevel10k-theme">Installing Powerlevel10K Theme</h2>
 <p>Although zsh comes with many pre-installed themes, this external community supported theme standsout.</p>
 <h3 id="install-required-fonts">Install required fonts</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yain ttf-dejavu ttf-meslo-nerd-font-powerlevel10k
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yain ttf-dejavu ttf-meslo-nerd-font-powerlevel10k
 </span></span></code></pre></div><h3 id="install-the-theme">Install the theme</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> https://github.com/romkatv/powerlevel10k.git <span style="color:#e6db74">${</span>ZSH_CUSTOM<span style="color:#66d9ef">:-</span>$HOME/.oh-my-zsh/custom<span style="color:#e6db74">}</span>/themes/powerlevel10k
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> https://github.com/romkatv/powerlevel10k.git <span style="color:#e6db74">${</span>ZSH_CUSTOM<span style="color:#66d9ef">:-</span>$HOME/.oh-my-zsh/custom<span style="color:#e6db74">}</span>/themes/powerlevel10k
 </span></span></code></pre></div><p>When the installation is complete, a wizard will guide us through the rest of configuration and tweaks for a powerup shell</p>
 <p>The wizard can anytime be re-run with <code>p10k configure</code> command</p>
 ]]></content>
@@ -419,10 +496,15 @@ sh -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/ma
             <pubDate>Thu, 05 Nov 2020 14:17:26 +0530</pubDate>
             
             <guid>https://karthick.it/posts/2020/11/opengl-compositor-crash-fix-restart/</guid>
-            <description>A workaround to get rid of x11/compositor crash in KDE 5.x for Intel HD GPUs
-OpenGL-Compositor crash fix on wakeup/unlock event This is a simple workaround to recover from the kde compositor crashes that renders the screen with black artifacts with non-responding UI.
-The idea is to keep a script running in the background which capture the dbus event of lock/unlock screen to restart kwin window manager.
-Restart script restart_kwin.</description>
+            <description>&lt;hr&gt;
+&lt;p&gt;A workaround to get rid of x11/compositor crash in KDE 5.x for Intel HD GPUs&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;opengl-compositor-crash-fix-on-wakeupunlock-event&#34;&gt;OpenGL-Compositor crash fix on wakeup/unlock event&lt;/h2&gt;
+&lt;p&gt;This is a simple workaround to recover from the kde compositor crashes that renders the screen with black artifacts with non-responding UI.&lt;/p&gt;
+&lt;p&gt;The idea is to keep a script running in the background which capture the dbus event of lock/unlock screen to restart kwin window manager.&lt;/p&gt;
+&lt;h3 id=&#34;restart-script&#34;&gt;Restart script&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;restart_kwin.sh&lt;/p&gt;</description>
             <content type="html"><![CDATA[<hr>
 <p>A workaround to get rid of x11/compositor crash in KDE 5.x for Intel HD GPUs</p>
 <hr>
@@ -433,7 +515,7 @@ Restart script restart_kwin.</description>
 <blockquote>
 <p>restart_kwin.sh</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>dbus-monitor --session <span style="color:#e6db74">&#34;type=&#39;signal&#39;,interface=&#39;org.freedesktop.ScreenSaver&#39;&#34;</span> |
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>dbus-monitor --session <span style="color:#e6db74">&#34;type=&#39;signal&#39;,interface=&#39;org.freedesktop.ScreenSaver&#39;&#34;</span> |
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span> read x; <span style="color:#66d9ef">do</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$x<span style="color:#e6db74">&#34;</span> in
 </span></span><span style="display:flex;"><span>      *<span style="color:#e6db74">&#34;boolean true&#34;</span>*<span style="color:#f92672">)</span> pkill kwin_x11;;
@@ -453,25 +535,39 @@ Restart script restart_kwin.</description>
             <pubDate>Fri, 30 Oct 2020 00:00:09 +0530</pubDate>
             
             <guid>https://karthick.it/posts/2020/10/encrypt-decrypt-with-gpg/</guid>
-            <description> This article explains encryption and decryption of files using GNU gpg
-Setup GNU gpg Generate Keys gpg --full-generate-key passphrase is optional Encrypting a file gpg -e -r &amp;#34;karthickk&amp;#34; .wekan.json This creates a file with an extension .gpg
-Decrypting a file gpg -o .wekan.json -d .wekan.json.gpg </description>
+            <description>&lt;hr&gt;
+&lt;p&gt;This article explains encryption and decryption of files using GNU gpg&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;setup-gnu-gpg&#34;&gt;Setup GNU gpg&lt;/h2&gt;
+&lt;h3 id=&#34;generate-keys&#34;&gt;Generate Keys&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpg --full-generate-key
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;passphrase is optional&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;encrypting-a-file&#34;&gt;Encrypting a file&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpg -e -r &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;karthickk&amp;#34;&lt;/span&gt; .wekan.json
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;This creates a file with an extension .gpg&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;decrypting-a-file&#34;&gt;Decrypting a file&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpg -o .wekan.json -d .wekan.json.gpg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
             <content type="html"><![CDATA[<hr>
 <p>This article explains encryption and decryption of files using GNU gpg</p>
 <hr>
 <h2 id="setup-gnu-gpg">Setup GNU gpg</h2>
 <h3 id="generate-keys">Generate Keys</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gpg --full-generate-key
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gpg --full-generate-key
 </span></span></code></pre></div><ul>
 <li>passphrase is optional</li>
 </ul>
 <h3 id="encrypting-a-file">Encrypting a file</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gpg -e -r <span style="color:#e6db74">&#34;karthickk&#34;</span> .wekan.json
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gpg -e -r <span style="color:#e6db74">&#34;karthickk&#34;</span> .wekan.json
 </span></span></code></pre></div><blockquote>
 <p>This creates a file with an extension .gpg</p>
 </blockquote>
 <h3 id="decrypting-a-file">Decrypting a file</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gpg -o .wekan.json -d .wekan.json.gpg
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gpg -o .wekan.json -d .wekan.json.gpg
 </span></span></code></pre></div>]]></content>
         </item>
         
@@ -481,12 +577,40 @@ Decrypting a file gpg -o .wekan.json -d .wekan.json.gpg </description>
             <pubDate>Wed, 28 Oct 2020 14:34:08 +0530</pubDate>
             
             <guid>https://karthick.it/posts/2020/10/hashicorp-boundary-setup-and-demo/</guid>
-            <description>This article explain how to setup a boundary server to authenticate/connect to an internal VM
-Boundary Binary Download URL: https://www.boundaryproject.io/downloads
-Boundary Server Boundary server has two components - controller and worker. A simple dev server can be started using boundary dev
-Server Spec VM - Any Network Interfaces:
-- 1 x NAT Network (10.x.x.x) - 1 x Host Only/Bridged Network (192.x.x.x/*) Setting up Pre-requisite Install Postgresql Create docker-compose.yaml
-version: &amp;#39;2&amp;#39; services: postgresql: image: &amp;#39;docker.</description>
+            <description>&lt;hr&gt;
+&lt;p&gt;This article explain how to setup a boundary server to authenticate/connect to an internal VM&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;boundary-binary-download&#34;&gt;Boundary Binary Download&lt;/h2&gt;
+&lt;p&gt;URL: &lt;a href=&#34;https://www.boundaryproject.io/downloads&#34;&gt;https://www.boundaryproject.io/downloads&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;boundary-server&#34;&gt;Boundary Server&lt;/h2&gt;
+&lt;p&gt;Boundary server has two components - controller and worker. A simple dev server can be started using &lt;code&gt;boundary dev&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;server-spec&#34;&gt;Server Spec&lt;/h3&gt;
+&lt;p&gt;VM - Any
+Network Interfaces:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- 1 x NAT Network (10.x.x.x)
+- 1 x Host Only/Bridged Network (192.x.x.x/*)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;setting-up-pre-requisite&#34;&gt;Setting up Pre-requisite&lt;/h3&gt;
+&lt;h4 id=&#34;install-postgresql&#34;&gt;Install Postgresql&lt;/h4&gt;
+&lt;p&gt;Create &lt;code&gt;docker-compose.yaml&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;2&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;services&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;postgresql&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;docker.io/bitnami/postgresql:11-debian-10&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;ports&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;5432:5432&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;volumes&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;postgresql_data:/bitnami/postgresql&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;environment&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ALLOW_EMPTY_PASSWORD=yes&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#ae81ff&#34;&gt;POSTGRESQL_USERNAME=postgres&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#ae81ff&#34;&gt;POSTGRESQL_PASSWORD=password123&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#ae81ff&#34;&gt;POSTGRESQL_DATABASE=boundary&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;volumes&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;postgresql_data&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;driver&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;local&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Run postgresql docker&lt;/p&gt;</description>
             <content type="html"><![CDATA[<hr>
 <p>This article explain how to setup a boundary server to authenticate/connect to an internal VM</p>
 <hr>
@@ -503,7 +627,7 @@ Network Interfaces:</p>
 <h3 id="setting-up-pre-requisite">Setting up Pre-requisite</h3>
 <h4 id="install-postgresql">Install Postgresql</h4>
 <p>Create <code>docker-compose.yaml</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;2&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;2&#39;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">postgresql</span>:
@@ -631,8 +755,8 @@ kms &#34;aead&#34; {
 }
 </code></pre><h4 id="setting-up-controller-and-worker-service">Setting up Controller and Worker Service</h4>
 <p>Create install script</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e"># Installs the boundary as a service for systemd on linux</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Installs the boundary as a service for systemd on linux</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Usage: ./install.sh &lt;worker|controller&gt;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>TYPE<span style="color:#f92672">=</span>$1
@@ -684,11 +808,11 @@ sudo ./install.sh worker
 </blockquote>
 <h2 id="connecting-to-vm-via-boundary-server">Connecting to VM via Boundary Server</h2>
 <p>Authenticate server</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>BOUNDARY_ADDR<span style="color:#f92672">=</span>http://192.168.99.102:9200 boundary authenticate password -auth-method-id<span style="color:#f92672">=</span>ampw_8KHJD8hQRJ -login-name<span style="color:#f92672">=</span>admin -password<span style="color:#f92672">=</span>ycgHbdayxhYoZG4HaMaj
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>BOUNDARY_ADDR<span style="color:#f92672">=</span>http://192.168.99.102:9200 boundary authenticate password -auth-method-id<span style="color:#f92672">=</span>ampw_8KHJD8hQRJ -login-name<span style="color:#f92672">=</span>admin -password<span style="color:#f92672">=</span>ycgHbdayxhYoZG4HaMaj
 </span></span></code></pre></div><p>Connect SSH</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>BOUNDARY_ADDR<span style="color:#f92672">=</span>http://192.168.99.102:9200 boundary connect ssh -target-id ttcp_yj50ER3Uq3 -token at_Zh5SfzpyYR_s1bWQSM96NgAY9UAy1W235eL3fiaui4QNBkhEkSnYy7ReY24ME2bYK3FtZGZWfX3C7NGPbPABNcgGusvRjQ1EFwc2AS7v1rq6Xxjv1fYnmwDbrLmV7UHdkP5y9ZUxFnN6BAtwRnTH82g2Q -- -l osboxes
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>BOUNDARY_ADDR<span style="color:#f92672">=</span>http://192.168.99.102:9200 boundary connect ssh -target-id ttcp_yj50ER3Uq3 -token at_Zh5SfzpyYR_s1bWQSM96NgAY9UAy1W235eL3fiaui4QNBkhEkSnYy7ReY24ME2bYK3FtZGZWfX3C7NGPbPABNcgGusvRjQ1EFwc2AS7v1rq6Xxjv1fYnmwDbrLmV7UHdkP5y9ZUxFnN6BAtwRnTH82g2Q -- -l osboxes
 </span></span></code></pre></div><p>Users &amp; Access</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>boundary roles update -grant-scope-id<span style="color:#f92672">=</span>p_tkwQtiybAR -id<span style="color:#f92672">=</span>r_MJpRFZlFsO -token at_i0VuJvNsla_s1Dy8URtX8J23CUmcZt6v3SN3xdPYTFLFxztgF6bGB8JqPWZwVRGEkrpTqPa9Bc5xVRNY4v2o63b8WAfa1xTwLqufUMfXUz17JCpDjsi
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>boundary roles update -grant-scope-id<span style="color:#f92672">=</span>p_tkwQtiybAR -id<span style="color:#f92672">=</span>r_MJpRFZlFsO -token at_i0VuJvNsla_s1Dy8URtX8J23CUmcZt6v3SN3xdPYTFLFxztgF6bGB8JqPWZwVRGEkrpTqPa9Bc5xVRNY4v2o63b8WAfa1xTwLqufUMfXUz17JCpDjsi
 </span></span><span style="display:flex;"><span>BOUNDARY_ADDR<span style="color:#f92672">=</span>http://192.168.50.10:9200 boundary roles list -scope-id p_tkwQtiybAR -token at_i0VuJvNsla_s1Dy8URtX8J23CUmcZt6v3SN3xdPYTFLFxztgF6bGB8JqPWZwVRGEkrpTqPa9Bc5xVRNY4v2o63b8WAfa1xTwLqufUMfXUz17JCpDjsi
 </span></span><span style="display:flex;"><span>BOUNDARY_ADDR<span style="color:#f92672">=</span>http://192.168.50.10:9200 boundary connect ssh -target-id ttcp_jRA1wIGwVS -token at_i0VuJvNsla_s1Dy8URtX8J23CUmcZt6v3SN3xdPYTFLFxztgF6bGB8JqPWZwVRGEkrpTqPa9Bc5xVRNY4v2o63b8WAfa1xTwLqufUMfXUz17JCpDjsi -- -l vagrant
 </span></span></code></pre></div>]]></content>

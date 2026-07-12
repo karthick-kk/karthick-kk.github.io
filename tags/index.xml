@@ -1,102 +1,89 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tags on Karthick-K</title>
-    <link>https://karthick.it/tags/</link>
-    <description>Recent content in Tags on Karthick-K</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 10 May 2021 20:11:40 +0530</lastBuildDate><atom:link href="https://karthick.it/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Arch</title>
-      <link>https://karthick.it/tags/arch/</link>
-      <pubDate>Mon, 10 May 2021 20:11:40 +0530</pubDate>
-      
-      <guid>https://karthick.it/tags/arch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tor</title>
-      <link>https://karthick.it/tags/tor/</link>
-      <pubDate>Mon, 10 May 2021 20:11:40 +0530</pubDate>
-      
-      <guid>https://karthick.it/tags/tor/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>devops</title>
-      <link>https://karthick.it/tags/devops/</link>
-      <pubDate>Thu, 29 Apr 2021 17:58:48 +0530</pubDate>
-      
-      <guid>https://karthick.it/tags/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>github</title>
-      <link>https://karthick.it/tags/github/</link>
-      <pubDate>Thu, 29 Apr 2021 17:58:48 +0530</pubDate>
-      
-      <guid>https://karthick.it/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cli</title>
-      <link>https://karthick.it/tags/cli/</link>
-      <pubDate>Fri, 09 Apr 2021 09:19:16 +0530</pubDate>
-      
-      <guid>https://karthick.it/tags/cli/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Migration</title>
-      <link>https://karthick.it/tags/migration/</link>
-      <pubDate>Tue, 23 Feb 2021 14:29:17 +0530</pubDate>
-      
-      <guid>https://karthick.it/tags/migration/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Virtualization</title>
-      <link>https://karthick.it/tags/virtualization/</link>
-      <pubDate>Tue, 23 Feb 2021 14:29:17 +0530</pubDate>
-      
-      <guid>https://karthick.it/tags/virtualization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vmware</title>
-      <link>https://karthick.it/tags/vmware/</link>
-      <pubDate>Tue, 23 Feb 2021 14:29:17 +0530</pubDate>
-      
-      <guid>https://karthick.it/tags/vmware/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Configuration</title>
-      <link>https://karthick.it/tags/configuration/</link>
-      <pubDate>Thu, 18 Feb 2021 15:19:18 +0530</pubDate>
-      
-      <guid>https://karthick.it/tags/configuration/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Upgrade</title>
-      <link>https://karthick.it/tags/upgrade/</link>
-      <pubDate>Fri, 12 Feb 2021 10:15:03 +0530</pubDate>
-      
-      <guid>https://karthick.it/tags/upgrade/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Tags on Karthick-K</title>
+		<link>https://karthick.it/tags/</link>
+		<description>Recent content in Tags on Karthick-K</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+			<copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+		
+		
+			<lastBuildDate>Mon, 10 May 2021 20:11:40 +0530</lastBuildDate>
+		
+			<atom:link href="https://karthick.it/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Arch</title>
+				<link>https://karthick.it/tags/arch/</link>
+				<pubDate>Mon, 10 May 2021 20:11:40 +0530</pubDate>
+				<guid>https://karthick.it/tags/arch/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Tor</title>
+				<link>https://karthick.it/tags/tor/</link>
+				<pubDate>Mon, 10 May 2021 20:11:40 +0530</pubDate>
+				<guid>https://karthick.it/tags/tor/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Devops</title>
+				<link>https://karthick.it/tags/devops/</link>
+				<pubDate>Thu, 29 Apr 2021 17:58:48 +0530</pubDate>
+				<guid>https://karthick.it/tags/devops/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Github</title>
+				<link>https://karthick.it/tags/github/</link>
+				<pubDate>Thu, 29 Apr 2021 17:58:48 +0530</pubDate>
+				<guid>https://karthick.it/tags/github/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Cli</title>
+				<link>https://karthick.it/tags/cli/</link>
+				<pubDate>Fri, 09 Apr 2021 09:19:16 +0530</pubDate>
+				<guid>https://karthick.it/tags/cli/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Migration</title>
+				<link>https://karthick.it/tags/migration/</link>
+				<pubDate>Tue, 23 Feb 2021 14:29:17 +0530</pubDate>
+				<guid>https://karthick.it/tags/migration/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Virtualization</title>
+				<link>https://karthick.it/tags/virtualization/</link>
+				<pubDate>Tue, 23 Feb 2021 14:29:17 +0530</pubDate>
+				<guid>https://karthick.it/tags/virtualization/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Vmware</title>
+				<link>https://karthick.it/tags/vmware/</link>
+				<pubDate>Tue, 23 Feb 2021 14:29:17 +0530</pubDate>
+				<guid>https://karthick.it/tags/vmware/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Configuration</title>
+				<link>https://karthick.it/tags/configuration/</link>
+				<pubDate>Thu, 18 Feb 2021 15:19:18 +0530</pubDate>
+				<guid>https://karthick.it/tags/configuration/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Upgrade</title>
+				<link>https://karthick.it/tags/upgrade/</link>
+				<pubDate>Fri, 12 Feb 2021 10:15:03 +0530</pubDate>
+				<guid>https://karthick.it/tags/upgrade/</guid>
+				<description></description>
+			</item>
+	</channel>
 </rss>
