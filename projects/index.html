@@ -5,11 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Karthick">
-<meta name="description" content="Software &amp; DevOps Ops-Runner Modern web application built to help operators handle day-to-day operations.
-Technology Stack: ReactJS, Go, and Redis
-ChatOps for Microsoft Teams Automated deployments triggered directly from Microsoft Teams as native chat queries.
-Developers initiate deployments as chat queries Automated, transparent deployment status updates Faster turnaround for product feature development Technology Stack: NodeJS, Jenkins, and MS Teams
-GoVuln Scanner [WIP] A hobby project, built from the ground up in Go to mimic a CIS audit / vulnerability scanner.
+<meta name="description" content="These are the projects I&rsquo;m actively building and maintaining. They range from Kubernetes platform tooling and hands-on learning platforms to AI agents, emulators, and everyday desktop apps.
+Platforms &amp; DevOps kubetrust I built kubetrust as a Kubernetes mutating admission webhook that automatically injects CA certificates into pods running in labeled namespaces, integrating with cert-manager&rsquo;s trust-manager to consolidate system and custom CAs into a single trust bundle.
+Runtime-configurable CA injection (no hardcoded certs), fully driven by Helm Zero-downtime CA rotation — update certificates without rebuilding images or restarting apps Automatic webhook TLS certificate generation via Helm hooks Custom organization CA support plus trust-manager bundle consolidation Namespace-scoped injection via labels; single image, production-ready with HA support Technology Stack: Go · Helm · cert-manager trust-manager · Kubernetes 1.19&#43;
 " />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
@@ -50,24 +48,20 @@ GoVuln Scanner [WIP] A hobby project, built from the ground up in Go to mimic a 
 
 
 	<meta itemprop="name" content="Projects">
-	<meta itemprop="description" content="Software &amp; DevOps Ops-Runner Modern web application built to help operators handle day-to-day operations.
-Technology Stack: ReactJS, Go, and Redis
-ChatOps for Microsoft Teams Automated deployments triggered directly from Microsoft Teams as native chat queries.
-Developers initiate deployments as chat queries Automated, transparent deployment status updates Faster turnaround for product feature development Technology Stack: NodeJS, Jenkins, and MS Teams
-GoVuln Scanner [WIP] A hobby project, built from the ground up in Go to mimic a CIS audit / vulnerability scanner.">
-	<meta itemprop="datePublished" content="2020-10-28T00:00:00+00:00">
-	<meta itemprop="dateModified" content="2020-10-28T00:00:00+00:00">
-	<meta itemprop="wordCount" content="119">
+	<meta itemprop="description" content="These are the projects I’m actively building and maintaining. They range from Kubernetes platform tooling and hands-on learning platforms to AI agents, emulators, and everyday desktop apps.
+Platforms &amp; DevOps kubetrust I built kubetrust as a Kubernetes mutating admission webhook that automatically injects CA certificates into pods running in labeled namespaces, integrating with cert-manager’s trust-manager to consolidate system and custom CAs into a single trust bundle.
+Runtime-configurable CA injection (no hardcoded certs), fully driven by Helm Zero-downtime CA rotation — update certificates without rebuilding images or restarting apps Automatic webhook TLS certificate generation via Helm hooks Custom organization CA support plus trust-manager bundle consolidation Namespace-scoped injection via labels; single image, production-ready with HA support Technology Stack: Go · Helm · cert-manager trust-manager · Kubernetes 1.19&#43;">
+	<meta itemprop="datePublished" content="2026-07-12T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2026-07-12T00:00:00+00:00">
+	<meta itemprop="wordCount" content="856">
 	<meta itemprop="image" content="https://karthick.it/">
 
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:image" content="https://karthick.it/">
 	<meta name="twitter:title" content="Projects">
-	<meta name="twitter:description" content="Software &amp; DevOps Ops-Runner Modern web application built to help operators handle day-to-day operations.
-Technology Stack: ReactJS, Go, and Redis
-ChatOps for Microsoft Teams Automated deployments triggered directly from Microsoft Teams as native chat queries.
-Developers initiate deployments as chat queries Automated, transparent deployment status updates Faster turnaround for product feature development Technology Stack: NodeJS, Jenkins, and MS Teams
-GoVuln Scanner [WIP] A hobby project, built from the ground up in Go to mimic a CIS audit / vulnerability scanner.">
+	<meta name="twitter:description" content="These are the projects I’m actively building and maintaining. They range from Kubernetes platform tooling and hands-on learning platforms to AI agents, emulators, and everyday desktop apps.
+Platforms &amp; DevOps kubetrust I built kubetrust as a Kubernetes mutating admission webhook that automatically injects CA certificates into pods running in labeled namespaces, integrating with cert-manager’s trust-manager to consolidate system and custom CAs into a single trust bundle.
+Runtime-configurable CA injection (no hardcoded certs), fully driven by Helm Zero-downtime CA rotation — update certificates without rebuilding images or restarting apps Automatic webhook TLS certificate generation via Helm hooks Custom organization CA support plus trust-manager bundle consolidation Namespace-scoped injection via labels; single image, production-ready with HA support Technology Stack: Go · Helm · cert-manager trust-manager · Kubernetes 1.19&#43;">
 
 
 
@@ -75,7 +69,7 @@ GoVuln Scanner [WIP] A hobby project, built from the ground up in Go to mimic a 
 
 
 
-    <meta property="article:published_time" content="2020-10-28 00:00:00 &#43;0000 UTC" />
+    <meta property="article:published_time" content="2026-07-12 00:00:00 &#43;0000 UTC" />
 
 
 
@@ -148,29 +142,98 @@ GoVuln Scanner [WIP] A hobby project, built from the ground up in Go to mimic a 
             
 
             <div class="post-content">
-                <h3 id="software--devops">Software &amp; DevOps</h3>
-<h4 id="ops-runner">Ops-Runner</h4>
-<p>Modern web application built to help operators handle day-to-day operations.</p>
-<p>Technology Stack: ReactJS, Go, and Redis</p>
-<h4 id="chatops-for-microsoft-teams">ChatOps for Microsoft Teams</h4>
-<p>Automated deployments triggered directly from Microsoft Teams as native chat queries.</p>
+                <p>These are the projects I&rsquo;m actively building and maintaining. They range from Kubernetes platform tooling and hands-on learning platforms to AI agents, emulators, and everyday desktop apps.</p>
+<h3 id="platforms--devops">Platforms &amp; DevOps</h3>
+<h4 id="kubetrust">kubetrust <img src="https://karthick.it/images/projects/kubetrust.png" alt="kubetrust" style="height:2.4em;vertical-align:middle;border-radius:6px;margin-left:.5rem"></h4>
+<p>I built <strong>kubetrust</strong> as a Kubernetes mutating admission webhook that automatically injects CA certificates into pods running in labeled namespaces, integrating with cert-manager&rsquo;s trust-manager to consolidate system and custom CAs into a single trust bundle.</p>
 <ul>
-<li>Developers initiate deployments as chat queries</li>
-<li>Automated, transparent deployment status updates</li>
-<li>Faster turnaround for product feature development</li>
+<li>Runtime-configurable CA injection (no hardcoded certs), fully driven by Helm</li>
+<li>Zero-downtime CA rotation — update certificates without rebuilding images or restarting apps</li>
+<li>Automatic webhook TLS certificate generation via Helm hooks</li>
+<li>Custom organization CA support plus trust-manager bundle consolidation</li>
+<li>Namespace-scoped injection via labels; single image, production-ready with HA support</li>
 </ul>
-<p>Technology Stack: NodeJS, Jenkins, and MS Teams</p>
-<h4 id="govuln-scanner-wip">GoVuln Scanner [WIP]</h4>
-<p>A hobby project, built from the ground up in Go to mimic a CIS audit / vulnerability scanner.</p>
+<p>Technology Stack: Go · Helm · cert-manager trust-manager · Kubernetes 1.19+</p>
+<p><a href="https://github.com/kubetrust/kubetrust">Source</a></p>
+<h4 id="enter-bash">Enter Bash <img src="https://karthick.it/images/projects/enter-bash.png" alt="Enter Bash" style="height:2.4em;vertical-align:middle;border-radius:6px;margin-left:.5rem"></h4>
+<p>I co-built <strong>Enter Bash</strong>, a hands-on DevOps &amp; Cloud learning platform where learners spin up real, disposable lab containers, solve challenges, and earn XP and streaks on a leaderboard — practical practice instead of multiple-choice quizzes.</p>
 <ul>
-<li>GUI scanner with remote execution</li>
-<li>Conformance with latest CIS benchmark standards (v2)</li>
-<li>Remote scanning over SSH</li>
+<li>Real lab environments per challenge (Docker / GitHub Actions runners), not simulations</li>
+<li>Structured challenges and learning paths across Linux, Kubernetes, Docker, Terraform, Ansible, and CI/CD</li>
+<li>Gamified progress: XP, daily streaks with multipliers, badges, and a global leaderboard</li>
+<li>GitHub / Google OAuth, user profiles, and admin tooling</li>
+<li>Open challenge-content repository so the community can contribute new scenarios</li>
 </ul>
-<p><a href="https://github.com/karthick-kk/govuln-scanner">Source Code</a></p>
-<h4 id="route53-updater-for-rds">Route53 Updater for RDS</h4>
-<p>Python utility to create/update CNAME records of a hosted zone with the RDS cluster endpoint.</p>
-<p><a href="https://github.com/karthick-kk/aws-automation">Source Code</a></p>
+<p>Technology Stack: SvelteKit (frontend) · Cloudflare Workers / Hono + D1 (backend) · Docker labs</p>
+<p><a href="https://github.com/enterbash/enter-bash-content">Source</a> · <a href="https://enter-bash.fosskloud.workers.dev/">Live</a></p>
+<h4 id="ipa--interview-panel-assistant">IPA — Interview Panel Assistant <img src="https://karthick.it/images/projects/ipa.png" alt="IPA screenshot" style="height:3.2em;vertical-align:middle;border-radius:8px;margin-left:.5rem"></h4>
+<p>I built <strong>IPA</strong> (Interview Panel Assistant), a desktop app for interviewers that spins up shareable, live technical scenarios on a local Linux desktop using distrobox — so candidates get a real, reproducible environment instead of a shared screen-share.</p>
+<ul>
+<li>One-click ephemeral interview environments via distrobox (packages, files, and setup scripts defined as reusable scenarios)</li>
+<li>Shareable live terminal (ttyd) plus an optional Cloudflare tunnel so remote interviewers and candidates can join</li>
+<li>Session recording (asciinema) for later review</li>
+<li>Optional vCluster injection for Kubernetes interview scenarios, with kubeconfig wired straight into the shell</li>
+<li>Scenario import / export as tar.gz and IDE mode for richer debugging</li>
+</ul>
+<p>Technology Stack: Go · Wails · Svelte / TypeScript · distrobox · Docker · ttyd · cloudflared · asciinema</p>
+<p><em>Private — not publicly available.</em></p>
+<h3 id="ai--security">AI &amp; Security</h3>
+<h4 id="neurocat">NeuroCAT <img src="https://karthick.it/images/projects/neurocat.png" alt="NeuroCAT" style="height:2.4em;vertical-align:middle;border-radius:6px;margin-left:.5rem"></h4>
+<p>I built <strong>NeuroCAT</strong>, an AI-powered security hardening agent that turns CIS benchmark PDFs into audit scripts and scans remote Linux servers for compliance — so hardening stops being a slow, manual, error-prone chore.</p>
+<ul>
+<li>AI-generated audit scripts from CIS benchmarks using local Ollama (or OpenRouter) LLMs</li>
+<li>RAG over benchmarks (vector store) so scripts target the right controls precisely</li>
+<li>Secure SSH auditing of remote hosts (password or key based)</li>
+<li>JSON and HTML compliance reports for easy review</li>
+<li>Clean CLI workflow — ingest → generate → scan — runnable at scale</li>
+</ul>
+<p>Technology Stack: Python 3.10+ · Ollama / OpenRouter · SSH · vector store</p>
+<p><a href="https://github.com/neur0cat/neurocat">Source</a></p>
+<h4 id="kiro-gateway">Kiro Gateway <img src="https://karthick.it/images/projects/kiro-gateway.png" alt="Kiro Gateway" style="height:2.4em;vertical-align:middle;border-radius:6px;margin-left:.5rem"></h4>
+<p>I built <strong>Kiro Gateway</strong>, a proxy that lets any OpenAI- or Anthropic-compatible tool use Kiro&rsquo;s (AWS) free Claude models — so you can point Claude Code, Codex, Cursor, and friends at Claude without a paid API key.</p>
+<ul>
+<li>OpenAI-compatible API plus a native Anthropic <code>/v1/messages</code> endpoint</li>
+<li>Multi-account support with intelligent failover between accounts</li>
+<li>Extended thinking, vision, web search, tool calling, and full SSE streaming</li>
+<li>VPN / proxy support, smart token refresh, and retry logic for 403 / 429 / 5xx</li>
+<li>Works with Claude Code, OpenCode, Codex, Cursor, Cline, Roo Code, and more</li>
+</ul>
+<p>Technology Stack: Python · FastAPI · multi-account token management</p>
+<p><a href="https://github.com/karthick-kk/kiro-gateway">Source</a></p>
+<h3 id="apps--emulators">Apps &amp; Emulators</h3>
+<h4 id="nux-emulator">Nux Emulator <img src="https://karthick.it/images/projects/nux-emulator.png" alt="Nux Emulator" style="height:2.4em;vertical-align:middle;border-radius:6px;margin-left:.5rem"></h4>
+<p>I contribute to <strong>Nux</strong>, a gaming-focused Android emulator for Linux with a polished GNOME-native UI — bringing near-native Android gaming to the desktop without proprietary layers.</p>
+<ul>
+<li>KVM hardware acceleration via crosvm for near-native CPU performance</li>
+<li>GPU passthrough with gfxstream (NVIDIA, AMD, and Intel)</li>
+<li>GTK4 + libadwaita interface, Wayland-first with full X11 support</li>
+<li>Android 16 (AOSP) on an x86_64 base</li>
+<li>Root support via Magisk / KernelSU / APatch, with microG by default (optional GApps)</li>
+</ul>
+<p>Technology Stack: Rust · crosvm / KVM · gfxstream · GTK4 / libadwaita</p>
+<p><a href="https://github.com/nux-emulator/nux-emulator">Source</a></p>
+<h4 id="rdownloader">rDownloader <img src="https://karthick.it/images/projects/rdownloader.png" alt="rDownloader" style="height:2.4em;vertical-align:middle;border-radius:6px;margin-left:.5rem"></h4>
+<p>I built <strong>rDownloader</strong>, a cross-platform download manager (with a bonus AI video summarizer) that pairs a snappy Flutter UI with a high-performance Rust core via flutter_rust_bridge.</p>
+<ul>
+<li>Multi-platform desktop (Linux, Windows, macOS, Android) with system tray and window controls</li>
+<li>Rust-powered downloads with live progress, speed, and ETA streaming</li>
+<li>Clipboard detection that auto-detects and queues copied download links</li>
+<li>Built-in AI summarizer — paste a video URL and get an AI summary (configurable API)</li>
+<li>Automatic update checks</li>
+</ul>
+<p>Technology Stack: Flutter / Dart · Rust (flutter_rust_bridge) · Riverpod · tray_manager</p>
+<p><em>Private — not publicly available.</em></p>
+<h4 id="agam-tv">AGAM TV <img src="https://karthick.it/images/projects/agamtv.png" alt="AGAM TV" style="height:2.4em;vertical-align:middle;border-radius:6px;margin-left:.5rem"></h4>
+<p>I built <strong>AGAM TV</strong>, a cross-platform IPTV app with a Google TV-inspired interface for Android, Android TV, and Linux — tuned for Tamil and regional channels.</p>
+<ul>
+<li>Google TV-style grid with rounded channel icons and smooth animations</li>
+<li>Advanced player (media_kit on Linux / Windows, native on Android)</li>
+<li>Multiple sources: local M3U / JSON files and remote Gist playlists</li>
+<li>Favorites, categories (Tamil, Local, Movies), and fast search</li>
+<li>Cross-platform builds: Android APK and Linux AppImage, with a dark Material theme</li>
+</ul>
+<p>Technology Stack: Flutter / Dart · media_kit · Provider · Dio / http · shared_preferences</p>
+<p><a href="https://github.com/karmedia/agamtv-releases">Source</a></p>
 
             </div>
         </article>
